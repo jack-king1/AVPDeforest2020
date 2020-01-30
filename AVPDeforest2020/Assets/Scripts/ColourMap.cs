@@ -1,27 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ColourMap : MonoBehaviour
 {
     public Vector3[] vertices;
-    public Vector3[] normalisedVertices;
     public Color[] colourMap;
     public Mesh mesh;
     public TerrainType[] regions;
     public Material mat;
-    public static ColourMap instance;
+    public float[] heights;
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
         mesh = gameObject.GetComponent<MeshFilter>().mesh;
         vertices = new Vector3[mesh.vertices.Length];
-        normalisedVertices = new Vector3[mesh.vertices.Length];
+        heights = new float[mesh.vertices.Length];
         GetVertices();
+        getMeshHeights();
         normaliseVertices();
         GetColourMap();
         mesh.colors = colourMap;
@@ -29,29 +26,45 @@ public class ColourMap : MonoBehaviour
 
     void normaliseVertices()
     {
-        for (int i = 0; i < vertices.Length; ++i)
+        float minHeight = heights.Min();
+        float maxHeight = heights.Max();
+        for(int i = 0; i < mesh.vertices.Length; ++i)
         {
-            normalisedVertices[i] = Vector3.Normalize(vertices[i]);
-        }  
+            float vertexHeight = vertices[i].y;
+            heights[i] = (vertexHeight - minHeight) / (maxHeight - minHeight);
+        }
     }
 
     void GetColourMap()
     {
         colourMap = new Color[mesh.vertices.Length];
-        int colourCount = 0;   
-        for(int j = 0; j < mesh.vertices.Length; ++j)
+        int colourCount = 0;
+        for (int j = 0; j < mesh.vertices.Length; ++j)
         {
-            //for (int i = 0; i < regions.Length; ++i)
-            //{
-            //    float currentHeight = normalisedVertices[j].y;
-            //    if (currentHeight < regions[i].height)
-            //    {    
-            //        colourMap[colourCount] = regions[i].colour;
-            //    }
-            //    ++colourCount;
-            //}
+            for (int i = 0; i < regions.Length; ++i)
+            {
+                float currentHeight = heights[j];
+                for (int k = 0; k < regions.Length; ++k)
+                {
+                    if (currentHeight <= regions[i].height)
+                    {
+                        //Debug.Log("Vertex Count: " + colourCount + "Current Vertex Height: " + currentHeight + " Name: " + regions[i].name);
+                        colourMap[colourCount] = regions[i].colour;
+                    }
 
-            colourMap[j] = regions[2].colour;
+                }
+            }
+            ++colourCount;
+            //colourMap[j] = regions[2].colour;
+        }
+    }
+
+    void getMeshHeights()
+    {
+        heights = new float[mesh.vertices.Length];
+        for(int i = 0; i < mesh.vertices.Length; ++i)
+        {
+            heights[i] = vertices[i].y;
         }
     }
 
