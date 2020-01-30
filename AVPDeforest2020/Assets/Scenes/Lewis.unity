@@ -120,6 +120,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &147494506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2534866581884222612, guid: ea7033daede6a994b972ded40f777826,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363389755}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &147494508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147494506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799ed2f0af0055447a522c98a89d73bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vertices: []
+  colourMap: []
+  mesh: {fileID: -2432090755550338912, guid: ea7033daede6a994b972ded40f777826, type: 3}
+  regions:
+  - name: Grass
+    height: 1
+    colour: {r: 0.23102543, g: 0.3018868, b: 0.086863644, a: 0}
+  - name: Mud
+    height: 0.6
+    colour: {r: 0.764151, g: 0.5332145, b: 0.16220188, a: 0}
+  - name: Mud2
+    height: 0.15
+    colour: {r: 0.3679245, g: 0.24764676, b: 0.06421324, a: 0}
+  mat: {fileID: 2100000, guid: 0ceb0cf9652d459428087135f84ab75c, type: 2}
+  heights: []
 --- !u!1 &404478553
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,5 +565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2416733968201007103, guid: ea7033daede6a994b972ded40f777826,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ceb0cf9652d459428087135f84ab75c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea7033daede6a994b972ded40f777826, type: 3}
