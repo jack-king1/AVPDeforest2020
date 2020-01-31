@@ -50,7 +50,7 @@ public class AudioManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("p Pressed");
-            StartCoroutine(FadeIn("Intro", 2, 1));
+            StartCoroutine(FadeIn("Intro", 10));
         }
     }
 
@@ -77,13 +77,13 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    public IEnumerator FadeIn(string sound_name, float FadeTime, float TargetVolume)
+    public IEnumerator FadeIn(string sound_name, float FadeTime)
     {
         Sound s = sounds.Find(sound => sound.name == sound_name);
         s.source.Play();
         s.source.volume = 0;
 
-        while (s.source.volume < TargetVolume)
+        while (s.source.volume < 1)
         {
             s.source.volume +=  Time.deltaTime / FadeTime;
             Debug.Log("volume:" + s.source.volume);
