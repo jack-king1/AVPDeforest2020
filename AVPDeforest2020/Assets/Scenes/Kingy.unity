@@ -275,6 +275,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4553873468584904471, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4553873468584904470, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,6 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Outro
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106744920206749286, guid: 266be02635a51024eb7a8ae7d026497a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9106744920206749285, guid: 266be02635a51024eb7a8ae7d026497a,
         type: 3}
