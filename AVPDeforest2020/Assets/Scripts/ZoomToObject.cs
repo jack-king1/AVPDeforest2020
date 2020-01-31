@@ -31,7 +31,5 @@ public class ZoomToObject : MonoBehaviour
             zoomSpeed += speedIncrease;
             increaseSpeedTimer = 2.0f;
         }
-
-
     }
 }
