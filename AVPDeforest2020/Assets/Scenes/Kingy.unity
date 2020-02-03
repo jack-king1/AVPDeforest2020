@@ -387,11 +387,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
-        type: 3}
-      propertyPath: Music.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a7e9a6e020c21498428b533dbecff1, type: 3}
 --- !u!1 &4329079587274547338 stripped
@@ -684,6 +679,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 90.06231
+      objectReference: {fileID: 0}
+    - target: {fileID: 5991309935058651297, guid: 652f65ce90527f84288bdc494023c1ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072509737742632833, guid: 652f65ce90527f84288bdc494023c1ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 94.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072509737742632833, guid: 652f65ce90527f84288bdc494023c1ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728063453695531342, guid: 652f65ce90527f84288bdc494023c1ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 66.20889
+      objectReference: {fileID: 0}
+    - target: {fileID: 2728063453695531342, guid: 652f65ce90527f84288bdc494023c1ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -94.18866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 652f65ce90527f84288bdc494023c1ac, type: 3}
