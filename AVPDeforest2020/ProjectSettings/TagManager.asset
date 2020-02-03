@@ -6,6 +6,8 @@ TagManager:
   tags:
   - IntroManager
   - Tree
+  - Leaf
+  - Trunk
   layers:
   - Default
   - TransparentFX
