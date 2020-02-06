@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Hec.unity
+- path: Assets/Scenes/Lewis.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
