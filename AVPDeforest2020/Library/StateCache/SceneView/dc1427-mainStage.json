@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":10.950312614440918,"y":1.7073631286621094,"z":15.981905937194825},"rotation":{"x":0.07893434166908264,"y":0.32219555974006655,"z":-0.02760838158428669,"w":0.9432070851325989},"size":30.716489791870118,"orthographic":false}
+=======
+<<<<<<< HEAD
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-204.50003051757813,"y":455.59991455078127,"z":407.37091064453127},"rotation":{"x":0.13328109681606294,"y":-0.8177240490913391,"z":0.20872712135314942,"w":0.5200159549713135},"size":415.1280517578125,"orthographic":false}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":113.20640563964844,"y":323.6875305175781,"z":-110.55537414550781},"rotation":{"x":0.03204480558633804,"y":0.9662493467330933,"z":-0.20777441561222077,"w":0.14898507297039033},"size":293.420166015625,"orthographic":false}
+>>>>>>> Hector
+>>>>>>> Lewis

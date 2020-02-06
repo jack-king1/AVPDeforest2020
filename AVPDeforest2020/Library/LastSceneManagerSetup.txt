@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/LP_Fire/demo.unity
+=======
+- path: Assets/Scenes/Lewis.unity
+>>>>>>> Lewis
   isLoaded: 1
   isActive: 1
   isSubScene: 0
