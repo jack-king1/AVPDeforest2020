@@ -27,20 +27,22 @@ public class BurnLeaves : BurnTree
     // Update is called once per frame
     void Update()
     {
-
-        if (burnTime >= 0.0f)
+        if(burn)
         {
-            burnTime -= Time.deltaTime;
-            if (life >= 20.0f)
+            if (burnTime >= 0.0f)
             {
-                life -= Time.deltaTime * burnRate;
-                colourLife -= Time.deltaTime * burnRate;
-                //life -= rate;
-                burnLeaves();
-            }
-            if(life <= 20.0f)
-            {
-                fadeLeaves();
+                burnTime -= Time.deltaTime;
+                if (life >= 20.0f)
+                {
+                    life -= Time.deltaTime * burnRate;
+                    colourLife -= Time.deltaTime * burnRate;
+                    //life -= rate;
+                    burnLeaves();
+                }
+                if (life <= 20.0f)
+                {
+                    fadeLeaves();
+                }
             }
         }
     }

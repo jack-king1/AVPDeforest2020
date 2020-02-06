@@ -24,13 +24,16 @@ public class BurnTrunk : BurnTree
     // Update is called once per frame
     void Update()
     {
-        if (burnTime >= 0.0f)
+        if(burn)
         {
-            burnTime -= Time.deltaTime;
-            if (life >= 0)
+            if (burnTime >= 0.0f)
             {
-                life -= Time.deltaTime * trunkBurnRate;
-                burnTrunk();
+                burnTime -= Time.deltaTime;
+                if (life >= 0)
+                {
+                    life -= Time.deltaTime * trunkBurnRate;
+                    burnTrunk();
+                }
             }
         }
     }
