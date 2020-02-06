@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - IntroManager
+  - Tree
+  - Leaf
+  - Trunk
   layers:
   - Default
   - TransparentFX
