@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Kingy.unity
+- path: Assets/LP_Fire/demo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
