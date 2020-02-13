@@ -8,7 +8,6 @@ public class move : MonoBehaviour
 
     public void Init(float speed)
     {
-        GetComponent<MeshRenderer>().material.color = new Color(1f, 1f, 1f, 0.0f);
         Speed = speed;
     }
 

@@ -50,12 +50,15 @@ public class CloudGenerator : MonoBehaviour
         Vector3 position = new Vector3(gameObject.transform.position.x,
             gameObject.transform.position.y,
             Random.Range(gameObject.transform.position.z - 200, gameObject.transform.position.z + 200));
+        GameObject CloudParent = new GameObject();
+        CloudParent.AddComponent<move>();
         GameObject newCloud = Instantiate(cloudPrefabs[id], position, Quaternion.identity);
+        newCloud.transform.SetParent(CloudParent.transform);
+        newCloud.transform.rotation = Random.rotation;
         newCloud.GetComponent<MeshRenderer>().material.color = new Color(1f, 1f, 1f, 0.0f);
-        newCloud.GetComponent<move>().Init(Random.Range(minSpeed, maxSpeed));
-
+        CloudParent.GetComponent<move>().Init(Random.Range(minSpeed, maxSpeed));
         StartCoroutine(EffectsManager.FadeAlpha(result => newCloud.GetComponent<MeshRenderer>().material.color = result, 15.0f,
             newCloud.GetComponent<MeshRenderer>().material.color.a, 1f));
-        cloudPool.Add(newCloud);
+        cloudPool.Add(CloudParent);
     }
 }
