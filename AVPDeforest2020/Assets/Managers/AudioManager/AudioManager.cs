@@ -38,9 +38,9 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        //Play("0");
+        StartCoroutine(FadeIn("Intro", 10));
         //Play("1");
-        
+
         //Play("Intro");
     }
 
