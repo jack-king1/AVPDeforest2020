@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 472}
   m_MaxSize: {x: 14000, y: 14022}
   vertical: 0
-  controlID: 873
+  controlID: 273
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 472}
   m_MaxSize: {x: 10000, y: 14022}
   vertical: 1
-  controlID: 874
+  controlID: 274
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 222}
   m_MaxSize: {x: 8004, y: 4022}
   vertical: 0
-  controlID: 875
+  controlID: 322
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: acd3feff
-      m_LastClickedID: -76884
-      m_ExpandedIDs: ced2feffdad2feff2ad6feff7624ffff2e3bffffe6d7ffffae580000606b0000786b0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 38f3ffff58f3ffff74fbffff42460000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 256.04605, y: 16.664333, z: 170.69066}
+    m_Target: {x: 205.8252, y: 27.619305, z: 150.20776}
     speed: 2
-    m_Value: {x: 256.04605, y: 16.664333, z: 170.69066}
+    m_Value: {x: 205.8252, y: 27.619305, z: 150.20776}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -475,9 +475,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.12595621, y: 0.13645758, z: -0.01749459, w: 0.9824614}
+    m_Target: {x: -0.00056971423, y: -0.26469976, z: -0.00015655527, w: 0.96434337}
     speed: 2
-    m_Value: {x: -0.12595621, y: -0.13645758, z: 0.017494591, w: -0.98246145}
+    m_Value: {x: 0.00056971423, y: 0.26469976, z: 0.00015655527, w: -0.96434337}
   m_Size:
     m_Target: 22.061583
     speed: 2
@@ -572,20 +572,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\University\Year 3\Audio Visual Production\AVPDeforest2020\AVPDeforest2020
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 162}
-    m_SelectedIDs: a64d0000
-    m_LastClickedID: 19878
-    m_ExpandedIDs: 000000004e310000ba310000bc31000008320000823a00000c4e00002c4e0000ae4f00003c5100002a530000345300004a6b000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 4e310000
+    m_LastClickedID: 12622
+    m_ExpandedIDs: 000000004e310000c6310000c8310000ca31000016320000903a0000583f0000783f0000084100009a420000b4440000be440000984f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +613,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004e310000ba310000bc31000008320000823a00000c4e00002c4e0000ae4f00003c5100002a530000345300004a6b000000ca9a3b
+    m_ExpandedIDs: 000000004e310000c8310000ca31000016320000903a0000583f0000783f0000084100009a420000b4440000be440000984f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
