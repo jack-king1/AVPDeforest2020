@@ -1,17 +1,12 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.TextMeshPro.Editor.dll
+/out:Temp/Assembly-CSharp-Editor.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
-/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
-/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
-/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
-/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/Assembly-CSharp.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -73,6 +68,28 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEditor.dll"
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/Unity.Rider.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.Arcade.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.Settings.dll"
@@ -296,7 +313,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:UNITY_PRO_LICENSE
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
@@ -307,50 +323,6 @@
 /define:ENABLE_TIMELINE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\DropdownOptionListDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphInfoDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphMetricsPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\GlyphRectPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BaseEditorPanel.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BaseShaderGUI.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_BitmapShaderGUI.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_CharacterPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ColorGradientAssetMenu.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ColorGradientEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_DropdownEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorCoroutine.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorPanel.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_EditorUtility.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_FontAsset_CreationMenu.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_FontAssetEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_GlyphPairAdjustmentRecordPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_GlyphPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_InputFieldEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_MeshRendererEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_PackageUtilities.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_PostBuildProcessHandler.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ProjectTextSettings.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_ResourcesLoader.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SDFShaderGUI.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SerializedPropertyHolder.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SettingsEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetImporter.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteAssetMenu.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteCharacterPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SpriteGlyphPropertyDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_StyleAssetMenu.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_StyleSheetEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SubMesh_Editor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_SubMeshUI_Editor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_TextAlignmentDrawer.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_UiEditorPanel.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMP_UIStyleManager.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_ContextMenus.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_CreateObjectMenu.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_EditorShaderUtilities.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_FontAssetCreatorWindow.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_FontPlugin.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_SortingLayerHelper.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_TextContainerEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.textmeshpro@2.0.1\Scripts\Editor\TMPro_TexturePostProcessor.cs
+"Assets\Imported Assets\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs"
+"Assets\Imported Assets\LP_Fire\Editor\LayerController.cs"
+Assets\Scripts\Editor\ExportTerrain.cs

@@ -1,16 +1,11 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.ProBuilder.AssetIdRemapUtility.dll
+/out:Temp/Assembly-CSharp.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
-/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
-/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
-/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -72,24 +67,30 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEditor.dll"
+/reference:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/Unity.Rider.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.Arcade.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/Facebook.Unity.Settings.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/SDK/7.9.4/FacebookNamedPipeClient.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/LuminSupport/UnityEditor.Lumin.Extensions.dll"
-/reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll"
-/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:D:/AVPDeforest2020/AVPDeforest2020/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
@@ -284,7 +285,7 @@
 /define:ENABLE_AR
 /define:ENABLE_WEBSOCKET_HOST
 /define:ENABLE_MONO
-/define:NET_4_6
+/define:NET_STANDARD_2_0
 /define:ENABLE_PROFILER
 /define:DEBUG
 /define:TRACE
@@ -306,10 +307,29 @@
 /define:ENABLE_TIMELINE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssemblyInfo.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssetId.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssetIdRemapBuilderEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssetIdRemapBuilderTreeView.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssetIdRemapEditor.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\AssetTreeView.cs
-D:\AVPDeforest2020\AVPDeforest2020\Library\PackageCache\com.unity.probuilder@4.0.5\AssetIdRemapUtility\Editor\PackageImporter.cs
+"Assets\Imported Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs"
+"Assets\Imported Assets\LP_Fire\ScriptsAndShaders\DemoController.cs"
+"Assets\Imported Assets\LP_Fire\ScriptsAndShaders\LightTimer.cs"
+"Assets\Imported Assets\LP_Fire\ScriptsAndShaders\LPMeshRandomizer.cs"
+"Assets\Imported Assets\LP_Fire\ScriptsAndShaders\Scaler.cs"
+Assets\Managers\AudioManager\AudioManager.cs
+Assets\Managers\AudioManager\Sound.cs
+Assets\Scripts\Burn\BurnLeaves.cs
+Assets\Scripts\Burn\BurnTree.cs
+Assets\Scripts\Burn\BurnTrunk.cs
+Assets\Scripts\BurnTreeInterface.cs
+Assets\Scripts\CameraMovement.cs
+Assets\Scripts\CloudGenerator.cs
+Assets\Scripts\ColourMap.cs
+Assets\Scripts\EarthRotation.cs
+Assets\Scripts\EffectsManager.cs
+Assets\Scripts\FadeIn.cs
+Assets\Scripts\fadeOut.cs
+Assets\Scripts\Gravity.cs
+Assets\Scripts\IntroManager.cs
+Assets\Scripts\move.cs
+Assets\Scripts\playJungleSounds.cs
+Assets\Scripts\rotateDemo.cs
+Assets\Scripts\ScrollTexture.cs
+Assets\Scripts\SunControl.cs
+Assets\Scripts\ZoomToObject.cs
