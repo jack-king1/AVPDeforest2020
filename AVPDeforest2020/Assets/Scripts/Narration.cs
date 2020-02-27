@@ -5,7 +5,7 @@ using UnityEngine;
 public class Narration : MonoBehaviour
 {
     float timer = 0.0f;
-    public int scenes = 5;
+    public int scenes;
     private int Clips = 0;
     bool playing = false;
     // Start is called before the first frame update
@@ -21,6 +21,9 @@ public class Narration : MonoBehaviour
         AudioManager.instance.Play("Jungle6");
     }
 
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -31,68 +34,41 @@ public class Narration : MonoBehaviour
 
     void Narrations()
     {
-        #region OldCode
-        //if( timer >= 14 && timer <= 15|| timer >= 29 && timer <= 30 || timer >= 44 && timer <= 45|| timer >= 59 && timer <= 60 || timer>= 74 && timer <= 75 || timer >= 89 &&  timer <= 90 )
-        //{
-        //    Debug.Log("Reseting playing bool");
-        //    playing = false;
-        //}
+        if(scenes == 2)
+        {
+           Scene2();
+            
+        }
 
-        //if (timer >= 0 && timer < 15 && timer <= 15 && !playing)
-        //{
-        //   Debug.Log("0 - 15");
-        //   AudioManager.instance.Play("A");
-        //   playing = true;
-        //}
+        if(scenes == 3)
+        {
+            Scene3();
+        }
 
-        //if (timer >= 15 && !playing)
-        //{
-        //    Debug.Log("15 - 29");
-        //    AudioManager.instance.Play("B");
-        //    playing = true;
-        //}
+        if (scenes == 4 )
+        {
 
-        //if (timer >= 30 && !playing)
-        //{
-        //    Debug.Log("30 - 45");
-        //    AudioManager.instance.Play("C");
-        //    playing = true;
-        //}
+        }
+
+        if (scenes == 5)
+        {
+
+        }
+        
+      
+    }
 
 
-        //if (timer >= 45 && !playing)
-        //{
-        //    AudioManager.instance.Play("D");
-        //    playing = true;
-        //}
+    void Scene2()
+    {
 
-        //if (timer >= 60 && !playing)
-        //{
-        //    AudioManager.instance.Play("E");
-        //    playing = true;
-        //}
-
-        //if (timer >= 75 && !playing)
-        //{
-        //    AudioManager.instance.Play("F");
-        //    playing = true;
-        //}
-        //if (timer >= 90 && !playing)
-        //{
-        //    AudioManager.instance.Play("G");
-        //    playing = true;
-        //}
-
-        #endregion 
-
-
-        if( Clips == 0 && timer <= 4)
+        if (Clips == 0 && timer <= 4)
         {
             AudioManager.instance.Play("A");
             Clips++;
         }
 
-        if(Clips == 1 && timer >= 5)
+        if (Clips == 1 && timer >= 5)
         {
             AudioManager.instance.Play("B");
             Clips++;
@@ -122,20 +98,30 @@ public class Narration : MonoBehaviour
         if (Clips == 6 && timer >= 65)
         {
             AudioManager.instance.Play("G");
+            Clips = 0;
+        }
+
+
+    }
+
+    void Scene3()
+    {
+        if (Clips == 0 && timer <= 4)
+        {
+            AudioManager.instance.Play("A");
             Clips++;
         }
-        /* int clip 
-             if (clip = 0 && timer <=4 ) 
-             {
-             play sound 
-             clip ++; 
-             }
 
-        if ( clip == 1 && timer >= 5)
+        if (Clips == 1 && timer >= 5)
         {
-            play sound 
-            ++ clip
+            AudioManager.instance.Play("B");
+            Clips++;
         }
-         */
+        if (Clips == 2 && timer >= 18)
+        {
+            AudioManager.instance.Play("C");
+            Clips++;
+        }
     }
+
 }
