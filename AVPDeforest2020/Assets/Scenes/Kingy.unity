@@ -700,7 +700,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def98ac49e2633349a20b89cb029ffa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes: 0
 --- !u!4 &503705876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3285652242551647394, guid: 8cccdd0907af86243b3e1ea2e0a1d088,
