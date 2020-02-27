@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Hec.unity
+=======
+- path: Assets/Scenes/Kingy.unity
+>>>>>>> Jack
   isLoaded: 1
   isActive: 1
   isSubScene: 0
