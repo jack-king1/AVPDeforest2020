@@ -1,5 +1,10 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/PlaybackEngines'
+Base path: 'F:/Unity/2019.2.0f1/Editor/Data', plugins path 'F:/Unity/2019.2.0f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
 
 Quitting shader compiler process
+=======
+Cmd: disassembleShader
+  api=9 insize=8197 outsize=8197 ok=1
+>>>>>>> Jack

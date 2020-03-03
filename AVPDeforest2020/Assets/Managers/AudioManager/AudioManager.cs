@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
         //Play("0");
         //Play("1");
         
-        //Play("Intro");
+       Play("Intro");
     }
 
     //Delete this update call, this is jsut to test stuff
