@@ -20,8 +20,13 @@ public class ColourMap : MonoBehaviour
         GetVertices();
         getMeshHeights();
         normaliseVertices();
-        GetColourMap();
         mesh.colors = colourMap;
+    }
+
+
+    private void OnEnable()
+    {
+        GetColourMap();
     }
 
     void normaliseVertices()
