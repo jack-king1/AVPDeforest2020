@@ -32,7 +32,7 @@ public class EyeLineParticleSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var distance = (gameObject.transform.position - CameraMovement.Instance().gameObject.transform.position).magnitude;
+        var distance = (gameObject.transform.position - CameraRaycast.Instance().gameObject.transform.position).magnitude;
 
         var radiusSize = Mathf.Lerp(radiusLower, radiusUpper, distance/maxDistance);
 
@@ -40,8 +40,8 @@ public class EyeLineParticleSystem : MonoBehaviour
 
         if (radiusSize < radiusLower) radiusSize = radiusLower;
 
-        var lookTime = CameraMovement.Instance().LookTime;
-        var maxLookTime = CameraMovement.Instance().MaxLookTime;
+        var lookTime = CameraRaycast.Instance().LookTime;
+        var maxLookTime = CameraRaycast.Instance().MaxLookTime;
 
         var main = ps.main;
         var vel = ps.velocityOverLifetime;
