@@ -14,19 +14,19 @@ public class ColourMap : MonoBehaviour
 
     void Awake()
     {
+
+    }
+
+    private void OnEnable()
+    {
         mesh = gameObject.GetComponent<MeshFilter>().mesh;
         vertices = new Vector3[mesh.vertices.Length];
         heights = new float[mesh.vertices.Length];
         GetVertices();
         getMeshHeights();
         normaliseVertices();
-        mesh.colors = colourMap;
-    }
-
-
-    private void OnEnable()
-    {
         GetColourMap();
+        mesh.colors = colourMap;
     }
 
     void normaliseVertices()
@@ -54,7 +54,7 @@ public class ColourMap : MonoBehaviour
                     if (currentHeight <= regions[i].height)
                     {
                         //Debug.Log("Vertex Count: " + colourCount + "Current Vertex Height: " + currentHeight + " Name: " + regions[i].name);
-                        colourMap[colourCount] = regions[i].colour;
+                        colourMap[colourCount] = ColourMaps.instance.DirtTerrain[i].colour;
                     }
 
                 }
@@ -75,7 +75,15 @@ public class ColourMap : MonoBehaviour
 
     void GetVertices()
     {
-        vertices = mesh.vertices;
+        if(mesh)
+        {
+            vertices = mesh.vertices;
+        }
+        else
+        {
+            Debug.Log("No Mesh Mate!");
+        }
+
     }
 
     [System.Serializable]
@@ -85,5 +93,4 @@ public class ColourMap : MonoBehaviour
         public float height;
         public Color colour;
     }
-
 }
