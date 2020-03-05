@@ -108,9 +108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &87564981953854377
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,9 +220,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &94336197355391270
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,9 +332,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &137865352716813605
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,9 +444,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &196959634053293261
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,9 +556,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &197924617844461185
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +572,6 @@ GameObject:
   - component: {fileID: 5096801336061948747}
   - component: {fileID: 8188585046710113659}
   - component: {fileID: 197924617844461187}
-  - component: {fileID: 197924617844461184}
   m_Layer: 0
   m_Name: untitled.042
   m_TagString: Terrain
@@ -644,28 +648,11 @@ MeshCollider:
   m_GameObject: {fileID: 197924617844461185}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -4149923180511515375, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &197924617844461184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197924617844461185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &269801327273462196
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,9 +761,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &292070533568593676
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,9 +873,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &420722057782688470
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,9 +985,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &451177062375259056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,9 +1097,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &468590471019536800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,9 +1209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &676429158607237162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,9 +1321,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &902303549841795787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,9 +1433,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &966062766635930950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,8 +1448,6 @@ GameObject:
   - component: {fileID: 2129224071448888780}
   - component: {fileID: 4925184293469401849}
   - component: {fileID: 583055253001083639}
-  - component: {fileID: 966062766635931000}
-  - component: {fileID: 966062766635931001}
   m_Layer: 0
   m_Name: untitled.038
   m_TagString: Terrain
@@ -1523,37 +1515,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &966062766635931000
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966062766635930950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 8488716462505923518, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &966062766635931001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966062766635930950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &1071748363558248502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,9 +1623,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1083351781614416034
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,9 +1735,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1122663966580380714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,9 +1847,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1132487632205495590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,9 +1959,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1226308492140238391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,9 +2071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1334978267348596441
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,9 +2183,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1447567697391736864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2328,9 +2295,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1466859894550095307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,9 +2407,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1592999817347172938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,9 +2519,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1612483755177509255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,8 +2534,6 @@ GameObject:
   - component: {fileID: 5297208678337814289}
   - component: {fileID: 6090198589066069762}
   - component: {fileID: 3484336107509811694}
-  - component: {fileID: 1612483755177509305}
-  - component: {fileID: 1612483755177509254}
   m_Layer: 0
   m_Name: untitled.035
   m_TagString: Terrain
@@ -2633,37 +2601,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1612483755177509305
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612483755177509255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1743373884601506472, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &1612483755177509254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612483755177509255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &1795459460175285005
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,9 +2709,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1822978629125026704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,9 +2821,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1831392175390197101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,9 +2933,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1852979487945657896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,9 +3045,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1891339193100354506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,9 +3157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &1956082073685640504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,9 +3269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2005673214269670752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3438,9 +3381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2103304566538541779
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,9 +3493,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2145228909420469795
 GameObject:
   m_ObjectHideFlags: 0
@@ -3660,9 +3605,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2151332999892955575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3771,9 +3717,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2161880163468363609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,9 +3829,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2181288380996661492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3993,9 +3941,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2444110935254402508
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,9 +4053,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2474639137184529305
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,9 +4165,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2533690277058325757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,9 +4277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2552226990449652350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,9 +4389,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2590330688462997873
 GameObject:
   m_ObjectHideFlags: 0
@@ -4548,9 +4501,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2598603940860633736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,9 +4613,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2691872529249282400
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,9 +4725,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2696308752903022872
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,9 +4837,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &2902065746493047973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4992,9 +4949,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3118562742241734319
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,9 +5061,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 0}
 --- !u!1 &3154881514877003879
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,9 +5174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3241029950995428325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5325,9 +5286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3338496594515152113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5436,9 +5398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3443371667078221351
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,9 +5510,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3453133209870336823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5658,9 +5622,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3565075321760470999
 GameObject:
   m_ObjectHideFlags: 0
@@ -5769,9 +5734,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3609219911276675326
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,9 +5846,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3672008298509144032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5991,9 +5958,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3697745573699743461
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,9 +6070,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3773945772727709137
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,9 +6182,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3872930748983741707
 GameObject:
   m_ObjectHideFlags: 0
@@ -6324,9 +6294,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &3940134227102641564
 GameObject:
   m_ObjectHideFlags: 0
@@ -6435,9 +6406,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4072607515009266248
 GameObject:
   m_ObjectHideFlags: 0
@@ -6546,9 +6518,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4292649760948385945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6657,9 +6630,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4317126049378335128
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,9 +6742,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 3154881514877003879}
+  - {fileID: 8608941715005398382}
+  - {fileID: 6824953320922226578}
+  - {fileID: 0}
 --- !u!1 &4520183027247830489
 GameObject:
   m_ObjectHideFlags: 0
@@ -6879,9 +6858,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4531161200741848025
 GameObject:
   m_ObjectHideFlags: 0
@@ -6990,9 +6970,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4637839975487947040
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,9 +7082,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4674968137917853432
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,9 +7194,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4680755481591666826
 GameObject:
   m_ObjectHideFlags: 0
@@ -7323,9 +7306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4697206870631159447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,9 +7418,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4746831897631899413
 GameObject:
   m_ObjectHideFlags: 0
@@ -7448,8 +7433,6 @@ GameObject:
   - component: {fileID: 7748266093293045689}
   - component: {fileID: 910356853115652761}
   - component: {fileID: 7744230379877609332}
-  - component: {fileID: 4746831897631899415}
-  - component: {fileID: 4746831897631899412}
   m_Layer: 0
   m_Name: untitled.041
   m_TagString: Terrain
@@ -7517,37 +7500,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &4746831897631899415
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746831897631899413}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -3960556657883931167, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &4746831897631899412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746831897631899413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &4747603913623169451
 GameObject:
   m_ObjectHideFlags: 0
@@ -7656,9 +7608,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &4849901374211648908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7767,9 +7720,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5004166215443594458
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,9 +7832,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5029450565608474267
 GameObject:
   m_ObjectHideFlags: 0
@@ -7989,9 +7944,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5324652742734610748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8100,9 +8056,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5386453303924004822
 GameObject:
   m_ObjectHideFlags: 0
@@ -8211,9 +8168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5410336141100641274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8322,9 +8280,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5579773090056350443
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,9 +8392,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5640125037039943240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8544,9 +8504,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5913675639464082494
 GameObject:
   m_ObjectHideFlags: 0
@@ -8655,9 +8616,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &5917791133247391539
 GameObject:
   m_ObjectHideFlags: 0
@@ -8766,9 +8728,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 5579773090056350443}
+  - {fileID: 6719247464333448194}
+  - {fileID: 1822978629125026704}
+  - {fileID: 0}
 --- !u!1 &5929127179358676884
 GameObject:
   m_ObjectHideFlags: 0
@@ -8877,9 +8844,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6057437240773248715
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,9 +8956,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6071374928264870866
 GameObject:
   m_ObjectHideFlags: 0
@@ -9099,9 +9068,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6139667058934184597
 GameObject:
   m_ObjectHideFlags: 0
@@ -9210,9 +9180,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6215969628993748838
 GameObject:
   m_ObjectHideFlags: 0
@@ -9321,9 +9292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6226337472555330602
 GameObject:
   m_ObjectHideFlags: 0
@@ -9432,9 +9404,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6268206201880574045
 GameObject:
   m_ObjectHideFlags: 0
@@ -9543,9 +9516,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6327682207796579690
 GameObject:
   m_ObjectHideFlags: 0
@@ -9654,9 +9628,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6356118364697267010
 GameObject:
   m_ObjectHideFlags: 0
@@ -9765,9 +9740,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6528930595395004417
 GameObject:
   m_ObjectHideFlags: 0
@@ -9876,9 +9852,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6683240240946332844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,9 +9964,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6719247464333448194
 GameObject:
   m_ObjectHideFlags: 0
@@ -10098,9 +10076,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 5917791133247391539}
+  - {fileID: 9043100826391285282}
+  - {fileID: 8861206898399764155}
+  - {fileID: 0}
 --- !u!1 &6811332066673981384
 GameObject:
   m_ObjectHideFlags: 0
@@ -10209,9 +10192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &6824953320922226578
 GameObject:
   m_ObjectHideFlags: 0
@@ -10320,9 +10304,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 9043100826391285282}
+  - {fileID: 4317126049378335128}
+  - {fileID: 4072607515009266248}
+  - {fileID: 0}
 --- !u!1 &6875925662787217362
 GameObject:
   m_ObjectHideFlags: 0
@@ -10431,9 +10420,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7014952445269723868
 GameObject:
   m_ObjectHideFlags: 0
@@ -10542,9 +10532,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7066560224110430717
 GameObject:
   m_ObjectHideFlags: 0
@@ -10653,9 +10644,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7071255039311661970
 GameObject:
   m_ObjectHideFlags: 0
@@ -10764,9 +10756,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7094544047943169763
 GameObject:
   m_ObjectHideFlags: 0
@@ -10875,9 +10868,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7181272789100022578
 GameObject:
   m_ObjectHideFlags: 0
@@ -10986,9 +10980,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7231026357004308687
 GameObject:
   m_ObjectHideFlags: 0
@@ -11097,9 +11092,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7289436144008120091
 GameObject:
   m_ObjectHideFlags: 0
@@ -11208,9 +11204,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7296498914874416030
 GameObject:
   m_ObjectHideFlags: 0
@@ -11319,9 +11316,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7302074605399767627
 GameObject:
   m_ObjectHideFlags: 0
@@ -11430,9 +11428,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7412160311363918197
 GameObject:
   m_ObjectHideFlags: 0
@@ -11541,9 +11540,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7456066103094874963
 GameObject:
   m_ObjectHideFlags: 0
@@ -11652,9 +11652,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7554170286552323049
 GameObject:
   m_ObjectHideFlags: 0
@@ -11763,9 +11764,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7564742723895343547
 GameObject:
   m_ObjectHideFlags: 0
@@ -11874,9 +11876,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7575662924701486326
 GameObject:
   m_ObjectHideFlags: 0
@@ -11985,9 +11988,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7587082916251581163
 GameObject:
   m_ObjectHideFlags: 0
@@ -11999,8 +12003,6 @@ GameObject:
   - component: {fileID: 630998881598780062}
   - component: {fileID: 6443996071586297343}
   - component: {fileID: 1292883330817595597}
-  - component: {fileID: 7587082916251581165}
-  - component: {fileID: 7587082916251581162}
   m_Layer: 0
   m_Name: untitled.037
   m_TagString: Terrain
@@ -12068,37 +12070,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7587082916251581165
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7587082916251581163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4847299897226533086, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &7587082916251581162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7587082916251581163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &7592976454947620869
 GameObject:
   m_ObjectHideFlags: 0
@@ -12207,9 +12178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7660440781471130642
 GameObject:
   m_ObjectHideFlags: 0
@@ -12318,9 +12290,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7702175719692537462
 GameObject:
   m_ObjectHideFlags: 0
@@ -12429,9 +12402,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7711117866579910630
 GameObject:
   m_ObjectHideFlags: 0
@@ -12540,9 +12514,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7785368416676404794
 GameObject:
   m_ObjectHideFlags: 0
@@ -12651,9 +12626,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7795505308652331358
 GameObject:
   m_ObjectHideFlags: 0
@@ -12677,7 +12653,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7795505308652331358}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 156.2, y: -22.8, z: 106.51836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12932,9 +12908,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &7981187593987044861
 GameObject:
   m_ObjectHideFlags: 0
@@ -13043,9 +13020,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8046273439555974333
 GameObject:
   m_ObjectHideFlags: 0
@@ -13154,9 +13132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8077410973494370988
 GameObject:
   m_ObjectHideFlags: 0
@@ -13265,9 +13244,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8090683398334984964
 GameObject:
   m_ObjectHideFlags: 0
@@ -13376,9 +13356,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8147299915569795841
 GameObject:
   m_ObjectHideFlags: 0
@@ -13487,9 +13468,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8159563273557156959
 GameObject:
   m_ObjectHideFlags: 0
@@ -13598,9 +13580,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8210563284201366113
 GameObject:
   m_ObjectHideFlags: 0
@@ -13709,9 +13692,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8253422746329476223
 GameObject:
   m_ObjectHideFlags: 0
@@ -13820,9 +13804,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8293057721570460284
 GameObject:
   m_ObjectHideFlags: 0
@@ -13931,9 +13916,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8380573716555427196
 GameObject:
   m_ObjectHideFlags: 0
@@ -13945,8 +13931,6 @@ GameObject:
   - component: {fileID: 5925436001933230046}
   - component: {fileID: 3744787573938997588}
   - component: {fileID: 1792651492972701180}
-  - component: {fileID: 8380573716555427198}
-  - component: {fileID: 8380573716555427199}
   m_Layer: 0
   m_Name: untitled.036
   m_TagString: Terrain
@@ -13986,7 +13970,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -14014,37 +13998,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8380573716555427198
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380573716555427196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4838161211900504613, guid: 68a96dd52555d6048be2b638d4930de1, type: 3}
---- !u!114 &8380573716555427199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8380573716555427196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ps: {fileID: 0}
-  type: 2
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
 --- !u!1 &8438962771954713162
 GameObject:
   m_ObjectHideFlags: 0
@@ -14231,9 +14184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8451694484364407387
 GameObject:
   m_ObjectHideFlags: 0
@@ -14342,9 +14296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8462557206676079221
 GameObject:
   m_ObjectHideFlags: 0
@@ -14453,9 +14408,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8511994420096953660
 GameObject:
   m_ObjectHideFlags: 0
@@ -14564,9 +14520,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8608941715005398382
 GameObject:
   m_ObjectHideFlags: 0
@@ -14675,9 +14632,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8619560732223069030
 GameObject:
   m_ObjectHideFlags: 0
@@ -14786,9 +14744,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8727587328514493209
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,9 +14856,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8791143112732184789
 GameObject:
   m_ObjectHideFlags: 0
@@ -15008,9 +14968,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &8861206898399764155
 GameObject:
   m_ObjectHideFlags: 0
@@ -15119,9 +15080,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &9020865938769619354
 GameObject:
   m_ObjectHideFlags: 0
@@ -15230,9 +15192,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &9043100826391285282
 GameObject:
   m_ObjectHideFlags: 0
@@ -15341,9 +15304,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours:
+  - {fileID: 6824953320922226578}
+  - {fileID: 7412160311363918197}
+  - {fileID: 6719247464333448194}
+  - {fileID: 0}
 --- !u!1 &9068034269866818312
 GameObject:
   m_ObjectHideFlags: 0
@@ -15452,9 +15420,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &9207434322180493320
 GameObject:
   m_ObjectHideFlags: 0
@@ -15563,9 +15532,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []
 --- !u!1 &9215467690014177139
 GameObject:
   m_ObjectHideFlags: 0
@@ -15674,6 +15644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ps: {fileID: 0}
   type: 2
-  burnRate: 10
+  burnRate: 5
   fadeRate: 1
   fadeLife: 100
+  neighbours: []

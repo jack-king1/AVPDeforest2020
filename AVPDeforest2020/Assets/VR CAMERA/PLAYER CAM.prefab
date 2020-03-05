@@ -43,8 +43,9 @@ GameObject:
   - component: {fileID: 8186418408705177088}
   - component: {fileID: 8186418408705143646}
   - component: {fileID: 8186418407504166295}
+  - component: {fileID: 223974233}
   m_Layer: 0
-  m_Name: OVRPlayerController
+  m_Name: PLAYER CAM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,14 +120,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186418408698959776}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca77cc8647952b5419473225d1f85f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   earth: {fileID: 0}
-  zoomSpeed: 10
+  zoomSpeed: 100
   increaseSpeedTimer: 5
+--- !u!114 &223974233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186418408698959776}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c676f7125c4090948a4bd8bb54ea43ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8186418408698959778
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +195,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 3500
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -213,6 +226,7 @@ GameObject:
   - component: {fileID: 8186418408699611560}
   - component: {fileID: 8186418408697827608}
   - component: {fileID: 8186418408705228090}
+  - component: {fileID: 175503731}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -266,7 +280,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 3500
+  far clip plane: 5000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -292,7 +306,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186418408698959780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
   m_Name: 
@@ -301,6 +315,21 @@ MonoBehaviour:
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000
+--- !u!114 &175503731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186418408698959780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc3812dbca15804ea90f49d61a5974d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLookTime: 1.5
+  eyeLinePsPrefab: {fileID: 6397662089328009503, guid: 783bc1b872e3c8a47a7ec8239f6181d5,
+    type: 3}
 --- !u!1 &8186418408698959782
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +385,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 3500
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
