@@ -5,28 +5,31 @@ using System.Linq;
 
 public class GetMeshTriangles : MonoBehaviour
 {
-    Vector3[] childVertices;
+    public Vector3[] childVertices;
     public Color[] colourMap;
-    public Mesh mesh;
     public Material mat;
     public float[] heights;
+    public MeshFilter[] terrainMeshFilterRef;
 
     private void OnEnable()
     {
+        GetGameObjecthInChildren();
         childVertices = GetVerticesInChildren(this.gameObject);
-        heights = new float[mesh.vertices.Length];
-        GetVertices();
         getMeshHeights();
         normaliseVertices();
         GetColourMap();
-        mesh.colors = colourMap;
+        AssignTriangleColours();
+    }
+
+    void GetGameObjecthInChildren()
+    {
+        terrainMeshFilterRef = gameObject.GetComponentsInChildren<MeshFilter>();
     }
 
     Vector3[] GetVerticesInChildren(GameObject go)
     {
-        MeshFilter[] mfs = go.GetComponentsInChildren<MeshFilter>();
         List<Vector3> vList = new List<Vector3>();
-        foreach (MeshFilter mf in mfs)
+        foreach (MeshFilter mf in terrainMeshFilterRef)
         {
             vList.AddRange(mf.mesh.vertices);
         }
@@ -37,7 +40,7 @@ public class GetMeshTriangles : MonoBehaviour
     {
         float minHeight = heights.Min();
         float maxHeight = heights.Max();
-        for (int i = 0; i < mesh.vertices.Length; ++i)
+        for (int i = 0; i < childVertices.Length; ++i)
         {
             float vertexHeight = childVertices[i].y;
             heights[i] = (vertexHeight - minHeight) / (maxHeight - minHeight);
@@ -46,9 +49,9 @@ public class GetMeshTriangles : MonoBehaviour
 
     void GetColourMap()
     {
-        colourMap = new Color[mesh.vertices.Length];
+        colourMap = new Color[childVertices.Length];
         int colourCount = 0;
-        for (int j = 0; j < mesh.vertices.Length; ++j)
+        for (int j = 0; j < childVertices.Length; ++j)
         {
             for (int i = 0; i < ColourMaps.instance.ForestTerrain.Length; ++i)
             {
@@ -58,7 +61,7 @@ public class GetMeshTriangles : MonoBehaviour
                     if (currentHeight <= ColourMaps.instance.ForestTerrain[i].height)
                     {
                         //Debug.Log("Vertex Count: " + colourCount + "Current Vertex Height: " + currentHeight + " Name: " + regions[i].name);
-                        colourMap[colourCount] = ColourMaps.instance.DirtTerrain[i].colour;
+                        colourMap[colourCount] = ColourMaps.instance.ForestTerrain[i].colour;
                     }
                 }
             }
@@ -68,22 +71,37 @@ public class GetMeshTriangles : MonoBehaviour
 
     void getMeshHeights()
     {
-        heights = new float[mesh.vertices.Length];
-        for (int i = 0; i < mesh.vertices.Length; ++i)
+        heights = new float[childVertices.Length];
+        for (int i = 0; i < childVertices.Length; ++i)
         {
             heights[i] = childVertices[i].y;
         }
     }
 
-    void GetVertices()
+    void AssignTriangleColours()
     {
-        if (mesh)
+        int verticeCountOffset = 0;
+        foreach(MeshFilter mf in terrainMeshFilterRef)
         {
-            childVertices = mesh.vertices;
-        }
-        else
-        {
-            Debug.Log("No Mesh Mate!");
+            Color[] meshColour = new Color[mf.mesh.vertices.Length];
+
+            if(verticeCountOffset == 0)
+            {
+                for (int i = 0; i + verticeCountOffset < verticeCountOffset + mf.mesh.vertices.Length; ++i)
+                {
+                    meshColour[i] = colourMap[i + verticeCountOffset];
+                    ++verticeCountOffset;
+                }
+            }
+            else
+            {
+                for (int i = 0; i + verticeCountOffset < verticeCountOffset + mf.mesh.vertices.Length; ++i)
+                {
+                    meshColour[i] = colourMap[i +verticeCountOffset];
+                    ++verticeCountOffset;
+                }
+            }
+            mf.mesh.colors = meshColour;
         }
     }
 }
