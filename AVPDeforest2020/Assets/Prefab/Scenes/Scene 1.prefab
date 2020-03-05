@@ -17778,6 +17778,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medium Tree (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2443459396277967543, guid: c55c083f2b1c75f4e8b7e2d0713da858,
+        type: 3}
+      propertyPath: burnRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7330290944773234250, guid: c55c083f2b1c75f4e8b7e2d0713da858,
+        type: 3}
+      propertyPath: fadeRate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595552425696773955, guid: c55c083f2b1c75f4e8b7e2d0713da858,
+        type: 3}
+      propertyPath: fadeRate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2388469492121128185, guid: c55c083f2b1c75f4e8b7e2d0713da858,
+        type: 3}
+      propertyPath: fadeRate
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55c083f2b1c75f4e8b7e2d0713da858, type: 3}
 --- !u!4 &7592851054978890013 stripped
