@@ -40,8 +40,10 @@ public class AudioManager : MonoBehaviour
     }
     private void Start()
     {
-        //StartCoroutine(FadeIn("Intro", 10));
-        //Play("Intro");  
+        //Play("0");
+        //Play("1");
+        
+       Play("Intro");
     }
 
     //Delete this update call, this is jsut to test stuff

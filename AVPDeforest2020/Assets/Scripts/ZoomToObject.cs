@@ -32,4 +32,11 @@ public class ZoomToObject : MonoBehaviour
             increaseSpeedTimer = 2.0f;
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        ScenesManager.Instance().SetActiveScene(ScenesManager.Scene.MAIN);
+    }
+
 }
