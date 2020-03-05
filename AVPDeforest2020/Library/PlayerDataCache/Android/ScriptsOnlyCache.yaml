@@ -3,14 +3,19 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager
     - Burnable
+    - CameraManager
     - CameraMovement
+    - CameraRaycast
     - CloudGenerator
     - ColourMap
     - EarthRotation
+    - EyeLineParticleSystem
+    - FireManager
     - LowPolyWater.LowPolyWater
     - ONSPSettings
     - PanelFade
     - PlayAnimation
+    - ScenesManager
     - ScrollTexture
     - ZoomToObject
     Oculus.VR.Editor.dll:
@@ -30,6 +35,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -37,6 +43,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/Kingy.unity:
@@ -121,33 +128,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11262}
     - Class: 114
-      Script: {instanceID: 11442}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11444}
     - Class: 114
-      Script: {instanceID: 11470}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11624}
+      Script: {instanceID: 11472}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 12430}
+      Script: {instanceID: 11782}
+    - Class: 114
+      Script: {instanceID: 11806}
+    - Class: 114
+      Script: {instanceID: 12434}
     - Class: 114
       Script: {instanceID: 12596}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12600}
     - Class: 114
-      Script: {instanceID: 12968}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13566}
+      Script: {instanceID: 12972}
     - Class: 114
-      Script: {instanceID: 13578}
+      Script: {instanceID: 13086}
     - Class: 114
-      Script: {instanceID: 13634}
+      Script: {instanceID: 13230}
     - Class: 114
-      Script: {instanceID: 26412}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 26826}
+      Script: {instanceID: 13584}
+    - Class: 114
+      Script: {instanceID: 13640}
+    - Class: 114
+      Script: {instanceID: 26466}
+    - Class: 114
+      Script: {instanceID: 27084}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -157,6 +174,10 @@ ScriptsOnlyBuild:
     - Class: 143
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -433,7 +454,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: b5ee92ab56e33db268f06129792eb3a9
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMovement
@@ -919,6 +940,12 @@ ScriptsOnlyBuild:
     className: TeleportTargetHandlerPhysical
   - hash:
       serializedVersion: 2
+      Hash: b92fea12477ad2addfd6c6cd0f3590b8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScenesManager
+  - hash:
+      serializedVersion: 2
       Hash: 265cf27ba050d55ff33a8acab4ded6c0
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -973,7 +1000,7 @@ ScriptsOnlyBuild:
     className: TeleportOrientationHandlerHMD
   - hash:
       serializedVersion: 2
-      Hash: 34c163e0aa31e4cdd3e0e7753dfce9d7
+      Hash: b38cc7c6851a209a56898cdd36805c50
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Burnable
@@ -1151,6 +1178,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: 3eca4e97f89c96ff72aca71bbc916ccb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraManager
   - hash:
       serializedVersion: 2
       Hash: ab9b3242e7f7cea8eb7d313db01cc29d
@@ -1837,6 +1870,12 @@ ScriptsOnlyBuild:
     className: OVRInputModule
   - hash:
       serializedVersion: 2
+      Hash: 73573466a5b7cd06d57a29a7927537b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraRaycast
+  - hash:
+      serializedVersion: 2
       Hash: e0fd6b206f44251ddce06e242ee39fb8
     assemblyName: Oculus.VR.dll
     namespaceName: 
@@ -2135,7 +2174,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: e4a7225ceda45beb326966954f2e0054
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NodeGrid
   platform: 13
   scenePathNames:
   - Assets/Scenes/Kingy.unity
-  playerPath: D:/build/earth.apk
+  playerPath: D:/build/build.apk

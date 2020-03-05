@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour
     {
         instance = this;
         scenePositions.Add(new Vector3(0, 202, 2095));
-        scenePositions.Add(new Vector3(190, 17, 150));
+        scenePositions.Add(new Vector3(188.42f, 17f, 129.91f));
     }
 
     // Start is called before the first frame update
@@ -77,12 +77,14 @@ public class CameraManager : MonoBehaviour
         {
             case Components.ZOOM:
                 {
-                    camera.GetComponent<ZoomToObject>().enabled = enable;
+                    if(camera.GetComponent<ZoomToObject>())
+                        camera.GetComponent<ZoomToObject>().enabled = enable;
                     break;
                 }
             case Components.RAYCAST:
                 {
-                    camera.GetComponent<CameraRaycast>().enabled = enable;
+                    if (camera.GetComponent<CameraRaycast>())
+                        camera.GetComponent<CameraRaycast>().enabled = enable;
                     break;
                 }
         }

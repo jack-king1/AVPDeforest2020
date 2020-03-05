@@ -30,7 +30,7 @@ public class ScenesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetActiveScene(Scene.INTRO);
+        SetActiveScene(Scene.MAIN);
     }
 
     // Update is called once per frame
@@ -48,6 +48,11 @@ public class ScenesManager : MonoBehaviour
             {
                 scenes[i].SetActive(true);
                 CameraManager.Instance().SetCameraScene(scene);
+
+                if(scene == Scene.MAIN)
+                {
+                    FireManager.Instance().GetBurnables();
+                }
             }
             else
                 scenes[i].SetActive(false);

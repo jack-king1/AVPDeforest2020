@@ -1,9 +1,14 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Burnable : MonoBehaviour
 {
     [HideInInspector] public GameObject ps;
+
+    int xIndex = 0;
+    int zIndex = 0;
 
     class Colour
     {
@@ -12,6 +17,8 @@ public class Burnable : MonoBehaviour
         public Color start;
         public Color end;
     }
+
+
 
     Colour colour = new Colour();
 
@@ -34,6 +41,10 @@ public class Burnable : MonoBehaviour
 
     public States State { get { return state; } set { state = value; } }
 
+    public int XIndex { get => xIndex; set => xIndex = value; }
+    public int ZIndex { get => zIndex; set => zIndex = value; }
+    public List<GameObject> Neighbours { get => neighbours; set => neighbours = value; }
+
     float health = 100.0f;
 
     Vector3 maxScale;
@@ -45,6 +56,9 @@ public class Burnable : MonoBehaviour
 
     bool destroyedFire = false;
 
+    float burnTime = 0.0f;
+
+    [SerializeField] private List<GameObject> neighbours = new List<GameObject>();
 
     // Start is called before the first frame update
     void Update()
@@ -52,6 +66,30 @@ public class Burnable : MonoBehaviour
         if(state == States.DEAD && !destroyedFire)
         {
             StartCoroutine(EndFire());
+        }
+        else if(state == States.BURN)
+        {
+            foreach (var n in neighbours)
+            {
+                var nBurnable = n.GetComponent<Burnable>();
+                if (nBurnable)
+                {
+                    if (nBurnable.type == Object.LEAVES && burnTime > 2.0f)
+                    {
+                        FireManager.Instance().StartFire(n);
+                        
+                    }
+                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 4.0f)
+                    {
+                        FireManager.Instance().StartFire(n);
+                    }
+                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 4.0f)
+                    {
+                        FireManager.Instance().StartFire(n);
+                        burnTime = 0.0f;
+                    }
+                }
+            }
         }
     }
 
@@ -86,7 +124,7 @@ public class Burnable : MonoBehaviour
             case Object.TERRAIN:
                 {
                     colour.start = gameObject.GetComponent<MeshRenderer>().material.color;
-                    colour.end = new Color(43.0f / 255.0f, 24.0f / 255.0f, 10.0f / 255.0f);
+                    colour.end = Color.black;
                     StartCoroutine(BurnTerrain());
                     break;
                 }
@@ -109,6 +147,7 @@ public class Burnable : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material.color = col;
 
             health -= Time.deltaTime * burnRate;
+            burnTime += Time.deltaTime;
 
             yield return null;
         }
@@ -132,7 +171,7 @@ public class Burnable : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material.color = col;
 
             health -= Time.deltaTime * burnRate;
-
+            burnTime += Time.deltaTime;
             yield return null;
         }
 
@@ -163,7 +202,7 @@ public class Burnable : MonoBehaviour
             gameObject.GetComponent<MeshRenderer>().material.color = col;
 
             health -= Time.deltaTime * burnRate;
-
+            burnTime += Time.deltaTime;
             yield return null;
         }
 
@@ -183,4 +222,54 @@ public class Burnable : MonoBehaviour
 
         Destroy(ps);
     }
+
+
+    public void FindClosestNeighbour()
+    {
+        neighbours.Sort(delegate (GameObject a, GameObject b)
+        {
+            return Vector3.Distance(this.transform.position, a.transform.position)
+            .CompareTo(
+              Vector3.Distance(this.transform.position, b.transform.position));
+        });
+
+
+        if(neighbours.Count > 3)
+        {
+            neighbours.RemoveRange(3, neighbours.Count - 3);
+        }
+
+    }
+
+
+    //void OnCollisionStay(Collision collision)
+    //{
+    //    if(name == "untitled.007")
+    //    {
+    //        int x = 0;
+    //    }
+    //    foreach (var n in neighbours)
+    //    {
+    //        if (collision.gameObject == n)
+    //            return;
+    //    }
+
+    //    neighbours.Add(collision.gameObject);
+    //}
+
+    //void OnTriggerStay(Collider col)
+    //{
+    //    if (name == "untitled.007")
+    //    {
+    //        int x = 0;
+    //    }
+    //    foreach (var n in neighbours)
+    //    {
+    //        if (col.gameObject == n)
+    //            return;
+    //    }
+
+    //    neighbours.Add(col.gameObject);
+    //}
+
 }
