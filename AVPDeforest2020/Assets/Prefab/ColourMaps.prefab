@@ -56,4 +56,19 @@ MonoBehaviour:
   - name: 4
     height: 0
     colour: {r: 0.24705882, g: 0.07450981, b: 0.07450981, a: 0}
-  ForestTerrain: []
+  ForestTerrain:
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
