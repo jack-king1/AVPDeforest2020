@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4484283124351179143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4484283124351179141}
+  - component: {fileID: 4484283124351179142}
+  m_Layer: 0
+  m_Name: ColourMaps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4484283124351179141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484283124351179143}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 190, y: 17, z: 150}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4484283124351179142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484283124351179143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9666a1462cede446af654e033a0195d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirtTerrain:
+  - name: 1
+    height: 1
+    colour: {r: 0.7058824, g: 0.21568628, b: 0.07058824, a: 0}
+  - name: 2
+    height: 0.8
+    colour: {r: 0.43529412, g: 0.14117648, b: 0.101960786, a: 0}
+  - name: 3
+    height: 0.4
+    colour: {r: 0.28235295, g: 0.08235294, b: 0.08235294, a: 0}
+  - name: 4
+    height: 0
+    colour: {r: 0.24705882, g: 0.07450981, b: 0.07450981, a: 0}
+  ForestTerrain:
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}
+  - name: 
+    height: 0
+    colour: {r: 0, g: 0, b: 0, a: 0}

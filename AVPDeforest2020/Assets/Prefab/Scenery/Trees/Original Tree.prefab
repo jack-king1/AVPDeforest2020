@@ -101,7 +101,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333121880262411100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486241553272275695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
@@ -237,7 +237,11 @@ GameObject:
   - component: {fileID: 197327278}
   m_Layer: 0
   m_Name: Original Tree
+<<<<<<< HEAD
+  m_TagString: Untagged
+=======
   m_TagString: Tree
+>>>>>>> Lewis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,7 +255,11 @@ Transform:
   m_GameObject: {fileID: 2729836688284300512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 135.48672, y: 16.242392, z: 135.49951}
+<<<<<<< HEAD
+  m_LocalScale: {x: 3.9928706, y: 3.9928706, z: 3.9928706}
+=======
   m_LocalScale: {x: 5.5092, y: 5.5092, z: 5.5092}
+>>>>>>> Lewis
   m_Children:
   - {fileID: 422559867605950561}
   - {fileID: 5137759730609365852}
@@ -275,7 +283,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2729836688284300512}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -326,7 +334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2729836688284300512}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
@@ -437,7 +445,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5671456540747013544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 

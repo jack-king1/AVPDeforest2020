@@ -16,7 +16,7 @@ public class EyeLineParticleSystem : MonoBehaviour
     float radialUpper = -2.0f;
     float radialLower = -0.5f;
 
-    float radiusLower = 1.0f;
+    float radiusLower = 0.5f;
     float radiusUpper = 5.0f;
 
     float maxDistance = 50.0f;
