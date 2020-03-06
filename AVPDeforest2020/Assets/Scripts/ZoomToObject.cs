@@ -6,7 +6,7 @@ public class ZoomToObject : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject earth;
-    [SerializeField] private float zoomSpeed = 10;
+    public float zoomSpeed = 10;
     [SerializeField] private float increaseSpeedTimer;
 
     private float speedIncrease = 1;

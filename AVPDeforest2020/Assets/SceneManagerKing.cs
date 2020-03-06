@@ -26,11 +26,14 @@ public class SceneManagerKing : MonoBehaviour
         sceneCount++;
     }
 
-    public IEnumerator Fading()
+    public void FadeToLevel()
     {
-        anim.SetBool("Fade", true);
-        yield return new WaitUntil(() => black.color.a == 1);
-        SceneManager.LoadScene(sceneCount);
+        sceneCount++;
+        anim.SetTrigger("FadeOut");
     }
     
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(sceneCount);
+    }
 }
