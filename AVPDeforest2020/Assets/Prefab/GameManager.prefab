@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ed28906b03c40a02ee94ccdbe264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introScenePosition: {fileID: 0}
+  forestScenePosition: {fileID: 0}
+  outroScenePosition: {fileID: 0}
   camera: {fileID: 0}
 --- !u!114 &1804181031658943787
 MonoBehaviour:

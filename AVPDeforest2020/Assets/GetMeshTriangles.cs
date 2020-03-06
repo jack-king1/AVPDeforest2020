@@ -81,11 +81,11 @@ public class GetMeshTriangles : MonoBehaviour
     void AssignTriangleColours()
     {
         int verticeCountOffset = 0;
-        foreach(MeshFilter mf in terrainMeshFilterRef)
+        foreach (MeshFilter mf in terrainMeshFilterRef)
         {
             Color[] meshColour = new Color[mf.mesh.vertices.Length];
 
-            if(verticeCountOffset == 0)
+            if (verticeCountOffset == 0)
             {
                 for (int i = 0; i + verticeCountOffset < verticeCountOffset + mf.mesh.vertices.Length; ++i)
                 {
@@ -97,7 +97,7 @@ public class GetMeshTriangles : MonoBehaviour
             {
                 for (int i = 0; i + verticeCountOffset < verticeCountOffset + mf.mesh.vertices.Length; ++i)
                 {
-                    meshColour[i] = colourMap[i +verticeCountOffset];
+                    meshColour[i] = colourMap[i + verticeCountOffset];
                     ++verticeCountOffset;
                 }
             }
