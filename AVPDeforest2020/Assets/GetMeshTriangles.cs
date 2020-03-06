@@ -21,6 +21,16 @@ public class GetMeshTriangles : MonoBehaviour
         AssignTriangleColours();
     }
 
+    private void Start()
+    {
+        GetGameObjecthInChildren();
+        childVertices = GetVerticesInChildren(this.gameObject);
+        getMeshHeights();
+        normaliseVertices();
+        GetColourMap();
+        AssignTriangleColours();
+    }
+
     void GetGameObjecthInChildren()
     {
         terrainMeshFilterRef = gameObject.GetComponentsInChildren<MeshFilter>();
