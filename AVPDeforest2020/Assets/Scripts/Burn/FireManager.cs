@@ -25,10 +25,17 @@ public class FireManager : MonoBehaviour
             {
                 SpawnFire(hit.gameObject);
                 hit.gameObject.GetComponent<Burnable>().Burn();
+                StartCoroutine(FireSounds());
             }
         }
     }
-
+    IEnumerator FireSounds()
+    {
+        AudioManager.instance.Play("FireStart");
+        yield return new WaitForSeconds(1);
+        AudioManager.instance.Play("FirePlay");
+        AudioManager.instance.Play("FireBurst");
+    }
     public void StartFire(GameObject burningObject)
     {
          SpawnFire(burningObject);

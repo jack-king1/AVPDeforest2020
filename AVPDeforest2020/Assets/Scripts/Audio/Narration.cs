@@ -10,10 +10,10 @@ public class Narration : MonoBehaviour
     void Start()
     {
         GetComponent<AudioSource>().loop = true;
-        StartCoroutine(playSound());
+        StartCoroutine(PlaySound());
     }
 
-    IEnumerator playSound()
+    IEnumerator PlaySound()
     {
         AudioManager.instance.Play("A");
         yield return new WaitForSeconds(10);

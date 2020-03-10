@@ -18773,7 +18773,7 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.size
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18893,7 +18893,7 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[1].volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18913,7 +18913,7 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[2].volume
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18944,16 +18944,16 @@ PrefabInstance:
         type: 3}
       propertyPath: MiscSounds.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 67ca0d59e673204419b686781a9be71f, type: 3}
+      objectReference: {fileID: 8300000, guid: 9d2e5a08b6ac182479ade85b76311e1e, type: 3}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[4].name
-      value: Birds
+      value: FireStart
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[4].volume
-      value: 0.1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18964,21 +18964,21 @@ PrefabInstance:
         type: 3}
       propertyPath: MiscSounds.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 67ca0d59e673204419b686781a9be71f, type: 3}
+      objectReference: {fileID: 8300000, guid: 8a6d180ea68e69246af2004f1b96c030, type: 3}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[5].name
-      value: Birds
+      value: FirePlay
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[5].volume
-      value: 0.1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[5].pitch
-      value: 1
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18988,7 +18988,7 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: MiscSounds.Array.data[0].loop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -18999,6 +18999,36 @@ PrefabInstance:
         type: 3}
       propertyPath: MiscSounds.Array.data[3].loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[5].loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[6].name
+      value: FireBurst
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[6].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: MiscSounds.Array.data[6].loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40a7e9a6e020c21498428b533dbecff1, type: 3}
@@ -25528,6 +25558,11 @@ PrefabInstance:
     - target: {fileID: 3168265982602299618, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496719914367332753, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
