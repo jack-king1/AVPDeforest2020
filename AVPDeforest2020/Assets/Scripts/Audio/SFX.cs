@@ -5,7 +5,7 @@ using UnityEngine;
 public class SFX : MonoBehaviour
 {
     private int audioSeed;
-    private float timer;
+    public float timer;
     private AudioSource source;
 
     private void Start()
@@ -20,6 +20,8 @@ public class SFX : MonoBehaviour
         timer += Time.deltaTime;
         Debug.Log(timer);
         if (timer >= 60 && timer <= 61 )   JungleSounds();
+
+        if (timer >= 110 && timer <= 111) WindSounds();
     }
 
     
@@ -29,7 +31,6 @@ public class SFX : MonoBehaviour
         AudioManager.instance.Stop("Alt");
         AudioManager.instance.Stop("Jungle1");
         AudioManager.instance.Stop("Cicada");
-
 
         #region OldCode 
         //if (audioSeed == 1 )
@@ -55,6 +56,12 @@ public class SFX : MonoBehaviour
 
         #endregion
     }
+
+    void WindSounds()
+    {
+        AudioManager.instance.Play("Whoosh");
+    }
+
 
     void ResetValues()
     {

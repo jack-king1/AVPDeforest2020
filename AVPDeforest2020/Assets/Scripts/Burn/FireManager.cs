@@ -35,6 +35,11 @@ public class FireManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         AudioManager.instance.Play("FirePlay");
         AudioManager.instance.Play("FireBurst");
+        yield return new WaitForSeconds(60);
+        
+        AudioManager.instance.Stop("FirePlay");
+        AudioManager.instance.Stop("FireBurst");
+        AudioManager.instance.Stop("FireStart");
     }
     public void StartFire(GameObject burningObject)
     {
