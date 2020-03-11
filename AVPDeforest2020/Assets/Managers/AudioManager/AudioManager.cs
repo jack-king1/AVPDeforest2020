@@ -17,9 +17,11 @@ public class AudioManager : MonoBehaviour
     public Sound[] MiscSounds;
     public Sound[] Narration;
     public Sound[] Music;
+
     [SerializeField] private List<Sound> sounds;
 
     public static AudioManager instance;
+  
 
     void Awake()
     {
@@ -47,6 +49,7 @@ public class AudioManager : MonoBehaviour
     //Delete this update call, this is jsut to test stuff
     void Update()
     {
+       
         if(Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("p Pressed");
@@ -165,4 +168,9 @@ public class AudioManager : MonoBehaviour
 
         //Delete other arrays here so they arnt held in memory.
     }
+
+
+ 
+
+    
 }

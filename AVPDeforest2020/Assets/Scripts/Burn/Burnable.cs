@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Burnable : MonoBehaviour
 {
+    public GameObject fireSound;
+     
     [HideInInspector] public GameObject ps;
 
     int xIndex = 0;
@@ -57,14 +59,22 @@ public class Burnable : MonoBehaviour
     bool destroyedFire = false;
 
     float burnTime = 0.0f;
+    private AudioFade fade;
 
     [SerializeField] private List<GameObject> neighbours = new List<GameObject>();
+
+    private void Awake()
+    {
+       // fade = GetComponent<AudioFade>();
+    }
 
     // Start is called before the first frame update
     void Update()
     {
-        if(state == States.DEAD && !destroyedFire)
+     
+        if (state == States.DEAD && !destroyedFire)
         {
+           
             StartCoroutine(EndFire());
         }
         else if(state == States.BURN)
@@ -212,14 +222,15 @@ public class Burnable : MonoBehaviour
     IEnumerator EndFire()
     {
         destroyedFire = true;
-
+       
         while (ps.GetComponent<ParticleSystem>().isPlaying)
         {
+          //  fade.StartCoroutine(Fadeout());
             ps.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
-
             yield return null;
-        }
 
+        }
+        FireManager.Instance().RemoveFireSound(fireSound);
         Destroy(ps);
     }
 

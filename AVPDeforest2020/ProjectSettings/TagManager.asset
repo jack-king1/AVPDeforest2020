@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tree
   - Terrain
+  - FireSoundPrefab
   layers:
   - Default
   - TransparentFX

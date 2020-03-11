@@ -779,6 +779,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3168265982602299619, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3168265982602299618, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -832,6 +837,11 @@ PrefabInstance:
     - target: {fileID: 3168265982602299618, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496719914367332753, guid: 8151ff91cfc0bdd4a82e04536cc4bdf4,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-54.9444580078125,"y":40.05046844482422,"z":-71.09406280517578},"rotation":{"x":-0.16489146649837495,"y":0.008210389874875546,"z":-0.001217466313391924,"w":-0.986588716506958},"size":20.0239200592041,"orthographic":false}
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":10.950312614440918,"y":1.7073631286621094,"z":15.981905937194825},"rotation":{"x":0.07893434166908264,"y":0.32219555974006655,"z":-0.02760838158428669,"w":0.9432070851325989},"size":30.716489791870118,"orthographic":false}
@@ -16,3 +19,4 @@
 =======
 >>>>>>> Lewis
 >>>>>>> Luke
+>>>>>>> Lewis
