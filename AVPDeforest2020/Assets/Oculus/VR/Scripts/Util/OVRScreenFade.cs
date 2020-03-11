@@ -14,8 +14,9 @@ ANY KIND, either express or implied. See the License for the specific language g
 permissions and limitations under the License.
 ************************************************************************************/
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System.Collections; // required for Coroutines
 
 /// <summary>
 /// Fades the screen from black after a new scene is loaded. Fade can also be controlled mid-scene using SetUIFade and SetFadeLevel
@@ -110,26 +111,25 @@ public class OVRScreenFade : MonoBehaviour
 
 		if (fadeOnStart)
 		{
-			StartCoroutine(Fade(1, 0));
+			StartCoroutine(Fade(1, 0, fadeTime));
 		}
 	}
 
 	/// <summary>
 	/// Start a fade out
 	/// </summary>
-	public void FadeOut()
+	public void FadeOut(float fadeTime)
     {
-        StartCoroutine(Fade(0,1));
+        StartCoroutine(Fade(0,1, fadeTime));
     }
 
-
-	/// <summary>
-	/// Starts a fade in when a new level is loaded
-	/// </summary>
-	void OnLevelFinishedLoading(int level)
-	{
-		StartCoroutine(Fade(1,0));
-	}
+    /// <summary>
+    /// Start a fade in
+    /// </summary>
+    public void FadeIn(float _fadeTime)
+    {
+        StartCoroutine(Fade(1, 0, _fadeTime));
+    }
 
 	void OnEnable()
 	{
@@ -175,16 +175,17 @@ public class OVRScreenFade : MonoBehaviour
 	/// <summary>
 	/// Fades alpha from 1.0 to 0.0
 	/// </summary>
-	IEnumerator Fade(float startAlpha, float endAlpha)
+	IEnumerator Fade(float startAlpha, float endAlpha, float _fadeTime)
 	{
 		float elapsedTime = 0.0f;
-		while (elapsedTime < fadeTime)
+		while (elapsedTime < _fadeTime)
 		{
 			elapsedTime += Time.deltaTime;
-            currentAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsedTime / fadeTime));
+            currentAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsedTime / _fadeTime));
             SetMaterialAlpha();
 			yield return new WaitForEndOfFrame();
 		}
+        //load New Scene Here.
 	}
 
     /// <summary>
