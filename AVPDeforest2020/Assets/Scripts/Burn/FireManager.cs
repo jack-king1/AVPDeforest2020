@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class FireManager : MonoBehaviour
 {
     static FireManager instance;
-    public GameObject FireSound;
+    public GameObject FireSoundPrefab;
+    public List <GameObject> FireSoundPrefabs = new List<GameObject>();
+
+
     public static FireManager Instance() { return instance; }
 
     private void Awake()
     {
         instance = this;
+      
     }
 
     public GameObject psTree;
@@ -17,6 +22,15 @@ public class FireManager : MonoBehaviour
 
     Burnable[] burnables;
 
+
+    public void RemoveFireSound(GameObject fireSound)
+    {
+        if(FireSoundPrefabs.Contains(fireSound))
+        {
+            FireSoundPrefabs.Remove(fireSound);
+            Destroy(fireSound);
+        }
+    }
     public void StartFire(Collider hit)
     {
         if (hit.gameObject.tag == "Tree" || hit.gameObject.tag == "Terrain")
@@ -25,23 +39,18 @@ public class FireManager : MonoBehaviour
             {
                 SpawnFire(hit.gameObject);
                 hit.gameObject.GetComponent<Burnable>().Burn();
-                Instantiate(FireSound, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity);
-                //StartCoroutine(FireSounds());
+
+                GameObject newFireSound = Instantiate(FireSoundPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity, hit.transform);
+                FireSoundPrefabs.Add(newFireSound);
+             
+                hit.gameObject.GetComponent<Burnable>().fireSound = newFireSound;
+               
+
+             
             }
         }
     }
-    IEnumerator FireSounds()
-    {
-        AudioManager.instance.Play("FireStart");
-        yield return new WaitForSeconds(1);
-        AudioManager.instance.Play("FirePlay");
-        AudioManager.instance.Play("FireBurst");
-        yield return new WaitForSeconds(60);
-        
-        AudioManager.instance.Stop("FirePlay");
-        AudioManager.instance.Stop("FireBurst");
-        AudioManager.instance.Stop("FireStart");
-    }
+
     public void StartFire(GameObject burningObject)
     {
          SpawnFire(burningObject);
