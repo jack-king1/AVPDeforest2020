@@ -31,10 +31,10 @@ public class SFX : MonoBehaviour
     }
     private void Update()
     {
-        if(scene.startSFX)
-        {
-            timer += Time.deltaTime;
-        }
+        //if(scene.startSFX)
+        //{
+        //    timer += Time.deltaTime;
+        //}
        
         Debug.Log(timer);
         if (timer >= 60 && timer <= 61 )   JungleSounds();
