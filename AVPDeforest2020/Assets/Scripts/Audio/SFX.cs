@@ -7,17 +7,23 @@ public class SFX : MonoBehaviour
     private int audioSeed;
     public float timer;
     private AudioSource source;
+    NextScene scene;
 
     private void Start()
     {
-        AudioManager.instance.Play("Jungle1");
-        AudioManager.instance.Play("Cicada");
-        AudioManager.instance.Play("Alt");
+        scene = gameObject.GetComponent<NextScene>();
+        //AudioManager.instance.Play("Jungle1");
+        //AudioManager.instance.Play("Cicada");
+        //AudioManager.instance.Play("Alt");
 
     }
     private void Update()
     {
-        timer += Time.deltaTime;
+        if(scene.startSFX)
+        {
+            timer += Time.deltaTime;
+        }
+       
         Debug.Log(timer);
         if (timer >= 60 && timer <= 61 )   JungleSounds();
 

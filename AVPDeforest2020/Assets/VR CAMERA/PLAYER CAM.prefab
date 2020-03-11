@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8186418408710201960}
   - component: {fileID: 8186418408705177088}
   - component: {fileID: 8186418408705143646}
-  - component: {fileID: 8186418407504166295}
   - component: {fileID: 223974233}
   m_Layer: 0
   m_Name: PLAYER CAM
@@ -113,21 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b71d1996d67004241a3b69960856ffcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8186418407504166295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186418408698959776}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca77cc8647952b5419473225d1f85f20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  earth: {fileID: 0}
-  zoomSpeed: 100
-  increaseSpeedTimer: 5
 --- !u!114 &223974233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +119,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186418408698959776}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c676f7125c4090948a4bd8bb54ea43ce, type: 3}
   m_Name: 

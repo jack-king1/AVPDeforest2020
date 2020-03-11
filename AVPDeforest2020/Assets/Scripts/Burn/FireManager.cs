@@ -4,7 +4,7 @@ using UnityEngine;
 public class FireManager : MonoBehaviour
 {
     static FireManager instance;
-
+    public GameObject FireSound;
     public static FireManager Instance() { return instance; }
 
     private void Awake()
@@ -25,7 +25,8 @@ public class FireManager : MonoBehaviour
             {
                 SpawnFire(hit.gameObject);
                 hit.gameObject.GetComponent<Burnable>().Burn();
-                StartCoroutine(FireSounds());
+                Instantiate(FireSound, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity);
+                //StartCoroutine(FireSounds());
             }
         }
     }

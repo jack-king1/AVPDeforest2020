@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 Base path: 'C:/Users/bartl/Documents/2019.2.0f1/Editor/Data', plugins path 'C:/Users/bartl/Documents/2019.2.0f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
 Quitting shader compiler process
+=======
+Base path: 'F:/Unity/2019.2.0f1/Editor/Data', plugins path 'F:/Unity/2019.2.0f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+>>>>>>> Jack

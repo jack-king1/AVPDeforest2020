@@ -7,6 +7,10 @@ public class CameraManager : MonoBehaviour
 
     static CameraManager instance;
 
+    public GameObject introScenePosition;
+    public GameObject forestScenePosition;
+    public GameObject outroScenePosition;
+
     public static CameraManager Instance() { return instance; }
 
 
@@ -25,8 +29,9 @@ public class CameraManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        scenePositions.Add(new Vector3(0, 202, 2095));
-        scenePositions.Add(new Vector3(188.42f, 17f, 129.91f));
+        scenePositions.Add(introScenePosition.transform.position);
+        scenePositions.Add(forestScenePosition.transform.position);
+        scenePositions.Add(outroScenePosition.transform.position);
     }
 
     // Start is called before the first frame update

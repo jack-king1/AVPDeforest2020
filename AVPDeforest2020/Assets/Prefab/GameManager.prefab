@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7742ed28906b03c40a02ee94ccdbe264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introScenePosition: {fileID: 0}
+  forestScenePosition: {fileID: 0}
+  outroScenePosition: {fileID: 0}
   camera: {fileID: 0}
 --- !u!114 &1804181031658943787
 MonoBehaviour:
@@ -74,6 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30a2c0b6fbd65845a7ad1637cb858ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  psTree: {fileID: 3189149895216184250, guid: 6f00ce5af6bc8d94bb4e8e341dc753cc, type: 3}
+  psTree: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   psTerrain: {fileID: 3189149895216184250, guid: 6f00ce5af6bc8d94bb4e8e341dc753cc,
     type: 3}
