@@ -9,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1804181031658943780}
-  - component: {fileID: 1804181031658943781}
   - component: {fileID: 1804181031658943787}
   - component: {fileID: 1804181031658943782}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,22 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1804181031658943781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804181031658943786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7742ed28906b03c40a02ee94ccdbe264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  introScenePosition: {fileID: 0}
-  forestScenePosition: {fileID: 0}
-  outroScenePosition: {fileID: 0}
-  camera: {fileID: 0}
 --- !u!114 &1804181031658943787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1bb0c57d7f34e4aa6dcd9d30bcaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  VRcam: {fileID: 0}
 --- !u!114 &1804181031658943782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,111 +130,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179141, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179141, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[0].height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[1].height
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[2].height
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[3].height
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[0].colour.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[0].colour.g
-      value: 0.2924528
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[0].colour.b
-      value: 0.0077299844
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[1].colour.r
-      value: 0.006274463
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[1].colour.g
-      value: 0.4433962
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[1].colour.b
-      value: 0.04481801
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[2].colour.r
-      value: 0.03716138
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[2].colour.g
-      value: 0.6132076
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[2].colour.b
-      value: 0.00867745
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[3].colour.r
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[3].colour.g
-      value: 0.30519706
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[3].colour.b
-      value: 0.096698105
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[4].colour.r
-      value: 0.24528301
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[4].colour.g
-      value: 0.031238874
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484283124351179142, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: ForestTerrain.Array.data[4].colour.b
-      value: 0.031238874
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112f9495ebfaf434f8a6da0727401b13, type: 3}

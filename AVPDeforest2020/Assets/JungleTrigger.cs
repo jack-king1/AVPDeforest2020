@@ -23,7 +23,7 @@ public class JungleTrigger : MonoBehaviour
             AudioManager.instance.Play("Cicada");
             AudioManager.instance.Play("Alt");
             narration.StartCoroutine(narration. PlayScene1());
-
+            Debug.Log("Im Playin");
 
         }
     }

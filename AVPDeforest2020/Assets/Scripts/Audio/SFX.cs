@@ -9,8 +9,20 @@ public class SFX : MonoBehaviour
     private AudioSource source;
     NextScene scene;
 
-    private void Start()
+    public static SFX instance;
+
+    public void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != null)
+        {
+            Destroy(this);
+        }
+
+
         scene = gameObject.GetComponent<NextScene>();
         //AudioManager.instance.Play("Jungle1");
         //AudioManager.instance.Play("Cicada");
@@ -31,11 +43,10 @@ public class SFX : MonoBehaviour
     }
 
     
-    void JungleSounds()
+    public void JungleSounds()
     {
-
         AudioManager.instance.Stop("Alt");
-        AudioManager.instance.Stop("Jungle1");
+        AudioManager.instance.Stop("Jungle");
         AudioManager.instance.Stop("Cicada");
 
         #region OldCode 
