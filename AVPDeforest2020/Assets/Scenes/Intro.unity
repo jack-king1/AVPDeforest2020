@@ -1135,6 +1135,8 @@ MonoBehaviour:
   fadeIn: 0
   VRCam: {fileID: 3352082158287414612}
   fadeTime: 5
+  newSceneTimer: 5
+  timer: 0
 --- !u!1001 &3352082158287414611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1146,11 +1148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PLAYER Intro
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989777507045550357, guid: 5d06441fa49a6fa4e915b03f34470c7f,
-        type: 3}
-      propertyPath: m_TagString
-      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 2989777507045127483, guid: 5d06441fa49a6fa4e915b03f34470c7f,
         type: 3}
@@ -1212,11 +1209,6 @@ PrefabInstance:
       propertyPath: earth
       value: 
       objectReference: {fileID: 1799056288}
-    - target: {fileID: 2989777505618903842, guid: 5d06441fa49a6fa4e915b03f34470c7f,
-        type: 3}
-      propertyPath: resetTime
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d06441fa49a6fa4e915b03f34470c7f, type: 3}
 --- !u!1 &3352082158287414612 stripped
@@ -1231,19 +1223,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3352082158287414611}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3352082158287414619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352082158287414612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeTime: 2
-  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
-  fadeOnStart: 1
-  renderQueue: 5000
