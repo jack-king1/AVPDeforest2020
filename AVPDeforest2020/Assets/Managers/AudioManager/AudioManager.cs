@@ -20,6 +20,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private List<Sound> sounds;
 
+
     public static AudioManager instance;
   
 

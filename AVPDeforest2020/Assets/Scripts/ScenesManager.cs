@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class ScenesManager : MonoBehaviour
 {
-
-
-
     static ScenesManager instance;
-
 
     public static ScenesManager Instance() { return instance; }
 
-    public GameObject[] scenes = new GameObject[3];
 
     public enum Scene
     {
@@ -21,6 +16,10 @@ public class ScenesManager : MonoBehaviour
         OUTRO = 2
     }
 
+
+    Scene currentScene = Scene.INTRO;
+
+    public Scene CurrentScene { get => currentScene; set => currentScene = value; }
 
     private void Awake()
     {
@@ -36,28 +35,20 @@ public class ScenesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
     public void SetActiveScene(Scene scene)
     {
-        for(int i = 0; i < scenes.Length; ++i)
+        currentScene = scene;
+
+        CameraManager.Instance().SetCameraScene(scene);
+
+        if(currentScene == Scene.MAIN)
         {
-            if (i == (int)scene)
-            {
-                scenes[i].SetActive(true);
-                CameraManager.Instance().SetCameraScene(scene);
-
-                if(scene == Scene.MAIN)
-                {
-                    FireManager.Instance().GetBurnables();
-                }
-            }
-            else
-                scenes[i].SetActive(false);
+            FireManager.Instance().GetBurnables();
         }
-
     }
 
 

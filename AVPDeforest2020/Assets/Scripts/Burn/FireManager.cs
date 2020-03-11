@@ -97,45 +97,7 @@ public class FireManager : MonoBehaviour
 
     public void GetBurnables()
     {
-
         StartCoroutine(GetNeighbours());
-
-        //burnables = FindObjectsOfType<Burnable>();
-
-
-        //for(int i = 0; i < burnables.Length; ++i)
-        //{
-        //    NodeGrid.Instance().GetObjectIndex(ref burnables[i]);
-        //}
-
-
-        //for (int i = 0; i < burnables.Length; ++i)
-        //{
-        //    if (burnables[i].type == Burnable.Object.LEAVES)
-        //        continue;
-
-        //    for (int j = 0; j < burnables.Length; ++j)
-        //    {
-        //        if (i == j)
-        //            continue;
-
-        //        if (burnables[i].XIndex >= burnables[j].XIndex - 1 && burnables[i].XIndex <= burnables[j].XIndex + 1)
-        //        {
-        //            if (burnables[i].ZIndex >= burnables[j].ZIndex -1 && burnables[i].ZIndex <= burnables[j].ZIndex + 1)
-        //            {
-        //                burnables[i].neighbours.Add(burnables[j].gameObject);
-        //            }
-        //        }
-        //    }
-        //}
-
-        //for (int i = 0; i < burnables.Length; ++i)
-        //{
-        //    if (burnables[i].type == Burnable.Object.LEAVES)
-        //        continue;
-
-        //    burnables[i].FindClosestNeighbour();
-        //}
     }
 
 
