@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class FireManager : MonoBehaviour
 {
     static FireManager instance;
+    public GameObject FireSoundPrefab;
+    public List <GameObject> FireSoundPrefabs = new List<GameObject>();
+
 
     public static FireManager Instance() { return instance; }
 
     private void Awake()
     {
         instance = this;
+      
     }
 
     public GameObject psTree;
@@ -17,6 +22,15 @@ public class FireManager : MonoBehaviour
 
     Burnable[] burnables;
 
+
+    public void RemoveFireSound(GameObject fireSound)
+    {
+        if(FireSoundPrefabs.Contains(fireSound))
+        {
+            FireSoundPrefabs.Remove(fireSound);
+            Destroy(fireSound);
+        }
+    }
     public void StartFire(Collider hit)
     {
         if (hit.gameObject.tag == "Tree" || hit.gameObject.tag == "Terrain")
@@ -25,6 +39,14 @@ public class FireManager : MonoBehaviour
             {
                 SpawnFire(hit.gameObject);
                 hit.gameObject.GetComponent<Burnable>().Burn();
+
+                GameObject newFireSound = Instantiate(FireSoundPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity, hit.transform);
+                FireSoundPrefabs.Add(newFireSound);
+             
+                hit.gameObject.GetComponent<Burnable>().fireSound = newFireSound;
+               
+
+             
             }
         }
     }
