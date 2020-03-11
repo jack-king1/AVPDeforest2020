@@ -10,6 +10,7 @@ public class FireManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        GetBurnables();
     }
 
     public GameObject psTree;
