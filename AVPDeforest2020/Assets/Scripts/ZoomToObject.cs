@@ -8,8 +8,11 @@ public class ZoomToObject : MonoBehaviour
     [SerializeField] private GameObject earth;
     public float zoomSpeed = 10;
     [SerializeField] private float increaseSpeedTimer;
+    [SerializeField] private float resetTime;
+    [SerializeField] private float maxSpeed;
 
-    private float speedIncrease = 1;
+
+    private float speedIncrease = 5;
     void Start()
     {
         //earth = GameObject.FindGameObjectWithTag("AmazonRainforest");
@@ -28,8 +31,11 @@ public class ZoomToObject : MonoBehaviour
         }
         else
         {
-            zoomSpeed += speedIncrease;
-            increaseSpeedTimer = 2.0f;
+            if(zoomSpeed> maxSpeed)
+            {
+                zoomSpeed += speedIncrease;
+                increaseSpeedTimer = resetTime;
+            }
         }
     }
 }
