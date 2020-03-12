@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - DontDestroyOnLoadScript
     - EarthRotation
     - EyeLineParticleSystem
+    - FadeMaterial
     - FadeText
     - FadeToQuote
     - FireManager
@@ -355,6 +356,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13614}
     - Class: 114
       Script: {instanceID: 13682}
+    - Class: 114
+      Script: {instanceID: 27972}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -772,7 +775,7 @@ ScriptsOnlyBuild:
     className: OvrAvatarSDKManager
   - hash:
       serializedVersion: 2
-      Hash: 22b7ff19f9593a23e04135ec0f6c8d2e
+      Hash: f99dd7204088bd28fc9b39a616018c41
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OVRFadeCustom
@@ -1576,7 +1579,7 @@ ScriptsOnlyBuild:
     className: PlatformManager
   - hash:
       serializedVersion: 2
-      Hash: 5ff788c708869792032f9db72435ffbb
+      Hash: 2173180b1e79d117cdcd4189e8571299
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainSceneManager
@@ -2462,9 +2465,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d0bcd269ab1f9ea68c4078cd8271d17b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeMaterial
   platform: 13
   scenePathNames:
   - Assets/Scenes/Intro.unity
   - Assets/Scenes/Forest.unity
   - Assets/Scenes/Outro2.unity
-  playerPath: D:/Builds/earh.apk
+  playerPath: D:/AVP Builds/earth.apk

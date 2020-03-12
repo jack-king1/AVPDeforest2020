@@ -7,7 +7,7 @@ public class FadeText : MonoBehaviour
 {
     Text[] texts;
     public float fadeOutTime;
-    float timer = 3.5f;
+    public float timer = 8f;
     bool textFade = false;
 
     private void Update()
@@ -28,7 +28,7 @@ public class FadeText : MonoBehaviour
         texts = GetComponentsInChildren<Text>();
         foreach(var t in texts)
         {
-            StartCoroutine(FadeTextToFullAlpha(8, t));
+            StartCoroutine(FadeTextToFullAlpha(fadeOutTime, t));
         }
     }
 

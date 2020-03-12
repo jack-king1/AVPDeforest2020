@@ -210,9 +210,9 @@ GameObject:
   - component: {fileID: 8186418408699448196}
   - component: {fileID: 8186418408699611560}
   - component: {fileID: 8186418408697827608}
-  - component: {fileID: 8186418408705228090}
   - component: {fileID: 175503731}
-  - component: {fileID: 132465437}
+  - component: {fileID: 132465432}
+  - component: {fileID: 4834570484341945707}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -285,7 +285,34 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &8186418408705228090
+--- !u!114 &175503731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186418408698959780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc3812dbca15804ea90f49d61a5974d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLookTime: 1.5
+  eyeLinePsPrefab: {fileID: 6397662089328009503, guid: 783bc1b872e3c8a47a7ec8239f6181d5,
+    type: 3}
+--- !u!114 &132465432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186418408698959780}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c676f7125c4090948a4bd8bb54ea43ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4834570484341945707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,33 +328,6 @@ MonoBehaviour:
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000
---- !u!114 &175503731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186418408698959780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc3812dbca15804ea90f49d61a5974d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLookTime: 1.5
-  eyeLinePsPrefab: {fileID: 6397662089328009503, guid: 783bc1b872e3c8a47a7ec8239f6181d5,
-    type: 3}
---- !u!114 &132465437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8186418408698959780}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c676f7125c4090948a4bd8bb54ea43ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8186418408698959782
 GameObject:
   m_ObjectHideFlags: 0

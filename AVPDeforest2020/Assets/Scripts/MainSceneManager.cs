@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
 {
+    //bool usingVr = false;
     public GameObject Camera;
     public GameObject hopeTreePrefab;
 
@@ -19,6 +20,7 @@ public class MainSceneManager : MonoBehaviour
     }
 
     SceneStage currentStage = SceneStage.TRANQUIL;
+    float sceneStageTime = 6.0f;
 
     [SerializeField]float[] sceneStageTimes = new float[3];
     float sceneStageTime = 0.0f;
@@ -50,7 +52,7 @@ public class MainSceneManager : MonoBehaviour
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(90.0f));
                         Camera.GetComponent<CameraRaycast>().enabled = true;
-                        //SFX.instance.JungleSounds();
+                        SFX.instance.JungleSounds();
                         StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }

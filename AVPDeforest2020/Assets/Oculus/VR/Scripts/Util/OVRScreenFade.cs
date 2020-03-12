@@ -162,6 +162,7 @@ public class OVRScreenFade : MonoBehaviour
         uiFadeAlpha = Mathf.Clamp01(level);
         SetMaterialAlpha();
     }
+
     /// <summary>
     /// Override current fade level
     /// </summary>
