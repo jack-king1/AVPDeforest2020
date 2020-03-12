@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Forest.unity
     guid: 0821f9558e110374cad4b35e12879c4e
   - enabled: 1
-    path: Assets/Scenes/Plant.unity
-    guid: 00e6b7a9403b9b2478c5b9aded6df9cf
-  - enabled: 1
-    path: Assets/Scenes/Outro.unity
-    guid: 5519e04e7a8e6884b8af775616cf8f5d
+    path: Assets/Scenes/Outro2.unity
+    guid: 1b8f2f565cafeb045b2f090520f7089b
   m_configObjects: {}

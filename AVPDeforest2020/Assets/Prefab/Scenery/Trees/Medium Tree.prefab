@@ -106,10 +106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 1
   burnRate: 20
-  fadeRate: 1
+  fadeRate: 100
   fadeLife: 100
   neighbours: []
 --- !u!1 &4868943431813513513
@@ -218,10 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 1
   burnRate: 20
-  fadeRate: 1
+  fadeRate: 100
   fadeLife: 100
   neighbours: []
 --- !u!1 &5022065372637479066
@@ -330,10 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 1
   burnRate: 20
-  fadeRate: 1
+  fadeRate: 100
   fadeLife: 100
   neighbours: []
 --- !u!1 &8427238797256914581
@@ -431,9 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 0
-  burnRate: 1
+  burnRate: 10
   fadeRate: 1
   fadeLife: 100
   neighbours: []

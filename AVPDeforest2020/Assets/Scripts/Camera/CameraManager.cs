@@ -19,12 +19,6 @@ public class CameraManager : MonoBehaviour
 
     List<Vector3> scenePositions = new List<Vector3>();
 
-    public enum Components
-    {
-        ZOOM = 0,
-        RAYCAST = 1
-    }
-
 
     private void Awake()
     {
@@ -49,51 +43,7 @@ public class CameraManager : MonoBehaviour
 
     public void SetCameraScene(ScenesManager.Scene scene)
     {
-        camera.transform.position = scenePositions[(int)scene];
-
-
-        switch (scene)
-        {
-            case ScenesManager.Scene.INTRO:
-                {
-                    SetComponent(Components.ZOOM, true);
-                    SetComponent(Components.RAYCAST, false);
-                    break;
-                }
-            case ScenesManager.Scene.MAIN:
-                {
-                    SetComponent(Components.ZOOM, false);
-                    SetComponent(Components.RAYCAST, true);
-                    break;
-                }
-            case ScenesManager.Scene.OUTRO:
-                {
-                    SetComponent(Components.ZOOM, true);
-                    SetComponent(Components.RAYCAST, false);
-                    break;
-                }
-        }
-
+        //camera.transform.position = scenePositions[(int)scene];
     }
-
-    public void SetComponent(Components comp, bool enable = true)
-    {
-        switch (comp)
-        {
-            case Components.ZOOM:
-                {
-                    if(camera.GetComponent<ZoomToObject>())
-                        camera.GetComponent<ZoomToObject>().enabled = enable;
-                    break;
-                }
-            case Components.RAYCAST:
-                {
-                    if (camera.GetComponent<CameraRaycast>())
-                        camera.GetComponent<CameraRaycast>().enabled = enable;
-                    break;
-                }
-        }
-    }
-
     
 }

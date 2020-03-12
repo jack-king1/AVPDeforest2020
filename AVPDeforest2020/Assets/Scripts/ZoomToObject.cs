@@ -22,8 +22,11 @@ public class ZoomToObject : MonoBehaviour
     void Update()
     {
         float step = zoomSpeed * Time.deltaTime;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
-        earth.transform.position, step);
+        if(earth != null)
+        {
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,earth.transform.position, step);
+        }
+
 
         if(increaseSpeedTimer > 0)
         {

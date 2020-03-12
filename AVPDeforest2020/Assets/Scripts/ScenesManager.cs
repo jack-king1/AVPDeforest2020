@@ -8,8 +8,6 @@ public class ScenesManager : MonoBehaviour
     static ScenesManager instance;
 
     public static ScenesManager Instance() { return instance; }
-
-    public GameObject[] scenes = new GameObject[3];
     public GameObject VRcam;
 
     public enum Scene
@@ -19,8 +17,9 @@ public class ScenesManager : MonoBehaviour
         OUTRO = 2
     }
 
-    Scene activeScene = 0;
+    Scene activeScene = Scene.INTRO;
 
+    public Scene ActiveScene { get => activeScene; set => activeScene = value; }
 
     private void Awake()
     {
@@ -30,40 +29,25 @@ public class ScenesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetActiveScene(Scene.INTRO);
+       // SetActiveScene(Scene.INTRO);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-
-    public void SetActiveScene(Scene scene)
-    {
-        for(int i = 0; i < scenes.Length; ++i)
-        {
-            if (i == (int)scene)
-            {
-                scenes[i].SetActive(true);
-                CameraManager.Instance().SetCameraScene(scene);
-
-                if(scene == Scene.MAIN)
-                {
-                    FireManager.Instance().GetBurnables();
-                }
-            }
-            else
-                scenes[i].SetActive(false);
-        }
 
     }
 
     public void LoadNextScene()
     {
         activeScene++;
-        switch(activeScene)
+        if (activeScene == Scene.MAIN)
+        {
+            if(FireManager.Instance())
+                FireManager.Instance().GetBurnables();
+        }
+
+        switch (activeScene)
         {
             case Scene.INTRO:
                 Debug.Log("Loading Intro");
