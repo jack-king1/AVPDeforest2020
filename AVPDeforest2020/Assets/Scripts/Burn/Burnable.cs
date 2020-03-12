@@ -221,7 +221,7 @@ public class Burnable : MonoBehaviour
             var mesh = gameObject.GetComponent<MeshFilter>().mesh;
             var triNum = mesh.triangles.Length;
             var emission = fire.GetComponent<ParticleSystem>().emission;
-            emission.rate = new ParticleSystem.MinMaxCurve(3 * triNum);
+            emission.rate = new ParticleSystem.MinMaxCurve(2 * triNum);
         }
         var shape = fire.GetComponent<ParticleSystem>().shape;
         shape.shapeType = ParticleSystemShapeType.MeshRenderer;

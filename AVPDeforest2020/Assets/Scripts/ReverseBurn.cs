@@ -71,35 +71,9 @@ public class ReverseBurn : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-
         if (state == States.DEAD && !destroyedFire)
         {
-
             StartCoroutine(EndFire());
-        }
-        else if (state == States.BURN)
-        {
-            foreach (var n in neighbours)
-            {
-                var nBurnable = n.GetComponent<ReverseBurn>();
-                if (nBurnable)
-                {
-                    if (nBurnable.type == Object.LEAVES && burnTime > 2.0f)
-                    {
-                        FireManager.Instance().StartFire(n);
-
-                    }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 4.0f)
-                    {
-                        FireManager.Instance().StartFire(n);
-                    }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 4.0f)
-                    {
-                        FireManager.Instance().StartFire(n);
-                        burnTime = 0.0f;
-                    }
-                }
-            }
         }
     }
 
@@ -149,8 +123,8 @@ public class ReverseBurn : MonoBehaviour
 
         while (health > 0.0f)
         {
-            scale = Vector3.Lerp(minScale, maxScale, health / 100.0f);
-            GetComponent<Transform>().localScale = scale;
+           // scale = Vector3.Lerp(minScale, maxScale, health / 100.0f);
+           // GetComponent<Transform>().localScale = scale;
 
 
             col = Color.Lerp(colour.end, colour.start, health / 100.0f);
@@ -166,15 +140,15 @@ public class ReverseBurn : MonoBehaviour
 
     IEnumerator BurnLeaves()
     {
-        Vector3 scale = gameObject.GetComponent<Transform>().localScale;
+        //Vector3 scale = gameObject.GetComponent<Transform>().localScale;
 
         var col = gameObject.GetComponent<MeshRenderer>().material.color;
 
         while (health >= 0.0f)
         {
 
-            scale = Vector3.Lerp(minScale, maxScale, health / 100.0f);
-            gameObject.GetComponent<Transform>().localScale = scale;
+           // scale = Vector3.Lerp(minScale, maxScale, health / 100.0f);
+            //gameObject.GetComponent<Transform>().localScale = scale;
 
             col = Color.Lerp(colour.end, colour.start, (health - 20.0f) / 80.0f);
             gameObject.GetComponent<MeshRenderer>().material.color = col;
