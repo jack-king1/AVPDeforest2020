@@ -22,7 +22,6 @@ public class FireManager : MonoBehaviour
 
     Burnable[] burnables;
 
-
     public void RemoveFireSound(GameObject fireSound)
     {
         if(FireSoundPrefabs.Contains(fireSound))
@@ -31,22 +30,19 @@ public class FireManager : MonoBehaviour
             Destroy(fireSound);
         }
     }
+
     public void StartFire(Collider hit)
     {
         if (hit.gameObject.tag == "Tree" || hit.gameObject.tag == "Terrain")
         {
-            if (hit.gameObject.GetComponent<Burnable>())
+            if (hit.gameObject.GetComponent<Burnable>() && hit.gameObject.GetComponent<Burnable>().State == Burnable.States.ALIVE)
             {
-                SpawnFire(hit.gameObject);
-                hit.gameObject.GetComponent<Burnable>().Burn();
+                hit.gameObject.GetComponent<Burnable>().StartFire();
 
                 GameObject newFireSound = Instantiate(FireSoundPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity, hit.transform);
                 FireSoundPrefabs.Add(newFireSound);
              
                 hit.gameObject.GetComponent<Burnable>().fireSound = newFireSound;
-               
-
-             
             }
         }
     }
@@ -64,11 +60,8 @@ public class FireManager : MonoBehaviour
 
         if (burningObject.GetComponent<Burnable>().State == Burnable.States.ALIVE && !burningObject.GetComponent<Burnable>().ps)
         {
-            //var inst = Instantiate(burningObject.tag == "Tree" ? psTree : psTerrain, burningObject.transform);
-            var inst = Instantiate(psTerrain, burningObject.transform);
-
-            burningObject.GetComponent<Burnable>().ps = inst;
-
+            var inst = burningObject.GetComponent<Burnable>().ps.GetComponent<ParticleSystem>();
+            inst.gameObject.SetActive(true);
             var shape = inst.GetComponent<ParticleSystem>().shape;
             var main = inst.GetComponent<ParticleSystem>().main;
             var emission = inst.GetComponent<ParticleSystem>().emission;
@@ -86,12 +79,7 @@ public class FireManager : MonoBehaviour
                 var triNum = mesh.triangles.Length;
                 emission.rate = new ParticleSystem.MinMaxCurve(3 * triNum);
             }
-
-            shape.shapeType = ParticleSystemShapeType.MeshRenderer;
-            shape.meshRenderer = burningObject.GetComponent<MeshRenderer>();
-            shape.meshShapeType = ParticleSystemMeshShapeType.Triangle;
         }
-
     }
 
 

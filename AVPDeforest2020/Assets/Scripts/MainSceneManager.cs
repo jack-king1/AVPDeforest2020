@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
 {
-
-    bool usingVr = true;
-
-    public GameObject VrCamera;
-    public GameObject PcCamera;
+    public GameObject Camera;
     public GameObject hopeTreePrefab;
 
     GameObject hopeTreeSpawn;
@@ -23,23 +19,21 @@ public class MainSceneManager : MonoBehaviour
     }
 
     SceneStage currentStage = SceneStage.TRANQUIL;
-    float sceneStageTime = 60.0f;
+
+    [SerializeField]float[] sceneStageTimes = new float[3];
+    float sceneStageTime = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sceneStageTime = sceneStageTimes[0];
         hopeTreeSpawn = GameObject.FindGameObjectWithTag("HopeTreeSpawn");
         dirLight = GameObject.FindGameObjectWithTag("DirectinalLight");
 
-        if (!usingVr)
-        {
-            PcCamera.GetComponent<CameraRaycast>().enabled = false;
-            PcCamera.GetComponent<CameraMovement>().enabled = true;
-        }
+        Camera.GetComponent<CameraRaycast>().enabled = false;
+        Camera.GetComponent<CameraMovement>().enabled = true;
     }
-
-
 
     // Update is called once per frame
     void Update()
@@ -51,37 +45,22 @@ public class MainSceneManager : MonoBehaviour
                 case SceneStage.TRANQUIL:
                     {
                         currentStage = SceneStage.BURNING;
-                        sceneStageTime = 90.0f;
+                        sceneStageTime = sceneStageTimes[1];
 
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(90.0f));
-                        if (usingVr)
-                        {
-                            VrCamera.GetComponent<CameraRaycast>().enabled = true;
-                        }
-                        else
-                        {
-                            PcCamera.GetComponent<CameraRaycast>().enabled = true;
-
-                        }
-                        SFX.instance.JungleSounds();
+                        Camera.GetComponent<CameraRaycast>().enabled = true;
+                        //SFX.instance.JungleSounds();
                         StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
                         currentStage = SceneStage.HOPE;
-                        sceneStageTime = 30.0f;
+                        sceneStageTime = sceneStageTimes[2];
                         StartCoroutine(ChangeSkyBoxColour(2.0f));
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
-                        if (usingVr)
-                        {
-                            VrCamera.GetComponent<CameraRaycast>().enabled = false;
-                        }
-                        else
-                        {
-                            PcCamera.GetComponent<CameraRaycast>().enabled = false;
-                        }
+                        Camera.GetComponent<CameraRaycast>().enabled = false;
                         StartCoroutine(Narration.instance.PlayScene3());
 
                         break;
@@ -104,16 +83,16 @@ public class MainSceneManager : MonoBehaviour
             time -= Time.deltaTime;
             yield return null;
         }
-        VrCamera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
+        Camera.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
     }
 
     IEnumerator ChangeSkyBoxColour(float time)
     {
-        startColour = VrCamera.GetComponent<Camera>().backgroundColor;
+        startColour = Camera.GetComponent<Camera>().backgroundColor;
         float startTime = time;
         while (time > 0.0f)
         {
-            VrCamera.GetComponent<Camera>().backgroundColor = Color.Lerp(Color.black, startColour, time/startTime);
+            Camera.GetComponent<Camera>().backgroundColor = Color.Lerp(Color.black, startColour, time/startTime);
 
             time -= Time.deltaTime;
             yield return null;
