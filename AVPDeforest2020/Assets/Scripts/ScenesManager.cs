@@ -43,7 +43,8 @@ public class ScenesManager : MonoBehaviour
         activeScene++;
         if (activeScene == Scene.MAIN)
         {
-            FireManager.Instance().GetBurnables();
+            if(FireManager.Instance())
+                FireManager.Instance().GetBurnables();
         }
 
         switch (activeScene)

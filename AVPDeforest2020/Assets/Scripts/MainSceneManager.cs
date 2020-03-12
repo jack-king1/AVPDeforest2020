@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainSceneManager : MonoBehaviour
 {
 
-    bool usingVr = false;
+    bool usingVr = true;
 
     public GameObject VrCamera;
     public GameObject PcCamera;

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1804181031658943780}
   - component: {fileID: 1804181031658943787}
-  - component: {fileID: 1804181031658943782}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -46,24 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VRcam: {fileID: 0}
---- !u!114 &1804181031658943782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804181031658943786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30a2c0b6fbd65845a7ad1637cb858ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FireSoundPrefab: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
-    type: 3}
-  FireSoundPrefabs: []
-  psTree: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
-  psTerrain: {fileID: 3189149895216184250, guid: 6f00ce5af6bc8d94bb4e8e341dc753cc,
-    type: 3}
 --- !u!1001 &4101128497893549002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,11 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1804181031658943780}
     m_Modifications:
-    - target: {fileID: 4484283124351179143, guid: 112f9495ebfaf434f8a6da0727401b13,
-        type: 3}
-      propertyPath: m_Name
-      value: ColourMaps
-      objectReference: {fileID: 0}
     - target: {fileID: 4484283124351179141, guid: 112f9495ebfaf434f8a6da0727401b13,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -130,6 +106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4484283124351179143, guid: 112f9495ebfaf434f8a6da0727401b13,
+        type: 3}
+      propertyPath: m_Name
+      value: ColourMaps
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112f9495ebfaf434f8a6da0727401b13, type: 3}
