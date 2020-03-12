@@ -11,6 +11,8 @@ public class OVRFadeCustom : MonoBehaviour
     public float newSceneTimer = 5;
     public float timer;
 
+    public OVRScreenFade ovrscreenfade;
+
     private void Update()
     {
         if(newScene)
@@ -49,12 +51,14 @@ public class OVRFadeCustom : MonoBehaviour
     public void FadeOut()
     {
         Debug.Log("Fadeing Out!");
-        VRCam.GetComponent<OVRScreenFade>().FadeOut(fadeTime);
+        ovrscreenfade = VRCam.GetComponentInChildren<OVRScreenFade>();
+        ovrscreenfade.FadeOut(fadeTime);
     }
 
     public void FadeIn()
     {
         Debug.Log("Fadeing In!");
-        VRCam.GetComponent<OVRScreenFade>().FadeIn(fadeTime);
+        ovrscreenfade = VRCam.GetComponentInChildren<OVRScreenFade>();
+        ovrscreenfade.FadeIn(fadeTime); ;
     }
 }
