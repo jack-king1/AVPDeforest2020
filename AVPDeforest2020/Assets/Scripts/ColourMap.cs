@@ -8,11 +8,16 @@ public class ColourMap : MonoBehaviour
     public Vector3[] vertices;
     public Color[] colourMap;
     public Mesh mesh;
-    public TerrainType[] regions;
     public Material mat;
     public float[] heights;
+    public bool dirt, forest;
 
     void Awake()
+    {
+
+    }
+
+    private void OnEnable()
     {
         mesh = gameObject.GetComponent<MeshFilter>().mesh;
         vertices = new Vector3[mesh.vertices.Length];
@@ -39,23 +44,43 @@ public class ColourMap : MonoBehaviour
     {
         colourMap = new Color[mesh.vertices.Length];
         int colourCount = 0;
-        for (int j = 0; j < mesh.vertices.Length; ++j)
+        if (dirt)
         {
-            for (int i = 0; i < regions.Length; ++i)
+            for (int j = 0; j < mesh.vertices.Length; ++j)
             {
-                float currentHeight = heights[j];
-                for (int k = 0; k < regions.Length; ++k)
+                for (int i = 0; i < ColourMaps.instance.DirtTerrain.Length; ++i)
                 {
-                    if (currentHeight <= regions[i].height)
+                    float currentHeight = heights[j];
+                    for (int k = 0; k < ColourMaps.instance.DirtTerrain.Length; ++k)
                     {
-                        //Debug.Log("Vertex Count: " + colourCount + "Current Vertex Height: " + currentHeight + " Name: " + regions[i].name);
-                        colourMap[colourCount] = regions[i].colour;
+                        if (currentHeight <= ColourMaps.instance.DirtTerrain[i].height)
+                        {
+                            colourMap[colourCount] = ColourMaps.instance.DirtTerrain[i].colour;
+                        }
                     }
-
                 }
+                ++colourCount;
             }
-            ++colourCount;
-            //colourMap[j] = regions[2].colour;
+        }
+        else if (forest)
+        {
+            for (int j = 0; j < mesh.vertices.Length; ++j)
+            {
+                for (int i = 0; i < ColourMaps.instance.ForestTerrain.Length; ++i)
+                {
+                    float currentHeight = heights[j];
+                    for (int k = 0; k < ColourMaps.instance.ForestTerrain.Length; ++k)
+                    {
+                        if (currentHeight <= ColourMaps.instance.ForestTerrain[i].height)
+                        {
+                            colourMap[colourCount] = ColourMaps.instance.ForestTerrain[i].colour;
+
+
+                        }
+                    }
+                }
+                ++colourCount;
+            }
         }
     }
 
@@ -70,7 +95,15 @@ public class ColourMap : MonoBehaviour
 
     void GetVertices()
     {
-        vertices = mesh.vertices;
+        if(mesh)
+        {
+            vertices = mesh.vertices;
+        }
+        else
+        {
+            Debug.Log("No Mesh Mate!");
+        }
+
     }
 
     [System.Serializable]
@@ -80,5 +113,4 @@ public class ColourMap : MonoBehaviour
         public float height;
         public Color colour;
     }
-
 }

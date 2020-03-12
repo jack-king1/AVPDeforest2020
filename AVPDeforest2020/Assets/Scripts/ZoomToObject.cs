@@ -6,10 +6,13 @@ public class ZoomToObject : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject earth;
-    [SerializeField] private float zoomSpeed = 10;
+    public float zoomSpeed = 10;
     [SerializeField] private float increaseSpeedTimer;
+    [SerializeField] private float resetTime;
+    [SerializeField] private float maxSpeed;
 
-    private float speedIncrease = 1;
+
+    private float speedIncrease = 5;
     void Start()
     {
         //earth = GameObject.FindGameObjectWithTag("AmazonRainforest");
@@ -19,8 +22,11 @@ public class ZoomToObject : MonoBehaviour
     void Update()
     {
         float step = zoomSpeed * Time.deltaTime;
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,
-        earth.transform.position, step);
+        if(earth != null)
+        {
+            gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position,earth.transform.position, step);
+        }
+
 
         if(increaseSpeedTimer > 0)
         {
@@ -28,8 +34,11 @@ public class ZoomToObject : MonoBehaviour
         }
         else
         {
-            zoomSpeed += speedIncrease;
-            increaseSpeedTimer = 2.0f;
+            if(zoomSpeed> maxSpeed)
+            {
+                zoomSpeed += speedIncrease;
+                increaseSpeedTimer = resetTime;
+            }
         }
     }
 }

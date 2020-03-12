@@ -1,24 +1,45 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioFade
     - AudioManager
-    - BurnLeaves
-    - BurnTrunk
+    - Burnable
     - CameraMovement
+    - CameraRaycast
     - CloudGenerator
     - ColourMap
+    - ColourMaps
+    - DontDestroyOnLoadScript
     - EarthRotation
-    - LowPolyWater.LowPolyWater
+    - EyeLineParticleSystem
+    - FadeText
+    - FadeToQuote
+    - FireManager
+    - GetMeshTriangles
+    - Grow
+    - HopeTreeSpotLight
+    - JungleTrigger
+    - MainSceneManager
+    - Narration
     - ONSPSettings
+    - OVRFadeCustom
+    - PanelFade
     - PlayAnimation
+    - SFX
+    - SceneManagerKing
+    - ScenesManager
     - ScrollTexture
+    - StopCamera
     - ZoomToObject
     Oculus.VR.Editor.dll:
     - OVRConfig
     Oculus.VR.dll:
     - OVRCameraRig
+    - OVRDebugInfo
     - OVRHeadsetEmulator
     - OVRManager
+    - OVRSceneSampleController
+    - OVRScreenFade
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -28,11 +49,133 @@ ScriptsOnlyBuild:
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.Text
     com.unity.multiplayer-hlapi.Runtime.dll:
     - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
-    Assets/Scenes/Kingy.unity:
+    Assets/Scenes/Forest.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9884}
+    - Class: 114
+      Script: {instanceID: 9970}
+    - Class: 114
+      Script: {instanceID: 9988}
+    - Class: 114
+      Script: {instanceID: 10168}
+    - Class: 114
+      Script: {instanceID: 10208}
+    - Class: 114
+      Script: {instanceID: 10310}
+    - Class: 114
+      Script: {instanceID: 10366}
+    - Class: 114
+      Script: {instanceID: 10684}
+    - Class: 114
+      Script: {instanceID: 10700}
+    - Class: 114
+      Script: {instanceID: 11082}
+    - Class: 114
+      Script: {instanceID: 11084}
+    - Class: 114
+      Script: {instanceID: 11104}
+    - Class: 114
+      Script: {instanceID: 11264}
+    - Class: 114
+      Script: {instanceID: 11290}
+    - Class: 114
+      Script: {instanceID: 11474}
+    - Class: 114
+      Script: {instanceID: 11502}
+    - Class: 114
+      Script: {instanceID: 11656}
+    - Class: 114
+      Script: {instanceID: 11984}
+    - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 114
+      Script: {instanceID: 12634}
+    - Class: 114
+      Script: {instanceID: 12820}
+    - Class: 114
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 13128}
+    - Class: 114
+      Script: {instanceID: 13272}
+    - Class: 114
+      Script: {instanceID: 13626}
+    - Class: 114
+      Script: {instanceID: 13682}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 205
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Intro.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -59,9 +202,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
@@ -71,56 +214,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 109
       Script: {instanceID: 0}
-    - Class: 111
-      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9916}
+      Script: {instanceID: 9946}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9970}
     - Class: 114
-      Script: {instanceID: 9958}
+      Script: {instanceID: 10060}
     - Class: 114
-      Script: {instanceID: 10030}
+      Script: {instanceID: 10128}
     - Class: 114
-      Script: {instanceID: 10096}
+      Script: {instanceID: 10132}
     - Class: 114
-      Script: {instanceID: 10100}
+      Script: {instanceID: 10178}
     - Class: 114
-      Script: {instanceID: 10144}
+      Script: {instanceID: 10208}
     - Class: 114
-      Script: {instanceID: 10174}
+      Script: {instanceID: 10248}
     - Class: 114
-      Script: {instanceID: 10214}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10254}
+      Script: {instanceID: 10464}
     - Class: 114
-      Script: {instanceID: 10294}
+      Script: {instanceID: 10594}
     - Class: 114
-      Script: {instanceID: 10330}
+      Script: {instanceID: 10658}
     - Class: 114
-      Script: {instanceID: 10426}
+      Script: {instanceID: 10928}
     - Class: 114
-      Script: {instanceID: 10618}
+      Script: {instanceID: 10978}
     - Class: 114
-      Script: {instanceID: 10840}
+      Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 10932}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11210}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 11236}
+      Script: {instanceID: 11502}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11656}
     - Class: 114
-      Script: {instanceID: 11770}
+      Script: {instanceID: 11836}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 11988}
     - Class: 114
-      Script: {instanceID: 12558}
+      Script: {instanceID: 12470}
     - Class: 114
-      Script: {instanceID: 12924}
+      Script: {instanceID: 12494}
     - Class: 114
-      Script: {instanceID: 13516}
+      Script: {instanceID: 12638}
+    - Class: 114
+      Script: {instanceID: 13012}
+    - Class: 114
+      Script: {instanceID: 13614}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -128,6 +273,99 @@ ScriptsOnlyBuild:
     - Class: 136
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    Assets/Scenes/Outro2.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9884}
+    - Class: 114
+      Script: {instanceID: 9970}
+    - Class: 114
+      Script: {instanceID: 10060}
+    - Class: 114
+      Script: {instanceID: 10086}
+    - Class: 114
+      Script: {instanceID: 10178}
+    - Class: 114
+      Script: {instanceID: 10208}
+    - Class: 114
+      Script: {instanceID: 10230}
+    - Class: 114
+      Script: {instanceID: 10354}
+    - Class: 114
+      Script: {instanceID: 10688}
+    - Class: 114
+      Script: {instanceID: 10928}
+    - Class: 114
+      Script: {instanceID: 11036}
+    - Class: 114
+      Script: {instanceID: 11104}
+    - Class: 114
+      Script: {instanceID: 11264}
+    - Class: 114
+      Script: {instanceID: 11490}
+    - Class: 114
+      Script: {instanceID: 11502}
+    - Class: 114
+      Script: {instanceID: 11656}
+    - Class: 114
+      Script: {instanceID: 11988}
+    - Class: 114
+      Script: {instanceID: 12470}
+    - Class: 114
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 13614}
+    - Class: 114
+      Script: {instanceID: 13682}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -228,10 +466,16 @@ ScriptsOnlyBuild:
     className: PreferenceDictionary
   - hash:
       serializedVersion: 2
-      Hash: 0298f5dec0cf37168587e406cb2f4c76
+      Hash: 6354a1ebb4249de594c6069ad78eaad2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ColourMap
+  - hash:
+      serializedVersion: 2
+      Hash: d6a13eb9abd0e6c2fca3a1a91b4ec06a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneManagerKing
   - hash:
       serializedVersion: 2
       Hash: 5bd9a19c7b5f76c563418e28f48a561b
@@ -268,6 +512,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: ArmModel
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioFade
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -372,12 +622,6 @@ ScriptsOnlyBuild:
     className: TrainButtonVisualController
   - hash:
       serializedVersion: 2
-      Hash: 6dede3c2adc77b6b15287a56ec98fd03
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BurnTrunk
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -396,13 +640,19 @@ ScriptsOnlyBuild:
     className: OVRRaycaster
   - hash:
       serializedVersion: 2
+      Hash: a3abad2c359c71d4e23cbf3c9d686609
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeToQuote
+  - hash:
+      serializedVersion: 2
       Hash: 9e70ecf91466f07d9bd649be625cae52
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 0ffc52612d5a36a78cb7462b3fc39a56
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraMovement
@@ -522,6 +772,12 @@ ScriptsOnlyBuild:
     className: OvrAvatarSDKManager
   - hash:
       serializedVersion: 2
+      Hash: 22b7ff19f9593a23e04135ec0f6c8d2e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OVRFadeCustom
+  - hash:
+      serializedVersion: 2
       Hash: 36f96c190e244321e128769d9c5120ac
     assemblyName: Unity.ProBuilder.dll
     namespaceName: UnityEngine.ProBuilder
@@ -564,6 +820,18 @@ ScriptsOnlyBuild:
     className: NetworkProximityChecker
   - hash:
       serializedVersion: 2
+      Hash: 0563b60fa2b2bf664a2c69890c30442a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Grow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StopCamera
+  - hash:
+      serializedVersion: 2
       Hash: 025866bb53162ac1e71a1b207ceca793
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -576,6 +844,12 @@ ScriptsOnlyBuild:
     className: TeleportInputHandlerHMD
   - hash:
       serializedVersion: 2
+      Hash: 9235e34b8f9b5b81ca44825ea80dbf18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GetMeshTriangles
+  - hash:
+      serializedVersion: 2
       Hash: 7200fc309b0ed180a81fb45217da51e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: Oculus.Platform.Samples.VrBoardGame
@@ -586,12 +860,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BurnTreeInterface
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -672,6 +940,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 35b3df8615cc235dc6e44692ad83cf08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ColourMaps
+  - hash:
+      serializedVersion: 2
       Hash: 9337d9b49ef69a8f6b3c9e840a9d2fe6
     assemblyName: Assembly-CSharp.dll
     namespaceName: OculusSampleFramework
@@ -732,10 +1006,28 @@ ScriptsOnlyBuild:
     className: OvrAvatarSettings
   - hash:
       serializedVersion: 2
+      Hash: bbe0c4831198be6185e89d50ffd3295f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeText
+  - hash:
+      serializedVersion: 2
       Hash: 5777c70a25f193ad387a5581565b81b9
     assemblyName: Assembly-CSharp.dll
     namespaceName: OVR
     className: AudioManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Narration
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HopeTreeSpotLight
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -876,6 +1168,12 @@ ScriptsOnlyBuild:
     className: TeleportOrientationHandlerThumbstick
   - hash:
       serializedVersion: 2
+      Hash: e4a7225ceda45beb326966954f2e0054
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NodeGrid
+  - hash:
+      serializedVersion: 2
       Hash: 025866bb53162ac1e71a1b207ceca793
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -892,6 +1190,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TeleportTargetHandlerPhysical
+  - hash:
+      serializedVersion: 2
+      Hash: 01b14f3dd5525f0b73c4aecea1f2caf7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScenesManager
   - hash:
       serializedVersion: 2
       Hash: 265cf27ba050d55ff33a8acab4ded6c0
@@ -948,13 +1252,19 @@ ScriptsOnlyBuild:
     className: TeleportOrientationHandlerHMD
   - hash:
       serializedVersion: 2
+      Hash: 592cd972d0bfdec435968d4022673d22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Burnable
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
   - hash:
       serializedVersion: 2
-      Hash: dd00da646287ad7671ed44f4462a503f
+      Hash: db397abd92702e43a7a383f46be3331e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ZoomToObject
@@ -1122,6 +1432,12 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
+      Hash: d4d5a6857e035e33b2353566a47a056a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraManager
+  - hash:
+      serializedVersion: 2
       Hash: ab9b3242e7f7cea8eb7d313db01cc29d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1260,6 +1576,18 @@ ScriptsOnlyBuild:
     className: PlatformManager
   - hash:
       serializedVersion: 2
+      Hash: 5ff788c708869792032f9db72435ffbb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainSceneManager
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DontDestroyOnLoadScript
+  - hash:
+      serializedVersion: 2
       Hash: 8fb3d6b79e9539c38197df7ed25fc22d
     assemblyName: Assembly-CSharp.dll
     namespaceName: OculusSampleFramework
@@ -1360,6 +1688,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Oculus.Platform.Samples.VrHoops
     className: LocalPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 592cd972d0bfdec435968d4022673d22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ReverseBurn
   - hash:
       serializedVersion: 2
       Hash: 9f7fd5f1cdce7cb0cbd6b8430ff831c1
@@ -1554,12 +1888,6 @@ ScriptsOnlyBuild:
     className: OvrAvatarRemoteDriver
   - hash:
       serializedVersion: 2
-      Hash: c5127212508d0f070e2e2ead18ea0146
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BurnLeaves
-  - hash:
-      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1606,6 +1934,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Oculus.Platform.Samples.VrHoops
     className: PlatformManager
+  - hash:
+      serializedVersion: 2
+      Hash: 054c11ebe7357ca64685056210b17e5a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SFX
   - hash:
       serializedVersion: 2
       Hash: 318c6c13a19c9fac98135ae14889de1b
@@ -1656,6 +1990,12 @@ ScriptsOnlyBuild:
     className: Entity
   - hash:
       serializedVersion: 2
+      Hash: 1d8abbb0af6047adbccac12555b990fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FireManager
+  - hash:
+      serializedVersion: 2
       Hash: 57f180a5003248da76cab9f40f315b05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1696,6 +2036,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ONSPPropagationMaterial
+  - hash:
+      serializedVersion: 2
+      Hash: 3fb58c9b2b40dd3301b4cd4df3d1d15a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JungleTrigger
   - hash:
       serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
@@ -1770,6 +2116,12 @@ ScriptsOnlyBuild:
     className: OVRConfig
   - hash:
       serializedVersion: 2
+      Hash: 3fb58c9b2b40dd3301b4cd4df3d1d15a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NextScene
+  - hash:
+      serializedVersion: 2
       Hash: 8b9f42d72019bde2f9fe0667762eaff3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1804,6 +2156,12 @@ ScriptsOnlyBuild:
     assemblyName: Oculus.VR.dll
     namespaceName: UnityEngine.EventSystems
     className: OVRInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 73573466a5b7cd06d57a29a7927537b0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CameraRaycast
   - hash:
       serializedVersion: 2
       Hash: e0fd6b206f44251ddce06e242ee39fb8
@@ -1866,10 +2224,10 @@ ScriptsOnlyBuild:
     className: VREyeRaycaster
   - hash:
       serializedVersion: 2
-      Hash: bdeb313e7db51d209a7fcd740c46f531
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BurnTree
+    className: EyeLineParticleSystem
   - hash:
       serializedVersion: 2
       Hash: e6ae40841db498b6e673877ac45ad208
@@ -1998,6 +2356,12 @@ ScriptsOnlyBuild:
     className: AudioManager
   - hash:
       serializedVersion: 2
+      Hash: 7adb444ee5462480ff76df09786f573d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PanelFade
+  - hash:
+      serializedVersion: 2
       Hash: 7090bc1e5ccaec2a9d0d1335ed8cee99
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -2100,5 +2464,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
-  - Assets/Scenes/Kingy.unity
-  playerPath: F:/University/Year 3/Audio Visual Production/earth.apk
+  - Assets/Scenes/Intro.unity
+  - Assets/Scenes/Forest.unity
+  - Assets/Scenes/Outro2.unity
+  playerPath: D:/Builds/earh.apk

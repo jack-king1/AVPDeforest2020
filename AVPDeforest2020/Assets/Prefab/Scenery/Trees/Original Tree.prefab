@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 6642167699931052625}
   - component: {fileID: 7162809892758659172}
   - component: {fileID: 1581564694247575029}
-  - component: {fileID: 1333121880262411103}
+  - component: {fileID: 3774318219337354812}
+  - component: {fileID: 1940366329}
   m_Layer: 0
   m_Name: Tree.007.Small.Leaves
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,29 +80,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1333121880262411103
+--- !u!64 &3774318219337354812
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333121880262411100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -2401142083431364017, guid: 729df8f6b3b6ef546bfee2857a3f6c36, type: 3}
+--- !u!114 &1940366329
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333121880262411100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485262a9be83fd49999129f058f91f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  burn: 1
-  dead: 0
-  maxScale: {x: 0, y: 0, z: 0}
-  minScale: {x: 0, y: 0, z: 0}
-  startColour: {r: 0, g: 0, b: 0, a: 0}
-  endColour: {r: 0, g: 0, b: 0, a: 0}
-  burnTime: 5
-  burnRate: 10
-  fadeRate: 5
-  colourLife: 80
+  ps: {fileID: 0}
+  type: 1
+  burnRate: 20
+  fadeRate: 100
+  fadeLife: 100
 --- !u!1 &1486241553272275695
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,10 +122,11 @@ GameObject:
   - component: {fileID: 5137759730609365852}
   - component: {fileID: 130528297556118648}
   - component: {fileID: 4855081773044457863}
-  - component: {fileID: 1486241553272275694}
+  - component: {fileID: 3713897448054313540}
+  - component: {fileID: 1567275141}
   m_Layer: 0
   m_Name: Tree.007.Medium.Leaves
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,29 +191,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &1486241553272275694
+--- !u!64 &3713897448054313540
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486241553272275695}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 8328968394967519464, guid: 729df8f6b3b6ef546bfee2857a3f6c36, type: 3}
+--- !u!114 &1567275141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486241553272275695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485262a9be83fd49999129f058f91f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  burn: 1
-  dead: 0
-  maxScale: {x: 0, y: 0, z: 0}
-  minScale: {x: 0, y: 0, z: 0}
-  startColour: {r: 0, g: 0, b: 0, a: 0}
-  endColour: {r: 0, g: 0, b: 0, a: 0}
-  burnTime: 5
-  burnRate: 10
-  fadeRate: 5
-  colourLife: 80
+  ps: {fileID: 0}
+  type: 1
+  burnRate: 20
+  fadeRate: 100
+  fadeLife: 100
 --- !u!1 &2729836688284300512
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,10 +233,15 @@ GameObject:
   - component: {fileID: 1421182386755159795}
   - component: {fileID: 7989961225068510405}
   - component: {fileID: 4458143675663351868}
-  - component: {fileID: 2729836688284300515}
+  - component: {fileID: 2037607476}
+  - component: {fileID: 197327278}
   m_Layer: 0
-  m_Name: splitTree.001
+  m_Name: Original Tree
+<<<<<<< HEAD
   m_TagString: Untagged
+=======
+  m_TagString: Tree
+>>>>>>> Lewis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +255,11 @@ Transform:
   m_GameObject: {fileID: 2729836688284300512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 135.48672, y: 16.242392, z: 135.49951}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD
+  m_LocalScale: {x: 3.9928706, y: 3.9928706, z: 3.9928706}
+=======
+  m_LocalScale: {x: 5.5092, y: 5.5092, z: 5.5092}
+>>>>>>> Lewis
   m_Children:
   - {fileID: 422559867605950561}
   - {fileID: 5137759730609365852}
@@ -256,7 +283,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2729836688284300512}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -286,27 +313,37 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2729836688284300515
+--- !u!64 &2037607476
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729836688284300512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2178022384030529044, guid: 729df8f6b3b6ef546bfee2857a3f6c36, type: 3}
+--- !u!114 &197327278
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2729836688284300512}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfee32f1f4dbe9442913894a6f4e31f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  burn: 1
-  dead: 0
-  maxScale: {x: 0, y: 0, z: 0}
-  minScale: {x: 0, y: 0, z: 0}
-  startColour: {r: 0, g: 0, b: 0, a: 0}
-  endColour: {r: 0, g: 0, b: 0, a: 0}
-  burnTime: 5
-  trunkBurnRate: 10
+  ps: {fileID: 0}
+  type: 0
+  burnRate: 5
+  fadeRate: 1
+  fadeLife: 100
 --- !u!1 &5671456540747013544
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,10 +355,11 @@ GameObject:
   - component: {fileID: 422559867605950561}
   - component: {fileID: 1082382786156464511}
   - component: {fileID: 1344189831178299193}
-  - component: {fileID: 5671456540747013547}
+  - component: {fileID: 481645527367798892}
+  - component: {fileID: 68912089}
   m_Layer: 0
   m_Name: Tree.007.Big.Leaves
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,26 +424,34 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5671456540747013547
+--- !u!64 &481645527367798892
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671456540747013544}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -9016763779278183501, guid: 729df8f6b3b6ef546bfee2857a3f6c36, type: 3}
+--- !u!114 &68912089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5671456540747013544}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485262a9be83fd49999129f058f91f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 100
-  burn: 1
-  dead: 0
-  maxScale: {x: 0, y: 0, z: 0}
-  minScale: {x: 0, y: 0, z: 0}
-  startColour: {r: 0, g: 0, b: 0, a: 0}
-  endColour: {r: 0, g: 0, b: 0, a: 0}
-  burnTime: 5
-  burnRate: 10
-  fadeRate: 5
-  colourLife: 80
+  ps: {fileID: 0}
+  type: 1
+  burnRate: 20
+  fadeRate: 100
+  fadeLife: 100
