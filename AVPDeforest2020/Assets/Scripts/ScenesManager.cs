@@ -11,13 +11,14 @@ public class ScenesManager : MonoBehaviour
     public GameObject VRcam;
 
     public enum Scene
-    {
-        INTRO = 0,
-        MAIN = 1,
-        OUTRO = 2
+    { 
+        IDLE = 0,
+        INTRO,
+        MAIN,
+        OUTRO
     }
 
-    Scene activeScene = Scene.INTRO;
+    Scene activeScene = Scene.IDLE;
 
     public Scene ActiveScene { get => activeScene; set => activeScene = value; }
 
@@ -49,19 +50,24 @@ public class ScenesManager : MonoBehaviour
 
         switch (activeScene)
         {
+            case Scene.IDLE:
+                Debug.Log("Loading IDLE");
+                SceneManager.LoadScene(0);
+                VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
+                break;
             case Scene.INTRO:
                 Debug.Log("Loading Intro");
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
                 VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
                 break;
             case Scene.MAIN:
                 Debug.Log("Loading Forest Scene");
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
                 break;
             case Scene.OUTRO:
                 Debug.Log("Loading outro");
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
                 VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
                 break;
             default:

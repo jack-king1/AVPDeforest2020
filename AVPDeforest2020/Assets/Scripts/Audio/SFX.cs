@@ -36,7 +36,7 @@ public class SFX : MonoBehaviour
         //    timer += Time.deltaTime;
         //}
        
-        Debug.Log(timer);
+        //Debug.Log(timer);
         if (timer >= 60 && timer <= 61 )   JungleSounds();
 
         if (timer >= 110 && timer <= 111) WindSounds();

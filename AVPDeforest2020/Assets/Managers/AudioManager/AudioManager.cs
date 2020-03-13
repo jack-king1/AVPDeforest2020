@@ -75,7 +75,7 @@ public class AudioManager : MonoBehaviour
         Sound s = sounds.Find(sound => sound.name == sound_name);
         if (s == null)
         {
-            Debug.Log("Sound with name: " + sound_name + " was not found.");
+            //Debug.Log("Sound with name: " + sound_name + " was not found.");
             return;
         }
         s.source.Stop();
@@ -100,7 +100,7 @@ public class AudioManager : MonoBehaviour
         while (s.source.volume < 1)
         {
             s.source.volume +=  Time.deltaTime / FadeTime;
-            Debug.Log("volume:" + s.source.volume);
+            //Debug.Log("volume:" + s.source.volume);
             yield return null;
         }
     }
@@ -140,7 +140,7 @@ public class AudioManager : MonoBehaviour
         {
             foreach (Sound s in MiscSounds)
             {
-                Debug.Log("Adding sound: " + s.name);
+                //Debug.Log("Adding sound: " + s.name);
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.volume = s.volume;
