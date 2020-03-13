@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         //Play("0");
         //Play("1");
         
-       Play("Intro");
+       //Play("Intro");
     }
 
     //Delete this update call, this is jsut to test stuff
@@ -81,7 +81,17 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    public IEnumerator FadeIn(string sound_name, float FadeTime)
+    public void FadeInSound(string sound_name, float FadeTime)
+    {
+        StartCoroutine(FadeIn(sound_name, FadeTime));
+    }
+
+    public void FadeOutSound(string sound_name, float FadeTime)
+    {
+        StartCoroutine(FadeOut(sound_name, FadeTime));
+    }
+
+    private IEnumerator FadeIn(string sound_name, float FadeTime)
     {
         Sound s = sounds.Find(sound => sound.name == sound_name);
         s.source.Play();
@@ -95,7 +105,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeOut(string sound_name, float FadeTime)
+    private IEnumerator FadeOut(string sound_name, float FadeTime)
     {
         Sound s = sounds.Find(sound => sound.name == sound_name);
         float startVolume = s.source.volume;

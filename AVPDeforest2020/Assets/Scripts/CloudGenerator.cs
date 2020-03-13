@@ -11,6 +11,7 @@ public class CloudGenerator : MonoBehaviour
     [SerializeField] private float cloudSpawnDelay;
     [SerializeField] private GameObject[] cloudPrefabs;
     [SerializeField] private List<GameObject> cloudPool;
+    public float minZ, maxZ;
 
     private float timer;
 
@@ -49,7 +50,7 @@ public class CloudGenerator : MonoBehaviour
         int id = Random.Range(0, cloudPrefabs.Length);
         Vector3 position = new Vector3(gameObject.transform.position.x,
             gameObject.transform.position.y,
-            Random.Range(gameObject.transform.position.z - 200, gameObject.transform.position.z + 200));
+            Random.Range(gameObject.transform.position.z - minZ, gameObject.transform.position.z + maxZ));
         GameObject CloudParent = new GameObject();
         CloudParent.AddComponent<move>();
         GameObject newCloud = Instantiate(cloudPrefabs[id], position, Quaternion.identity);
@@ -58,7 +59,7 @@ public class CloudGenerator : MonoBehaviour
         newCloud.GetComponent<MeshRenderer>().material.color = new Color(1f, 1f, 1f, 0.0f);
         CloudParent.GetComponent<move>().Init(Random.Range(minSpeed, maxSpeed));
         StartCoroutine(EffectsManager.FadeAlpha(result => newCloud.GetComponent<MeshRenderer>().material.color = result, 15.0f,
-            newCloud.GetComponent<MeshRenderer>().material.color.a, 1f));
+            newCloud.GetComponent<MeshRenderer>().material.color.a, 1f)); 
         cloudPool.Add(CloudParent);
     }
 }
