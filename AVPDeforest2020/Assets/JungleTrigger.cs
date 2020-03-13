@@ -18,12 +18,12 @@ public class JungleTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("MainCamera"))
         {
             startSFX = true;
-            AudioManager.instance.Stop("Intro");
-            AudioManager.instance.Play("Jungle");
-            AudioManager.instance.Play("Cicada");
-            AudioManager.instance.Play("Alt");
-            narration.StartCoroutine(narration. PlayScene1());
-            Debug.Log("Im Playin");
+            //AudioManager.instance.Stop("Intro");
+            //AudioManager.instance.Play("Jungle");
+            //AudioManager.instance.Play("Cicada");
+            //AudioManager.instance.Play("Alt");
+            //narration.StartCoroutine(narration. PlayScene1());
+            //Debug.Log("Im Playin");
 
         }
     }

@@ -47,11 +47,11 @@ public class Narration : MonoBehaviour
 
     public IEnumerator PlayScene2()
     {
-        AudioManager.instance.Play("Clip5");
+        //AudioManager.instance.Play("Clip5");
         yield return new WaitForSeconds(10);
-        AudioManager.instance.Play("Clip6");
-        yield return new WaitForSeconds(10);
-        AudioManager.instance.Play("Clip7");
+        //AudioManager.instance.Play("Clip6");
+        //yield return new WaitForSeconds(10);
+        //AudioManager.instance.Play("Clip7");
     }
      
      

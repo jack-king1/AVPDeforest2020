@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8186418408705177088}
   - component: {fileID: 8186418408705143646}
   - component: {fileID: 223974227}
+  - component: {fileID: 3805061791805466936}
   m_Layer: 0
   m_Name: PLAYER CAM
   m_TagString: MainCamera
@@ -125,6 +126,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3805061791805466936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186418408698959776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1dc7bf8934f4243a20dad851521bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8186418408698959778
 GameObject:
   m_ObjectHideFlags: 0

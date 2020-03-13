@@ -7,10 +7,8 @@ public class Burnable : MonoBehaviour
 {
     public GameObject fireSound;
      
-    [HideInInspector] public GameObject ps;
-
-    int xIndex = 0;
-    int zIndex = 0;
+    public GameObject ps;
+    GameObject fire;
 
     class Colour
     {
@@ -19,8 +17,6 @@ public class Burnable : MonoBehaviour
         public Color start;
         public Color end;
     }
-
-
 
     Colour colour = new Colour();
 
@@ -43,8 +39,6 @@ public class Burnable : MonoBehaviour
 
     public States State { get { return state; } set { state = value; } }
 
-    public int XIndex { get => xIndex; set => xIndex = value; }
-    public int ZIndex { get => zIndex; set => zIndex = value; }
     public List<GameObject> Neighbours { get => neighbours; set => neighbours = value; }
 
     float health = 100.0f;
@@ -65,16 +59,14 @@ public class Burnable : MonoBehaviour
 
     private void Awake()
     {
-       // fade = GetComponent<AudioFade>();
+        // fade = GetComponent<AudioFade>();
     }
 
     // Start is called before the first frame update
     void Update()
-    {
-     
+    {  
         if (state == States.DEAD && !destroyedFire)
-        {
-           
+        {      
             StartCoroutine(EndFire());
         }
         else if(state == States.BURN)
@@ -86,16 +78,15 @@ public class Burnable : MonoBehaviour
                 {
                     if (nBurnable.type == Object.LEAVES && burnTime > 2.0f)
                     {
-                        FireManager.Instance().StartFire(n);
-                        
+                        nBurnable.StartFire();
                     }
                     else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 4.0f)
                     {
-                        FireManager.Instance().StartFire(n);
+                        nBurnable.StartFire();
                     }
                     else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 4.0f)
                     {
-                        FireManager.Instance().StartFire(n);
+                        nBurnable.StartFire();
                         burnTime = 0.0f;
                     }
                 }
@@ -111,6 +102,7 @@ public class Burnable : MonoBehaviour
         }
 
         state = States.BURN;
+
         switch (type)
         {
             case Object.TRUNK:
@@ -219,19 +211,36 @@ public class Burnable : MonoBehaviour
         state = States.DEAD;
     }
 
+    public void StartFire()
+    {
+        fire = Instantiate(ps);
+
+        fire.transform.parent = gameObject.transform;
+        if (tag == "Terrain")
+        {
+            var mesh = gameObject.GetComponent<MeshFilter>().mesh;
+            var triNum = mesh.triangles.Length;
+            var emission = fire.GetComponent<ParticleSystem>().emission;
+            emission.rate = new ParticleSystem.MinMaxCurve(2 * triNum);
+        }
+        var shape = fire.GetComponent<ParticleSystem>().shape;
+        shape.shapeType = ParticleSystemShapeType.MeshRenderer;
+        shape.meshRenderer = GetComponent<MeshRenderer>();
+        shape.meshShapeType = ParticleSystemMeshShapeType.Triangle;
+        Burn();
+    }
+
+
     IEnumerator EndFire()
     {
         destroyedFire = true;
-       
-        while (ps.GetComponent<ParticleSystem>().isPlaying)
+        while (fire.GetComponent<ParticleSystem>().isPlaying)
         {
-          //  fade.StartCoroutine(Fadeout());
-            ps.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            fire.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
             yield return null;
-
         }
         FireManager.Instance().RemoveFireSound(fireSound);
-        Destroy(ps);
+        fire.SetActive(false);
     }
 
 
@@ -251,36 +260,4 @@ public class Burnable : MonoBehaviour
         }
 
     }
-
-
-    //void OnCollisionStay(Collision collision)
-    //{
-    //    if(name == "untitled.007")
-    //    {
-    //        int x = 0;
-    //    }
-    //    foreach (var n in neighbours)
-    //    {
-    //        if (collision.gameObject == n)
-    //            return;
-    //    }
-
-    //    neighbours.Add(collision.gameObject);
-    //}
-
-    //void OnTriggerStay(Collider col)
-    //{
-    //    if (name == "untitled.007")
-    //    {
-    //        int x = 0;
-    //    }
-    //    foreach (var n in neighbours)
-    //    {
-    //        if (col.gameObject == n)
-    //            return;
-    //    }
-
-    //    neighbours.Add(col.gameObject);
-    //}
-
 }

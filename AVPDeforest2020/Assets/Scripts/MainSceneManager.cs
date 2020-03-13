@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainSceneManager : MonoBehaviour
 {
-    //bool usingVr = false;
+    [SerializeField] bool usingVr = false;
     public GameObject Camera;
     public GameObject hopeTreePrefab;
 
@@ -20,17 +20,20 @@ public class MainSceneManager : MonoBehaviour
     }
 
     SceneStage currentStage = SceneStage.TRANQUIL;
-    float sceneStageTime = 6.0f;
+
+    [SerializeField]float[] sceneStageTimes = new float[3];
+    float sceneStageTime = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        sceneStageTime = sceneStageTimes[0];
         hopeTreeSpawn = GameObject.FindGameObjectWithTag("HopeTreeSpawn");
         dirLight = GameObject.FindGameObjectWithTag("DirectinalLight");
 
         Camera.GetComponent<CameraRaycast>().enabled = false;
-        Camera.GetComponent<CameraMovement>().enabled = true;
+        if(!usingVr) Camera.GetComponent<CameraMovement>().enabled = true;
     }
 
     // Update is called once per frame
@@ -43,19 +46,19 @@ public class MainSceneManager : MonoBehaviour
                 case SceneStage.TRANQUIL:
                     {
                         currentStage = SceneStage.BURNING;
-                        sceneStageTime = 90.0f;
+                        sceneStageTime = sceneStageTimes[1];
 
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(90.0f));
                         Camera.GetComponent<CameraRaycast>().enabled = true;
-                        SFX.instance.JungleSounds();
+                        //SFX.instance.JungleSounds();
                         StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
                         currentStage = SceneStage.HOPE;
-                        sceneStageTime = 30.0f;
+                        sceneStageTime = sceneStageTimes[2];
                         StartCoroutine(ChangeSkyBoxColour(2.0f));
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
                         Camera.GetComponent<CameraRaycast>().enabled = false;
