@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -16,8 +17,11 @@ namespace AudioManagerNS
 
         public AudioMixerGroup masterGroup;
         public AudioMixer masterMixer;
-        public AudioMixerGroup musicGroup;
-
+        public AudioMixerGroup idleGroup;
+        public AudioMixerGroup introGroup;
+        public AudioMixerGroup fireGroup;
+        public AudioMixerGroup hopeGroup;
+        public AudioMixerGroup jungleGroup;
         public AudioMixerGroup narrationGroup;
 
         public int lowestDeciblesBeforeMute = -20;
@@ -26,7 +30,7 @@ namespace AudioManagerNS
 
         #region Public Enums
 
-        public enum AudioChannel { Master, Narration, Fire, Intro, Idle, Hope, Jungle }
+        public enum AudioChannel { Master = 0, Narration, Fire, Intro, Idle, Hope, Jungle }
 
         #endregion Public Enums
 
@@ -41,7 +45,7 @@ namespace AudioManagerNS
         /// <param name="volume"></param>
         /// <param name="pitch"></param>
         /// <returns></returns>
-        public AudioSource CreatePlaySource(AudioClip clip, Transform emitter, float volume, float pitch, bool music = false)
+        public AudioSource CreatePlaySource(AudioClip clip, Transform emitter, float volume, float pitch, AudioChannel channel = 0)
         {
             GameObject go = new GameObject("Audio: " + clip.name);
             go.transform.position = emitter.position;
@@ -53,11 +57,31 @@ namespace AudioManagerNS
             source.volume = volume;
             source.pitch = pitch;
 
-            // Output sound through the sound group or narration group
-            if (music)
-                source.outputAudioMixerGroup = musicGroup;
-            else
-                source.outputAudioMixerGroup = narrationGroup;
+            // Output sound through the correct mixer group.
+            switch(channel)
+            {
+                case AudioChannel.Idle:
+                    source.outputAudioMixerGroup = idleGroup;
+                    break;
+                case AudioChannel.Intro:
+                    source.outputAudioMixerGroup = introGroup;
+                    break;
+                case AudioChannel.Fire:
+                    source.outputAudioMixerGroup = fireGroup;
+                    break;
+                case AudioChannel.Hope:
+                    source.outputAudioMixerGroup = hopeGroup;
+                    break;
+                case AudioChannel.Jungle:
+                    source.outputAudioMixerGroup = jungleGroup;
+                    break;
+                case AudioChannel.Narration:
+                    source.outputAudioMixerGroup = narrationGroup;
+                    break;
+                default:
+                    source.outputAudioMixerGroup = masterGroup;
+                    break;
+            }
 
             source.Play();
             return source;
@@ -185,6 +209,72 @@ namespace AudioManagerNS
                 case AudioChannel.Hope:
                     masterMixer.SetFloat("HopeVolume", adjustedVolume);
                     break;
+            }
+        }
+
+        /// <summary>
+        /// Fade in a mixer which will fade in all audio under that type of mixer. to either max vol or muted.
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="fadeTime"></param>
+        /// <param name="fadeIn"></param>
+        public void FadeMixer(AudioChannel channel, float fadeTime, bool fadeIn)
+        {
+            string mixerName = "";
+
+            switch (channel)
+            {
+                case AudioChannel.Master:
+                    mixerName = "MasterVolume";
+                    break;
+                case AudioChannel.Narration:
+                    mixerName = "NarrationVolume";
+                    break;
+                case AudioChannel.Idle:
+                    mixerName = "IdleVolume";
+                    break;
+                case AudioChannel.Intro:
+                    mixerName = "IntroVolume";
+                    break;
+                case AudioChannel.Fire:
+                    mixerName = "FireVolume";
+                    break;
+                case AudioChannel.Hope:
+                    mixerName = "HopeVolume";
+                    break;
+            }
+
+            if(fadeIn)
+            {
+                StartCoroutine(FadeInMixer(mixerName, fadeTime));
+            }
+            else
+            {
+                StartCoroutine(FadeOutMixer(mixerName, fadeTime));
+            }
+        }
+
+        private IEnumerator FadeInMixer(string volParam, float FadeTime)
+        {
+            masterMixer.SetFloat(volParam, 0);
+            float vol = 0;
+            masterMixer.GetFloat(volParam, out vol);
+            while (vol < 1)
+            {
+                 vol += Time.deltaTime / FadeTime;
+                masterMixer.SetFloat(volParam, vol * 100);
+                yield return null;
+            }
+        }
+        private IEnumerator FadeOutMixer(string volParam, float FadeTime)
+        {
+            float vol = 0;
+            masterMixer.GetFloat(volParam, out vol);
+            while (vol > 0)
+            {
+                vol -= Time.deltaTime / FadeTime;
+                masterMixer.SetFloat(volParam, vol * 100);
+                yield return null;
             }
         }
 

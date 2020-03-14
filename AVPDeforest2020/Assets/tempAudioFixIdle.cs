@@ -20,6 +20,7 @@ public class tempAudioFixIdle : MonoBehaviour
         {
             //AudioClip clip = SFX.Instance.GetSFX("Idle");
 
+            AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Hope, 5f, true);
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Hope"), CameraManager.instance.transform);
         }
     }
