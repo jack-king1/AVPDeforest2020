@@ -1,187 +1,228 @@
-﻿using System.Collections;
+﻿
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using System;
+using yaSingleton;
 
-/// <summary>
-///  Singleton Class - Only one instance of this script will exist.
-/// </summary>
-
-//To access the audio manager in another script just type AudioManager.Play("Sound Name Here");
-// To add more sounds go to Unity -> Select AudiManager Script which will be attached to GameManager, Increase Array Size by 1 and add drag sound into it.
-
-public class AudioManager : MonoBehaviour
+namespace AudioManagerNS
 {
-    public Sound[] JungleSounds;
-    public Sound[] MiscSounds;
-    public Sound[] Narration;
-    public Sound[] Music;
-
-    [SerializeField] private List<Sound> sounds;
-
-
-    public static AudioManager instance;
-  
-
-    void Awake()
+    [CreateAssetMenu(fileName = "Audio Manager", menuName = "Singletons/AudioManager")]
+    public class AudioManager : Singleton<AudioManager>
     {
-        sounds = new List<Sound>();
-        if (instance == null)
+        #region Public Fields
+
+        // public static AudioManager Instance;
+
+        public AudioMixerGroup masterGroup;
+        public AudioMixer masterMixer;
+        public AudioMixerGroup musicGroup;
+
+        public AudioMixerGroup narrationGroup;
+
+        public int lowestDeciblesBeforeMute = -20;
+
+        #endregion Public Fields
+
+        #region Public Enums
+
+        public enum AudioChannel { Master, Narration, Music }
+
+        #endregion Public Enums
+
+        #region Public Methods
+
+        /// <summary>
+        /// Plays a sound at the given point in space by creating an empty game object with an
+        /// AudioSource in that place and destroys it after it finished playing.
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="emitter"></param>
+        /// <param name="volume"></param>
+        /// <param name="pitch"></param>
+        /// <returns></returns>
+        public AudioSource CreatePlaySource(AudioClip clip, Transform emitter, float volume, float pitch, bool music = false)
         {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+            GameObject go = new GameObject("Audio: " + clip.name);
+            go.transform.position = emitter.position;
+            go.transform.parent = emitter;
 
-        AddSoundsToList();
-    }
-    private void Start()
-    {
-        //Play("0");
-        //Play("1");
-        
-       //Play("Intro");
-    }
+            //Create the source
+            AudioSource source = go.AddComponent<AudioSource>();
+            source.clip = clip;
+            source.volume = volume;
+            source.pitch = pitch;
 
-    //Delete this update call, this is jsut to test stuff
-    void Update()
-    {
-       
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("p Pressed");
-            StartCoroutine(FadeIn("Intro", 10));
-        }
-    }
+            // Output sound through the sound group or music group
+            if (music)
+                source.outputAudioMixerGroup = musicGroup;
+            else
+                source.outputAudioMixerGroup = narrationGroup;
 
-    public void Play(string sound_name)
-    {
-        Sound s = sounds.Find(sound => sound.name == sound_name);
-        if (s == null)
-        {
-            Debug.Log("Sound with name: " + sound_name + " was not found.");
-            return;
-        }
-        //Debug.Log("Playing: " + s.source.name);
-        s.source.Play();
-    }
-
-    public void Stop(string sound_name)
-    {
-        Sound s = sounds.Find(sound => sound.name == sound_name);
-        if (s == null)
-        {
-            //Debug.Log("Sound with name: " + sound_name + " was not found.");
-            return;
-        }
-        s.source.Stop();
-    }
-
-    public void FadeInSound(string sound_name, float FadeTime)
-    {
-        StartCoroutine(FadeIn(sound_name, FadeTime));
-    }
-
-    public void FadeOutSound(string sound_name, float FadeTime)
-    {
-        StartCoroutine(FadeOut(sound_name, FadeTime));
-    }
-
-    private IEnumerator FadeIn(string sound_name, float FadeTime)
-    {
-        Sound s = sounds.Find(sound => sound.name == sound_name);
-        s.source.Play();
-        s.source.volume = 0;
-
-        while (s.source.volume < 1)
-        {
-            s.source.volume +=  Time.deltaTime / FadeTime;
-            //Debug.Log("volume:" + s.source.volume);
-            yield return null;
-        }
-    }
-
-    private IEnumerator FadeOut(string sound_name, float FadeTime)
-    {
-        Sound s = sounds.Find(sound => sound.name == sound_name);
-        float startVolume = s.source.volume;
-
-        while (s.source.volume > 0)
-        {
-            s.source.volume -= startVolume * Time.deltaTime / FadeTime;
-
-            yield return null;
+            source.Play();
+            return source;
         }
 
-        Stop(sound_name);
-        //s.source.volume = startVolume;
-    }
-
-    void AddSoundsToList()
-    {
-        if (JungleSounds != null)
+        public AudioSource Play(AudioClip clip, Transform emitter)
         {
-            foreach (Sound s in JungleSounds)
+            return Play(clip, emitter, 1f, 1f);
+        }
+
+        public AudioSource Play(AudioClip clip, Transform emitter, float volume)
+        {
+            return Play(clip, emitter, volume, 1f);
+        }
+
+        /// <summary>
+        /// Plays a sound by creating an empty game object with an AudioSource and attaching it to
+        /// the given transform (so it moves with the transform). Destroys it after it finished playing.
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="emitter"></param>
+        /// <param name="volume"></param>
+        /// <param name="pitch"></param>
+        /// <returns></returns>
+        public AudioSource Play(AudioClip clip, Transform emitter, float volume, float pitch)
+        {
+            //Create an empty game object
+            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch);
+            Destroy(source.gameObject, clip.length);
+            return source;
+        }
+
+        public AudioSource Play(AudioClip clip, Vector3 point)
+        {
+            return Play(clip, point, 1f, 1f);
+        }
+
+        public AudioSource Play(AudioClip clip, Vector3 point, float volume)
+        {
+            return Play(clip, point, volume, 1f);
+        }
+
+        /// <summary>
+        /// Plays a sound at the given point in space by creating an empty game object with an
+        /// AudioSource in that place and destroys it after it finished playing.
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="point"></param>
+        /// <param name="volume"></param>
+        /// <param name="pitch"></param>
+        /// <returns></returns>
+        public AudioSource Play(AudioClip clip, Vector3 point, float volume, float pitch)
+        {
+            AudioSource source = CreatePlaySource(clip, point, volume, pitch);
+            Destroy(source.gameObject, clip.length);
+            return source;
+        }
+
+        /// <summary>
+        /// Plays the sound effect in a loop. Should destroy the audio source in your script when it
+        /// is ready to end.
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="point"></param>
+        /// <param name="volume"></param>
+        /// <param name="pitch"></param>
+        /// <returns></returns>
+        public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1f, float pitch = 1f, bool music = true)
+        {
+            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, true);
+            source.loop = true;
+            return source;
+        }
+
+        /// <summary>
+        /// Plays the sound effect in a loop. Should destroy the audio source in your script when it
+        /// is ready to end.
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="point"></param>
+        /// <param name="volume"></param>
+        /// <param name="pitch"></param>
+        /// <returns></returns>
+        public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1f, float pitch = 1f, bool music = true)
+        {
+            AudioSource source = CreatePlaySource(clip, point, volume, pitch, true);
+            source.loop = true;
+            return source;
+        }
+
+        /// <summary>
+        /// Adjusts the volume on the audio channel in the unity audio mixer
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="volume">From 0 (mute) to 100 (full volume - 0 DB)</param>
+        public void SetVolume(AudioChannel channel, int volume)
+        {
+            // Converts the 0 - 100 input into decibles | volume of 0 will mute, 1 should be ~the lowestDecibles set,
+            // and 100 should be 0 DB offset from the base volume on the channel
+            float adjustedVolume = lowestDeciblesBeforeMute + (-lowestDeciblesBeforeMute / 5 * volume / 20);
+
+            // Effectively completed muted if volume if 0
+            if (volume == 0)
             {
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-                sounds.Add(s);
+                adjustedVolume = -100;
+            }
+
+            switch (channel)
+            {
+                case AudioChannel.Master:
+                    masterMixer.SetFloat("MasterVolume", adjustedVolume);
+                    break;
+
+                case AudioChannel.Narration:
+                    masterMixer.SetFloat("NarrationVolume", adjustedVolume);
+                    break;
+
+                case AudioChannel.Music:
+                    masterMixer.SetFloat("MusicVolume", adjustedVolume);
+                    break;
             }
         }
 
-        if (MiscSounds != null)
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private AudioSource CreatePlaySource(AudioClip clip, Vector3 point, float volume, float pitch, bool music = false)
         {
-            foreach (Sound s in MiscSounds)
-            {
-                //Debug.Log("Adding sound: " + s.name);
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-                sounds.Add(s);
-            }
+            //Create an empty game object
+            GameObject go = new GameObject("Audio: " + clip.name);
+            go.transform.position = point;
+
+            //Create the source
+            AudioSource source = go.AddComponent<AudioSource>();
+            source.clip = clip;
+            source.volume = volume;
+            source.pitch = pitch;
+
+            // Output sound through the sound group or music group
+            if (music)
+                source.outputAudioMixerGroup = musicGroup;
+            else
+                source.outputAudioMixerGroup = narrationGroup;
+
+            source.Play();
+            return source;
         }
 
-        if (Narration != null)
+        /// <summary>
+        /// Set up audio levels
+        /// </summary>
+        private void Start()
         {
-            foreach (Sound s in Narration)
-            {
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-                sounds.Add(s);
-            }
+            // Set the audio levels from player preferences
+            int masterVolume = PlayerPrefs.GetInt("MasterVolume", 100);
+            int soundVolume = PlayerPrefs.GetInt("NarrationVolume", 100);
+            int musicVolume = PlayerPrefs.GetInt("MusicVolume", 100);
+
+            // Update the audio mixer
+            SetVolume(AudioChannel.Master, masterVolume);
+            SetVolume(AudioChannel.Narration, soundVolume);
+            SetVolume(AudioChannel.Music, musicVolume);
         }
 
-        if (Music != null)
-        {
-            foreach (Sound s in Music)
-            {
-                Debug.Log("Adding sound: " + s.name);
-                s.source = gameObject.AddComponent<AudioSource>();
-                s.source.clip = s.clip;
-                s.source.volume = s.volume;
-                s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
-                sounds.Add(s);
-            }
-        }
-
-        //Delete other arrays here so they arnt held in memory.
+        #endregion Private Methods
     }
-
-
- 
-
-    
 }

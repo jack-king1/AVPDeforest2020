@@ -83,9 +83,9 @@ public class MainSceneManager : MonoBehaviour
                     {
                         if(!nextSceneLoading)
                         {
-                            SFX.instance.StopForestSounds(5);
-                            SFX.instance.StopWindSounds(5);
-                            SFX.instance.StartOutroSounds(10);
+                            //SFX.Instance.StopForestSounds(5);
+                            //SFX.Instance.StopWindSounds(5);
+                            //SFX.Instance.StartOutroSounds(10);
                             Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
                             nextSceneLoading = true;
                         }

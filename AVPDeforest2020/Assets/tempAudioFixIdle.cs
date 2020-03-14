@@ -1,15 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioManagerNS;
 
 public class tempAudioFixIdle : MonoBehaviour
 {
+    bool test = false;
+    public AudioClip clip;
+
+    private void Start()
+    {
+        //AudioClip clip = SFX.instance.GetSFX("Idle");
+        //AudioManager.Instance.Play(clip, Camera.main.transform);
+    }
+
     private void Update()
     {
-        if(SFX.instance != null)
+        if(Input.GetKeyDown(KeyCode.A))
         {
-            SFX.instance.StopOutroSounds(1);
-            Destroy(this);
+            //AudioClip clip = SFX.Instance.GetSFX("Idle");
+
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Idle"), Camera.main.transform);
         }
     }
 }

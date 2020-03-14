@@ -16,24 +16,24 @@ public class IntroAudio : MonoBehaviour
         {
             Destroy(this);
         }
-        AudioManager.instance.FadeInSound("Idle", 5);
+        AudioManagerOld.instance.FadeInSound("Idle", 5);
     }
 
     public void StopSounds(float timeToFade)
     {
-        AudioManager.instance.FadeOutSound("Intro", timeToFade);
+        AudioManagerOld.instance.FadeOutSound("Intro", timeToFade);
     }
 
     public void StartForestSounds(float timeToFade)
     {
-        AudioManager.instance.FadeInSound("Alt", timeToFade);
-        AudioManager.instance.FadeInSound("Cicada", timeToFade);
-        AudioManager.instance.FadeInSound("Jungle", timeToFade);
+        AudioManagerOld.instance.FadeInSound("Alt", timeToFade);
+        AudioManagerOld.instance.FadeInSound("Cicada", timeToFade);
+        AudioManagerOld.instance.FadeInSound("Jungle", timeToFade);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        SFX.instance.StartForestSounds(20);
-        SFX.instance.StopIntroSounds(5);
+        // SFX.instance.StartForestSounds(20);
+        //SFX.instance.StopIntroSounds(5);
     }
 }

@@ -35,8 +35,8 @@ public class LoadIdle : MonoBehaviour
             if(!loadingScene)
             {
                 start = false;
-                SFX.instance.StopOutroSounds(5);
-                SFX.instance.StartIdleSounds(10);
+                //SFX.instance.StopOutroSounds(5);
+                //SFX.instance.StartIdleSounds(10);
                 Camera.main.GetComponent<OVRScreenFade>().FadeOut(5f, SceneType.IDLE);
                 loadingScene = true;
             }

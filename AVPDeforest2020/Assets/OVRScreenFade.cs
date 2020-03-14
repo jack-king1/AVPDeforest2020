@@ -207,7 +207,7 @@ public class OVRScreenFade : MonoBehaviour
             SetMaterialAlpha();
             yield return new WaitForEndOfFrame();
         }
-        ScenesManager.Instance().LoadScene(_scene);
+        ScenesManager.Instance.LoadScene(_scene);
     }
 
 

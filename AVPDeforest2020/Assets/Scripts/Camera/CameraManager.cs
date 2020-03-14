@@ -4,46 +4,42 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager instance;
+    public Camera VRcam;
 
-    static CameraManager instance;
-
-    public GameObject introScenePosition;
-    public GameObject forestScenePosition;
-    public GameObject outroScenePosition;
-
-    public static CameraManager Instance() { return instance; }
-
-
-    public GameObject camera;
-
-
-    List<Vector3> scenePositions = new List<Vector3>();
-
-
-    private void Awake()
+    void Awake()
     {
-        instance = this;
-        scenePositions.Add(introScenePosition.transform.position);
-        scenePositions.Add(forestScenePosition.transform.position);
-        scenePositions.Add(outroScenePosition.transform.position);
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else if(instance != this)
+        {
+            Destroy(this);
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        if (VRcam == null)
+        {
+            VRcam = Camera.main;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewScene(SceneType sceneType, bool fadeOut)
     {
-        
+        if(fadeOut)
+        {
+            if (VRcam == null)
+            {
+                VRcam = Camera.main;
+            }
+            VRcam.GetComponent<OVRScreenFade>().FadeIn(5, sceneType);
+        }
+        else
+        {
+            ScenesManager.Instance.LoadScene(sceneType);
+        }
     }
-
-
-    public void SetCameraScene(SceneType scene)
-    {
-        //camera.transform.position = scenePositions[(int)scene];
-    }
-    
 }

@@ -34,9 +34,9 @@ public class CameraRayTransition : MonoBehaviour
                     {
                         if(!audioSet)
                         {
-                            ScenesManager.Instance().LoadScene(SceneType.INTRO);
-                            SFX.instance.StartIntroSounds(10);
-                            SFX.instance.StopIdleSounds(5);
+                            CameraManager.instance.NewScene(SceneType.INTRO, false);
+                            //SFX.instance.StartIntroSounds(10);
+                            //SFX.instance.StopIdleSounds(5);
                             audioSet = true;
                         }
                     }

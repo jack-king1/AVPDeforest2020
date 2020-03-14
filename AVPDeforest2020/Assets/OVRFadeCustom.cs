@@ -26,7 +26,7 @@ public class OVRFadeCustom : MonoBehaviour
             else
             {
                 newScene = false;
-               ScenesManager.Instance().LoadScene(fadeToScene);
+               ScenesManager.Instance.LoadScene(fadeToScene);
             }
         }
         else
