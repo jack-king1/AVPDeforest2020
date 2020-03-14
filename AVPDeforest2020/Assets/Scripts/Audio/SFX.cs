@@ -21,12 +21,11 @@ public class SFX : MonoBehaviour
         {
             Destroy(this);
         }
-
-
         scene = gameObject.GetComponent<NextScene>();
-        //AudioManager.instance.Play("Jungle1");
-        //AudioManager.instance.Play("Cicada");
-        //AudioManager.instance.Play("Alt");
+        if(ScenesManager.Instance().ActiveScene == SceneType.IDLE)
+        {
+            SFX.instance.StartIdleSounds(5);
+        }
 
     }
     private void Update()
@@ -37,53 +36,79 @@ public class SFX : MonoBehaviour
         //}
        
         //Debug.Log(timer);
-        if (timer >= 60 && timer <= 61 )   JungleSounds();
+        if (timer >= 60 && timer <= 61 )   StopForestSounds(5);
 
-        if (timer >= 110 && timer <= 111) WindSounds();
+        if (timer >= 110 && timer <= 111) StartWindSounds(1);
     }
 
-    
-    public void JungleSounds()
+
+
+    #region IDLE
+    public void StartIdleSounds(float timeToFade)
     {
-        AudioManager.instance.Stop("Alt");
-        AudioManager.instance.Stop("Jungle");
-        AudioManager.instance.Stop("Cicada");
-
-        #region OldCode 
-        //if (audioSeed == 1 )
-        //{
-
-        //  AudioManager.instance.Play("Jungle1");
-        //  ResetValues();
-
-        //}
-
-        //if (audioSeed == 2)
-        //{
-
-        //    AudioManager.instance.Play("Regular");
-        //    ResetValues();
-        //}
-        //if (audioSeed == 3)
-        //{
-
-        //    AudioManager.instance.Play("Tropical");
-        //    ResetValues();
-        //}
-
-        #endregion
+        AudioManager.instance.FadeInSound("Idle", timeToFade);
     }
 
-    void WindSounds()
+    public void StopIdleSounds(float timeToFade)
     {
-        AudioManager.instance.Play("Whoosh");
+        AudioManager.instance.FadeOutSound("Idle", timeToFade);
+    }
+    #endregion
+
+    #region INTRO
+    public void StartIntroSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeInSound("Intro", timeToFade);
+
     }
 
+    public void StopIntroSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeOutSound("Intro", timeToFade);
+    }
+    #endregion
+
+    #region JUNGLE
+    public void StartWindSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeInSound("Whoosh", timeToFade);
+    }
+
+    public void StopWindSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeOutSound("Whoosh", timeToFade);
+    }
+
+    public void StartForestSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeInSound("Alt", timeToFade);
+        AudioManager.instance.FadeInSound("Jungle", timeToFade);
+        AudioManager.instance.FadeInSound("Cicada", timeToFade);
+    }
+
+    public void StopForestSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeOutSound("Alt", timeToFade);
+        AudioManager.instance.FadeOutSound("Jungle", timeToFade);
+        AudioManager.instance.FadeOutSound("Cicada", timeToFade);
+    }
+    #endregion
+
+    #region OUTRO
+    public void StartOutroSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeInSound("Intro", timeToFade);
+
+    }
+
+    public void StopOutroSounds(float timeToFade)
+    {
+        AudioManager.instance.FadeOutSound("Intro", timeToFade);
+    }
+    #endregion
 
     void ResetValues()
     {
         timer = 0;
     }
-
-    
 }

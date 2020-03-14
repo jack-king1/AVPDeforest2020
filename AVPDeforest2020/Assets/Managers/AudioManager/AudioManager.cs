@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Sound with name: " + sound_name + " was not found.");
             return;
         }
-        Debug.Log("Playing: " + s.source.name);
+        //Debug.Log("Playing: " + s.source.name);
         s.source.Play();
     }
 
@@ -118,7 +118,7 @@ public class AudioManager : MonoBehaviour
         }
 
         Stop(sound_name);
-        s.source.volume = startVolume;
+        //s.source.volume = startVolume;
     }
 
     void AddSoundsToList()

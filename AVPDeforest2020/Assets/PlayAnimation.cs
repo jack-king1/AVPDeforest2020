@@ -21,7 +21,7 @@ public class PlayAnimation : MonoBehaviour
     {
         if(t.Count() && playAnim)
         {
-            Debug.Log("Animation Playing");
+            //Debug.Log("Animation Playing");
             animation.Play();
             playAnim = false;
         }

@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum SceneType
+{
+    IDLE = 0,
+    INTRO,
+    MAIN,
+    OUTRO
+}
+
 public class ScenesManager : MonoBehaviour
 {
     static ScenesManager instance;
 
     public static ScenesManager Instance() { return instance; }
-    public GameObject VRcam;
+    public Camera VRcam;
 
-    public enum Scene
-    { 
-        IDLE = 0,
-        INTRO,
-        MAIN,
-        OUTRO
-    }
 
-    Scene activeScene = Scene.IDLE;
 
-    public Scene ActiveScene { get => activeScene; set => activeScene = value; }
+    SceneType activeScene = SceneType.IDLE;
+
+    public SceneType ActiveScene { get => activeScene; set => activeScene = value; }
 
     private void Awake()
     {
@@ -30,7 +32,10 @@ public class ScenesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // SetActiveScene(Scene.INTRO);
+        if(VRcam == null)
+        {
+            VRcam = Camera.main;
+        }
     }
 
     // Update is called once per frame
@@ -39,39 +44,22 @@ public class ScenesManager : MonoBehaviour
 
     }
 
-    public void LoadNextScene()
+    public void LoadScene(SceneType sceneType)
     {
-        activeScene++;
-        if (activeScene == Scene.MAIN)
+        if (activeScene == SceneType.MAIN)
         {
-            if(FireManager.Instance())
+            if (FireManager.Instance())
                 FireManager.Instance().GetBurnables();
         }
 
-        switch (activeScene)
+        Debug.Log("Loading " + sceneType.ToString()); ;
+        SceneManager.LoadScene((int)sceneType);
+        if(VRcam == null)
         {
-            case Scene.IDLE:
-                Debug.Log("Loading IDLE");
-                SceneManager.LoadScene(0);
-                VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
-                break;
-            case Scene.INTRO:
-                Debug.Log("Loading Intro");
-                SceneManager.LoadScene(1);
-                VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
-                break;
-            case Scene.MAIN:
-                Debug.Log("Loading Forest Scene");
-                SceneManager.LoadScene(2);
-                VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
-                break;
-            case Scene.OUTRO:
-                Debug.Log("Loading outro");
-                SceneManager.LoadScene(3);
-                VRcam.GetComponent<OVRScreenFade>().FadeIn(5);
-                break;
-            default:
-                break;
+            VRcam = Camera.main;
         }
+        VRcam = Camera.main;
+        VRcam.GetComponent<OVRScreenFade>().FadeIn(5, sceneType);
     }
+
 }

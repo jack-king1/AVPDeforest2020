@@ -41,7 +41,7 @@ public class CameraManager : MonoBehaviour
     }
 
 
-    public void SetCameraScene(ScenesManager.Scene scene)
+    public void SetCameraScene(SceneType scene)
     {
         //camera.transform.position = scenePositions[(int)scene];
     }

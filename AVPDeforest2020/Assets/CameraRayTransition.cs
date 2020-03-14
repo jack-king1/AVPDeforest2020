@@ -8,7 +8,7 @@ public class CameraRayTransition : MonoBehaviour
     [SerializeField] private float progress;
     public float beginRayTimer;
 
-
+    bool audioSet;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +30,15 @@ public class CameraRayTransition : MonoBehaviour
             {
                 if (hit.collider.CompareTag("TransitionTree"))
                 {
-                    Debug.Log("Tree Hit");
                     if (progress >= 1)
                     {
-                        ScenesManager.Instance().LoadNextScene();
-
+                        if(!audioSet)
+                        {
+                            ScenesManager.Instance().LoadScene(SceneType.INTRO);
+                            SFX.instance.StartIntroSounds(10);
+                            SFX.instance.StopIdleSounds(5);
+                            audioSet = true;
+                        }
                     }
                     else
                     {
