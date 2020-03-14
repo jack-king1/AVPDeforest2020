@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   masterGroup: {fileID: 24300002, guid: d4384bf6348b77d4dad7474e2876935d, type: 2}
   masterMixer: {fileID: 24100000, guid: d4384bf6348b77d4dad7474e2876935d, type: 2}
-  musicGroup: {fileID: 8999477593412329663, guid: d4384bf6348b77d4dad7474e2876935d,
+  idleGroup: {fileID: -5286016726905065901, guid: d4384bf6348b77d4dad7474e2876935d,
+    type: 2}
+  introGroup: {fileID: 2919087939789812652, guid: d4384bf6348b77d4dad7474e2876935d,
+    type: 2}
+  fireGroup: {fileID: -4932300546067555244, guid: d4384bf6348b77d4dad7474e2876935d,
+    type: 2}
+  hopeGroup: {fileID: 4663838088992369343, guid: d4384bf6348b77d4dad7474e2876935d,
+    type: 2}
+  jungleGroup: {fileID: -8897761826231314108, guid: d4384bf6348b77d4dad7474e2876935d,
     type: 2}
   narrationGroup: {fileID: -4477711006648989725, guid: d4384bf6348b77d4dad7474e2876935d,
     type: 2}

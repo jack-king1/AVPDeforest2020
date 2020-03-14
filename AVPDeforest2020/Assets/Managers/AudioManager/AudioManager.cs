@@ -149,9 +149,9 @@ namespace AudioManagerNS
         /// <param name="volume"></param>
         /// <param name="pitch"></param>
         /// <returns></returns>
-        public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1f, float pitch = 1f, bool music = true)
+        public AudioSource PlayLoop(AudioClip clip, Transform emitter, float volume = 1f, float pitch = 1f, AudioChannel channel = 0)
         {
-            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, true);
+            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, channel);
             source.loop = true;
             return source;
         }
@@ -165,9 +165,9 @@ namespace AudioManagerNS
         /// <param name="volume"></param>
         /// <param name="pitch"></param>
         /// <returns></returns>
-        public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1f, float pitch = 1f, bool music = true)
+        public AudioSource PlayLoop(AudioClip clip, Vector3 point, float volume = 1f, float pitch = 1f, AudioChannel channel = 0)
         {
-            AudioSource source = CreatePlaySource(clip, point, volume, pitch, true);
+            AudioSource source = CreatePlaySource(clip, point, volume, pitch, channel);
             source.loop = true;
             return source;
         }
@@ -213,12 +213,12 @@ namespace AudioManagerNS
         }
 
         /// <summary>
-        /// Fade in a mixer which will fade in all audio under that type of mixer. to either max vol or muted.
+        /// Fade a sound with an array of sounds to delete after fade is complete.
         /// </summary>
         /// <param name="channel"></param>
         /// <param name="fadeTime"></param>
         /// <param name="fadeIn"></param>
-        public void FadeMixer(AudioChannel channel, float fadeTime, bool fadeIn)
+        public void FadeMixer(AudioChannel channel, float fadeTime, bool fadeIn, AudioSource audioSource = null)
         {
             string mixerName = "";
 
@@ -250,39 +250,153 @@ namespace AudioManagerNS
             }
             else
             {
-                StartCoroutine(FadeOutMixer(mixerName, fadeTime));
+                if(audioSource == null)
+                {
+                    StartCoroutine(FadeOutMixer(mixerName, fadeTime));
+                }
+                else
+                {
+                    StartCoroutine(FadeOutMixer(mixerName, fadeTime, audioSource));
+                }
             }
         }
 
+        /// <summary>
+        /// Fade a mixer with an array of sounds to delete after fade is complete.
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="fadeTime"></param>
+        /// <param name="fadeIn"></param>
+        /// <param name="audioSource"></param>
+        public void FadeMixer(AudioChannel channel, float fadeTime, bool fadeIn, AudioSource[] audioSource = null)
+        {
+            string mixerName = "";
+
+            switch (channel)
+            {
+                case AudioChannel.Master:
+                    mixerName = "MasterVolume";
+                    break;
+                case AudioChannel.Narration:
+                    mixerName = "NarrationVolume";
+                    break;
+                case AudioChannel.Idle:
+                    mixerName = "IdleVolume";
+                    break;
+                case AudioChannel.Intro:
+                    mixerName = "IntroVolume";
+                    break;
+                case AudioChannel.Fire:
+                    mixerName = "FireVolume";
+                    break;
+                case AudioChannel.Hope:
+                    mixerName = "HopeVolume";
+                    break;
+            }
+
+            if (fadeIn)
+            {
+                StartCoroutine(FadeInMixer(mixerName, fadeTime));
+            }
+            else
+            {
+                if (audioSource == null)
+                {
+                    StartCoroutine(FadeOutMixer(mixerName, fadeTime));
+                }
+                else
+                {
+                    StartCoroutine(FadeOutMixer(mixerName, fadeTime, audioSource));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Fade mixer in and all sounds associated with it.
+        /// </summary>
+        /// <param name="volParam"></param>
+        /// <param name="FadeTime"></param>
+        /// <returns></returns>
         private IEnumerator FadeInMixer(string volParam, float FadeTime)
         {
-            masterMixer.SetFloat(volParam, 0);
+            masterMixer.SetFloat(volParam, -80);
             float vol = 0;
             masterMixer.GetFloat(volParam, out vol);
             while (vol < 1)
             {
-                 vol += Time.deltaTime / FadeTime;
-                masterMixer.SetFloat(volParam, vol * 100);
+                 vol += (Time.deltaTime / FadeTime) * 100;
+                masterMixer.SetFloat(volParam, vol);
                 yield return null;
             }
         }
+
+        /// <summary>
+        /// Just fade Out a mixer and all sounds associated with it.
+        /// </summary>
+        /// <param name="volParam"></param>
+        /// <param name="FadeTime"></param>
+        /// <returns></returns>
         private IEnumerator FadeOutMixer(string volParam, float FadeTime)
         {
             float vol = 0;
             masterMixer.GetFloat(volParam, out vol);
-            while (vol > 0)
+            while (vol > -80)
             {
-                vol -= Time.deltaTime / FadeTime;
-                masterMixer.SetFloat(volParam, vol * 100);
+                vol -= (Time.deltaTime / FadeTime) * 100;
+                masterMixer.SetFloat(volParam, vol);
                 yield return null;
             }
         }
+
+        /// <summary>
+        /// FadeOut mixer and destroy referenced audio source
+        /// </summary>
+        /// <param name="volParam"></param>
+        /// <param name="FadeTime"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        private IEnumerator FadeOutMixer(string volParam, float FadeTime, AudioSource audioSource)
+        {
+            float vol = 0;
+            masterMixer.GetFloat(volParam, out vol);
+            while (vol > -80)
+            {
+                vol -= (Time.deltaTime / FadeTime) * 100;
+                masterMixer.SetFloat(volParam, vol);
+                yield return null;
+            }
+            Destroy(audioSource);
+        }
+
+        /// <summary>
+        /// FadeOut mixer and destroy references audio source array.
+        /// </summary>
+        /// <param name="volParam"></param>
+        /// <param name="FadeTime"></param>
+        /// <param name="audioSource"></param>
+        /// <returns></returns>
+        private IEnumerator FadeOutMixer(string volParam, float FadeTime, AudioSource[] audioSource)
+        {
+            float vol = 0;
+            masterMixer.GetFloat(volParam, out vol);
+            while (vol > -80)
+            {
+                vol -= (Time.deltaTime / FadeTime) * 100;
+                masterMixer.SetFloat(volParam, vol);
+                yield return null;
+            }
+            foreach (var asource in audioSource)
+            {
+                Destroy(asource);
+            }
+        }
+
 
         #endregion Public Methods
 
         #region Private Methods
 
-        private AudioSource CreatePlaySource(AudioClip clip, Vector3 point, float volume, float pitch, bool music = false)
+        private AudioSource CreatePlaySource(AudioClip clip, Vector3 point, float volume, float pitch, AudioChannel channel = 0)
         {
             //Create an empty game object
             GameObject go = new GameObject("Audio: " + clip.name);
@@ -294,12 +408,31 @@ namespace AudioManagerNS
             source.volume = volume;
             source.pitch = pitch;
 
-            // Output sound through the sound group or music group
-            if (music)
-                source.outputAudioMixerGroup = musicGroup;
-            else
-                source.outputAudioMixerGroup = narrationGroup;
-
+            // Output sound through the correct mixer group.
+            switch (channel)
+            {
+                case AudioChannel.Idle:
+                    source.outputAudioMixerGroup = idleGroup;
+                    break;
+                case AudioChannel.Intro:
+                    source.outputAudioMixerGroup = introGroup;
+                    break;
+                case AudioChannel.Fire:
+                    source.outputAudioMixerGroup = fireGroup;
+                    break;
+                case AudioChannel.Hope:
+                    source.outputAudioMixerGroup = hopeGroup;
+                    break;
+                case AudioChannel.Jungle:
+                    source.outputAudioMixerGroup = jungleGroup;
+                    break;
+                case AudioChannel.Narration:
+                    source.outputAudioMixerGroup = narrationGroup;
+                    break;
+                default:
+                    source.outputAudioMixerGroup = masterGroup;
+                    break;
+            }
             source.Play();
             return source;
         }

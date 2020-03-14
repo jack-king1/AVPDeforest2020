@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775689455601fef4b887b46d65af76b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: d07d529929387c246aabb9cc65e7c304, type: 3}
+  clip: {fileID: 8300000, guid: d76030601819b314785ec64ab7e818fb, type: 3}
 --- !u!1001 &169189879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13426,7 +13426,7 @@ PrefabInstance:
     - target: {fileID: 194054163770987158, guid: 6dfd6c37a62238c47931b337040f3262,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: -9.05
       objectReference: {fileID: 0}
     - target: {fileID: 194054163770987158, guid: 6dfd6c37a62238c47931b337040f3262,
         type: 3}

@@ -19,9 +19,18 @@ public class tempAudioFixIdle : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             //AudioClip clip = SFX.Instance.GetSFX("Idle");
+            AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Idle, 5f, true, new AudioSource());
+            AudioManager.Instance.PlayLoop(clip, transform, 1, 1, AudioManager.AudioChannel.Idle);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            //AudioClip clip = SFX.Instance.GetSFX("Idle");
+            AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Idle, 5f, false, GetComponentsInChildren<AudioSource>());
+        }
 
-            AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Hope, 5f, true);
-            AudioManager.Instance.Play(SFX.Instance.GetSFX("Hope"), CameraManager.instance.transform);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Destroy(GetComponentInChildren<AudioSource>());
         }
     }
 }
