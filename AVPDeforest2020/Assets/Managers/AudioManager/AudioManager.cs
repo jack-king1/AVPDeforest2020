@@ -26,7 +26,7 @@ namespace AudioManagerNS
 
         #region Public Enums
 
-        public enum AudioChannel { Master, Narration, Music }
+        public enum AudioChannel { Master, Narration, Fire, Intro, Idle, Hope, Jungle }
 
         #endregion Public Enums
 
@@ -53,7 +53,7 @@ namespace AudioManagerNS
             source.volume = volume;
             source.pitch = pitch;
 
-            // Output sound through the sound group or music group
+            // Output sound through the sound group or narration group
             if (music)
                 source.outputAudioMixerGroup = musicGroup;
             else
@@ -170,13 +170,20 @@ namespace AudioManagerNS
                 case AudioChannel.Master:
                     masterMixer.SetFloat("MasterVolume", adjustedVolume);
                     break;
-
                 case AudioChannel.Narration:
                     masterMixer.SetFloat("NarrationVolume", adjustedVolume);
                     break;
-
-                case AudioChannel.Music:
-                    masterMixer.SetFloat("MusicVolume", adjustedVolume);
+                case AudioChannel.Idle:
+                    masterMixer.SetFloat("IdleVolume", adjustedVolume);
+                    break;
+                case AudioChannel.Intro:
+                    masterMixer.SetFloat("IntroVolume", adjustedVolume);
+                    break;
+                case AudioChannel.Fire:
+                    masterMixer.SetFloat("FireVolume", adjustedVolume);
+                    break;
+                case AudioChannel.Hope:
+                    masterMixer.SetFloat("HopeVolume", adjustedVolume);
                     break;
             }
         }
@@ -214,15 +221,20 @@ namespace AudioManagerNS
         {
             // Set the audio levels from player preferences
             int masterVolume = PlayerPrefs.GetInt("MasterVolume", 100);
-            int soundVolume = PlayerPrefs.GetInt("NarrationVolume", 100);
-            int musicVolume = PlayerPrefs.GetInt("MusicVolume", 100);
+            int narrationVolume = PlayerPrefs.GetInt("NarrationVolume", 100);
+            int idleVolume = PlayerPrefs.GetInt("IdleVolume", 100);
+            int introVolume = PlayerPrefs.GetInt("IntroVolume", 100);
+            int fireVolume = PlayerPrefs.GetInt("FireVolume", 100);
+            int hopeVolume = PlayerPrefs.GetInt("HopeVolume", 100);
 
             // Update the audio mixer
             SetVolume(AudioChannel.Master, masterVolume);
-            SetVolume(AudioChannel.Narration, soundVolume);
-            SetVolume(AudioChannel.Music, musicVolume);
+            SetVolume(AudioChannel.Narration, narrationVolume);
+            SetVolume(AudioChannel.Idle, idleVolume);
+            SetVolume(AudioChannel.Intro, introVolume);
+            SetVolume(AudioChannel.Fire, fireVolume);
+            SetVolume(AudioChannel.Hope, hopeVolume);
         }
-
         #endregion Private Methods
     }
 }
