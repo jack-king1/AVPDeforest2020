@@ -7,16 +7,18 @@ public class DontDestroyOnLoadScript : MonoBehaviour
     static DontDestroyOnLoadScript instance;
     private void Awake()
     {
-        if(instance == null)
+        if(DontDestroyOnLoadFlag.onDestroyCreated == false)
         {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }
+            else if (instance != null)
+            {
+                Destroy(this.gameObject);
+            }
+            DontDestroyOnLoadFlag.onDestroyCreated = true;
         }
-        else if (instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-
-        
     }
 }

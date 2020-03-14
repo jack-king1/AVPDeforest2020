@@ -359,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: Music.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
@@ -709,6 +709,31 @@ PrefabInstance:
     - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
         type: 3}
       propertyPath: Music.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: Music.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d51674eb1a05ad04c902a01235209de3, type: 3}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: Music.Array.data[2].name
+      value: Outro
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: Music.Array.data[2].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: Music.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198308005111433423, guid: 40a7e9a6e020c21498428b533dbecff1,
+        type: 3}
+      propertyPath: Music.Array.data[2].loop
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

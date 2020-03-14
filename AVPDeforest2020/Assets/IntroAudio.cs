@@ -33,7 +33,7 @@ public class IntroAudio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SFX.instance.StartForestSounds(10);
+        SFX.instance.StartForestSounds(20);
         SFX.instance.StopIntroSounds(5);
     }
 }

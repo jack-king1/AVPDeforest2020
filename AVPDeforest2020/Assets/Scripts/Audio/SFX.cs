@@ -24,6 +24,7 @@ public class SFX : MonoBehaviour
         scene = gameObject.GetComponent<NextScene>();
         if(ScenesManager.Instance().ActiveScene == SceneType.IDLE)
         {
+            
             SFX.instance.StartIdleSounds(5);
         }
 
@@ -97,13 +98,12 @@ public class SFX : MonoBehaviour
     #region OUTRO
     public void StartOutroSounds(float timeToFade)
     {
-        AudioManager.instance.FadeInSound("Intro", timeToFade);
-
+        AudioManager.instance.FadeInSound("Outro", timeToFade);
     }
 
     public void StopOutroSounds(float timeToFade)
     {
-        AudioManager.instance.FadeOutSound("Intro", timeToFade);
+        AudioManager.instance.FadeOutSound("Outro", timeToFade);
     }
     #endregion
 

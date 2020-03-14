@@ -14,6 +14,8 @@ public class MainSceneManager : MonoBehaviour
     GameObject dirLight;
     Color startColour = new Color();
 
+    bool nextSceneLoading = false;
+
     public enum SceneStage
     {
         TRANQUIL = 0,
@@ -79,10 +81,14 @@ public class MainSceneManager : MonoBehaviour
                     }
                 case SceneStage.HOPE:
                     {
-                        SFX.instance.StopForestSounds(5);
-                        SFX.instance.StopWindSounds(5);
-                        SFX.instance.StartOutroSounds(5);
-                        Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
+                        if(!nextSceneLoading)
+                        {
+                            SFX.instance.StopForestSounds(5);
+                            SFX.instance.StopWindSounds(5);
+                            SFX.instance.StartOutroSounds(10);
+                            Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
+                            nextSceneLoading = true;
+                        }
                         break;
                     }
             }

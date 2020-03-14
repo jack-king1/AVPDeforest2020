@@ -7,6 +7,8 @@ public class LoadIdle : MonoBehaviour
     public float loadTimer;
     bool start = false;
 
+    bool loadingScene = false;
+
     private void Start()
     {
         loadTimer = 10;
@@ -30,10 +32,14 @@ public class LoadIdle : MonoBehaviour
         }
         else if(loadTimer <= 0)
         {
-            start = false;
-            SFX.instance.StopOutroSounds(5);
-            SFX.instance.StartIdleSounds(10);
-            Camera.main.GetComponent<OVRScreenFade>().FadeOut(2.5f, SceneType.IDLE);
+            if(!loadingScene)
+            {
+                start = false;
+                SFX.instance.StopOutroSounds(5);
+                SFX.instance.StartIdleSounds(10);
+                Camera.main.GetComponent<OVRScreenFade>().FadeOut(5f, SceneType.IDLE);
+                loadingScene = true;
+            }
         }
     }
 }

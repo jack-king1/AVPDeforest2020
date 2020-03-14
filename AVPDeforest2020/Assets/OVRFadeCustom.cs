@@ -61,6 +61,6 @@ public class OVRFadeCustom : MonoBehaviour
     {
         Debug.Log("Fadeing In!");
         ovrscreenfade = VRCam.GetComponentInChildren<OVRScreenFade>();
-        ovrscreenfade.FadeIn(fadeTime); ;
+        ovrscreenfade.FadeIn(fadeTime);
     }
 }
