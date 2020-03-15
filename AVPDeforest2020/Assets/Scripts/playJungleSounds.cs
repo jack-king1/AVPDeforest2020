@@ -10,8 +10,8 @@ public class playJungleSounds : MonoBehaviour
     {
         if(timer <= 0)
         {
-            int sound = Random.Range(1, AudioManager.instance.JungleSounds.Length + 1);
-            AudioManager.instance.Play(sound.ToString());
+            int sound = Random.Range(1, AudioManagerOld.instance.JungleSounds.Length + 1);
+            AudioManagerOld.instance.Play(sound.ToString());
             Debug.Log("Sound Played: " + sound);
             timer = Random.Range(10, 20);
         }

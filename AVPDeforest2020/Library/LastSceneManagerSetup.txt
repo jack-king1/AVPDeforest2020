@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Hec.unity
-=======
-- path: Assets/Scenes/Intro.unity
->>>>>>> Lynny
+- path: Assets/Scenes/Forest.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

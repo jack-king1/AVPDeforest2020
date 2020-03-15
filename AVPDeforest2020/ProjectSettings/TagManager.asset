@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Tree
   - Terrain
+  - GameManager
+  - DirectinalLight
+  - HopeTreeSpawn
+  - TransitionTree
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -42,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 3495908345
     locked: 0

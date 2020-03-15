@@ -22,7 +22,6 @@ public class FireManager : MonoBehaviour
 
     Burnable[] burnables;
 
-
     public void RemoveFireSound(GameObject fireSound)
     {
         if(FireSoundPrefabs.Contains(fireSound))
@@ -31,69 +30,22 @@ public class FireManager : MonoBehaviour
             Destroy(fireSound);
         }
     }
+
     public void StartFire(Collider hit)
     {
         if (hit.gameObject.tag == "Tree" || hit.gameObject.tag == "Terrain")
         {
-            if (hit.gameObject.GetComponent<Burnable>())
+            if (hit.gameObject.GetComponent<Burnable>() && hit.gameObject.GetComponent<Burnable>().State == Burnable.States.ALIVE)
             {
-                SpawnFire(hit.gameObject);
-                hit.gameObject.GetComponent<Burnable>().Burn();
+                hit.gameObject.GetComponent<Burnable>().StartFire();
 
                 GameObject newFireSound = Instantiate(FireSoundPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity, hit.transform);
                 FireSoundPrefabs.Add(newFireSound);
              
                 hit.gameObject.GetComponent<Burnable>().fireSound = newFireSound;
-               
-
-             
             }
         }
     }
-
-    public void StartFire(GameObject burningObject)
-    {
-         SpawnFire(burningObject);
-         burningObject.GetComponent<Burnable>().Burn();
-    }
-
-    void SpawnFire(GameObject burningObject)
-    {
-        if (!burningObject.GetComponent<Burnable>())
-            return;
-
-        if (burningObject.GetComponent<Burnable>().State == Burnable.States.ALIVE && !burningObject.GetComponent<Burnable>().ps)
-        {
-            //var inst = Instantiate(burningObject.tag == "Tree" ? psTree : psTerrain, burningObject.transform);
-            var inst = Instantiate(psTerrain, burningObject.transform);
-
-            burningObject.GetComponent<Burnable>().ps = inst;
-
-            var shape = inst.GetComponent<ParticleSystem>().shape;
-            var main = inst.GetComponent<ParticleSystem>().main;
-            var emission = inst.GetComponent<ParticleSystem>().emission;
-            var force = inst.GetComponent<ParticleSystem>().forceOverLifetime;
-
-            force.yMultiplier = 1.0f;
-
-            main.startSize = new ParticleSystem.MinMaxCurve(0.4f, 0.6f);
-
-            if (burningObject.tag == "Terrain")
-            {
-                force.yMultiplier = 10.0f;
-                main.startSize = new ParticleSystem.MinMaxCurve(7f, 9f);
-                var mesh = burningObject.GetComponent<MeshFilter>().mesh;
-                var triNum = mesh.triangles.Length;
-                emission.rate = new ParticleSystem.MinMaxCurve(3 * triNum);
-            }
-
-            shape.shapeType = ParticleSystemShapeType.MeshRenderer;
-            shape.meshRenderer = burningObject.GetComponent<MeshRenderer>();
-            shape.meshShapeType = ParticleSystemMeshShapeType.Triangle;
-        }
-
-    }
-
 
     public void GetBurnables()
     {
