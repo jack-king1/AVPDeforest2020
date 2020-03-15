@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioManagerNS;
 
 public class MainSceneManager : MonoBehaviour
 {
@@ -60,7 +61,8 @@ public class MainSceneManager : MonoBehaviour
                     {
                         currentStage = SceneStage.BURNING;
                         sceneStageTime = sceneStageTimes[1];
-
+                        AnimalManager.instance.RemoveAllAnimals();
+                        ForestAudio.instance.StopJungle();
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(2.0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;

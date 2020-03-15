@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioManagerNS;
 
 public class CameraRayTransition : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class CameraRayTransition : MonoBehaviour
                     {
                         progress += 0.5f * Time.deltaTime;
                         GetComponent<OVRScreenFade>().SetFadeLevel(progress);
+                        AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Idle, (1 - progress) * 100f);
                     }
                 }
             }
@@ -53,6 +55,7 @@ public class CameraRayTransition : MonoBehaviour
                 {
                     progress -= 0.5f * Time.deltaTime;
                     GetComponent<OVRScreenFade>().SetFadeLevel(progress);
+                    AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Idle, (1 - progress) * 100f);
                 }
             }
         }

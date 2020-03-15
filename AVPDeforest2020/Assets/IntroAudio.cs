@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioManagerNS;
 
 public class IntroAudio : MonoBehaviour
 {
     public static IntroAudio instance;
+
+    bool fadedIn;
 
     private void Start()
     {
@@ -19,21 +22,18 @@ public class IntroAudio : MonoBehaviour
         AudioManagerOld.instance.FadeInSound("Idle", 5);
     }
 
-    public void StopSounds(float timeToFade)
+    private void Update()
     {
-        AudioManagerOld.instance.FadeOutSound("Intro", timeToFade);
-    }
-
-    public void StartForestSounds(float timeToFade)
-    {
-        AudioManagerOld.instance.FadeInSound("Alt", timeToFade);
-        AudioManagerOld.instance.FadeInSound("Cicada", timeToFade);
-        AudioManagerOld.instance.FadeInSound("Jungle", timeToFade);
+        if (fadedIn == false)
+        {
+            fadedIn = true;
+            AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Intro, 3, true, new AudioSource());
+            AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Intro"), transform, 1, 1, AudioManager.AudioChannel.Intro);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // SFX.instance.StartForestSounds(20);
-        //SFX.instance.StopIntroSounds(5);
+        AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Intro, 20, false, GetComponentInChildren<AudioSource>());
     }
 }

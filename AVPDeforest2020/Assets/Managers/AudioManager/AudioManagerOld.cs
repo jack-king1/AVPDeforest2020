@@ -96,7 +96,7 @@ public class AudioManagerOld : MonoBehaviour
         s.source.Play();
         s.source.volume = 0;
 
-        while (s.source.volume < 1)
+        while (s.source.volume < 0)
         {
             s.source.volume +=  Time.deltaTime / FadeTime;
             //Debug.Log("volume:" + s.source.volume);

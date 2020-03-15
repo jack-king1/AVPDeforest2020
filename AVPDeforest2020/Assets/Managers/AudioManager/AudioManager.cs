@@ -177,7 +177,7 @@ namespace AudioManagerNS
         /// </summary>
         /// <param name="channel"></param>
         /// <param name="volume">From 0 (mute) to 100 (full volume - 0 DB)</param>
-        public void SetVolume(AudioChannel channel, int volume)
+        public void SetVolume(AudioChannel channel, float volume)
         {
             // Converts the 0 - 100 input into decibles | volume of 0 will mute, 1 should be ~the lowestDecibles set,
             // and 100 should be 0 DB offset from the base volume on the channel
@@ -208,6 +208,9 @@ namespace AudioManagerNS
                     break;
                 case AudioChannel.Hope:
                     masterMixer.SetFloat("HopeVolume", adjustedVolume);
+                    break;
+                case AudioChannel.Jungle:
+                    masterMixer.SetFloat("JungleVolume", adjustedVolume);
                     break;
             }
         }
@@ -241,6 +244,9 @@ namespace AudioManagerNS
                     break;
                 case AudioChannel.Hope:
                     mixerName = "HopeVolume";
+                    break;
+                case AudioChannel.Jungle:
+                    mixerName = "JungleVolume";
                     break;
             }
 
@@ -292,6 +298,9 @@ namespace AudioManagerNS
                 case AudioChannel.Hope:
                     mixerName = "HopeVolume";
                     break;
+                case AudioChannel.Jungle:
+                    mixerName = "JungleVolume";
+                    break;
             }
 
             if (fadeIn)
@@ -322,7 +331,7 @@ namespace AudioManagerNS
             masterMixer.SetFloat(volParam, -80);
             float vol = 0;
             masterMixer.GetFloat(volParam, out vol);
-            while (vol < 1)
+            while (vol < 0)
             {
                  vol += (Time.deltaTime / FadeTime) * 100;
                 masterMixer.SetFloat(volParam, vol);
@@ -449,6 +458,7 @@ namespace AudioManagerNS
             int introVolume = PlayerPrefs.GetInt("IntroVolume", 100);
             int fireVolume = PlayerPrefs.GetInt("FireVolume", 100);
             int hopeVolume = PlayerPrefs.GetInt("HopeVolume", 100);
+            int jungleVolume = PlayerPrefs.GetInt("JungleVolume", 100);
 
             // Update the audio mixer
             SetVolume(AudioChannel.Master, masterVolume);
@@ -457,6 +467,7 @@ namespace AudioManagerNS
             SetVolume(AudioChannel.Intro, introVolume);
             SetVolume(AudioChannel.Fire, fireVolume);
             SetVolume(AudioChannel.Hope, hopeVolume);
+            SetVolume(AudioChannel.Jungle, jungleVolume);
         }
         #endregion Private Methods
     }

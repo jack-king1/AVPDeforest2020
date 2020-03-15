@@ -22,6 +22,7 @@ public class tempAudioFixIdle : MonoBehaviour
             AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Idle, 5f, true, new AudioSource());
             AudioManager.Instance.PlayLoop(clip, transform, 1, 1, AudioManager.AudioChannel.Idle);
         }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             //AudioClip clip = SFX.Instance.GetSFX("Idle");
