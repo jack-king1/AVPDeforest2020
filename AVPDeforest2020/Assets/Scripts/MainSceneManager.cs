@@ -74,6 +74,9 @@ public class MainSceneManager : MonoBehaviour
                     {
                         currentStage = SceneStage.HOPE;
                         sceneStageTime = sceneStageTimes[2];
+                        ForestAudio.instance.StartHope();
+                        ForestAudio.instance.StopFire();
+                        
                         StartCoroutine(ChangeSkyBoxColour(2.0f));
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
                         Camera.main.GetComponent<CameraRaycast>().enabled = false;
@@ -88,6 +91,7 @@ public class MainSceneManager : MonoBehaviour
                             //SFX.Instance.StopForestSounds(5);
                             //SFX.Instance.StopWindSounds(5);
                             //SFX.Instance.StartOutroSounds(10);
+                            //ForestAudio.instance.StopHope();
                             Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
                             nextSceneLoading = true;
                         }

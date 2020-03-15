@@ -20,6 +20,8 @@ public class LoadIdle : MonoBehaviour
         {
             loadTimer = 10;
             start = true;
+            ForestAudio.instance.StopHope();
+            ForestAudio.instance.BeginDestroyTimer();
         }
     }
 

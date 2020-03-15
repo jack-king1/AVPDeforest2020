@@ -106,10 +106,10 @@ namespace AudioManagerNS
         /// <param name="volume"></param>
         /// <param name="pitch"></param>
         /// <returns></returns>
-        public AudioSource Play(AudioClip clip, Transform emitter, float volume, float pitch)
+        public AudioSource Play(AudioClip clip, Transform emitter, float volume, float pitch, AudioChannel channel = 0)
         {
             //Create an empty game object
-            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch);
+            AudioSource source = CreatePlaySource(clip, emitter, volume, pitch, channel);
             Destroy(source.gameObject, clip.length);
             return source;
         }
@@ -133,9 +133,9 @@ namespace AudioManagerNS
         /// <param name="volume"></param>
         /// <param name="pitch"></param>
         /// <returns></returns>
-        public AudioSource Play(AudioClip clip, Vector3 point, float volume, float pitch)
+        public AudioSource Play(AudioClip clip, Vector3 point, float volume, float pitch, AudioChannel channel = 0)
         {
-            AudioSource source = CreatePlaySource(clip, point, volume, pitch);
+            AudioSource source = CreatePlaySource(clip, point, volume, pitch, channel);
             Destroy(source.gameObject, clip.length);
             return source;
         }

@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 8094547266148173391}
   - component: {fileID: 8094547266145771263}
   - component: {fileID: 8094547266151035613}
+  - component: {fileID: 6188559964823022624}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -200,10 +201,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 2
+  fadeTime: 5
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
   fadeOnStart: 1
   renderQueue: 5000
+--- !u!65 &6188559964823022624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094547266144376899}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8094547266144376901
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +304,6 @@ GameObject:
   - component: {fileID: 8094547266151021031}
   - component: {fileID: 8094547266151120057}
   - component: {fileID: 8094547267133665904}
-  - component: {fileID: 8623467365392667655}
   - component: {fileID: 8623467365392667652}
   m_Layer: 0
   m_Name: PLAYER OUTRO
@@ -360,19 +373,6 @@ MonoBehaviour:
   increaseSpeedTimer: 0.5
   resetTime: 0.5
   maxSpeed: 0
---- !u!65 &8623467365392667655
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8094547266144376903}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8623467365392667652
 Rigidbody:
   m_ObjectHideFlags: 0

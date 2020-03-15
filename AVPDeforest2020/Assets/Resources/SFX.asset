@@ -48,3 +48,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 1ff7076e39cf84a4e9290713fa720e2d, type: 3}
   - name: Hope
     clip: {fileID: 8300000, guid: 1bc237bebddcabb4b987f636161ee8b0, type: 3}
+  - name: Flamestrike
+    clip: {fileID: 8300000, guid: 9d2e5a08b6ac182479ade85b76311e1e, type: 3}
+  - name: Fire1
+    clip: {fileID: 8300000, guid: 8a6d180ea68e69246af2004f1b96c030, type: 3}
+  - name: Fire4
+    clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
