@@ -63,16 +63,17 @@ public class MainSceneManager : MonoBehaviour
                         sceneStageTime = sceneStageTimes[1];
                         AnimalManager.instance.RemoveAllAnimals();
                         ForestAudio.instance.StopJungle();
+                        Narration.instance.StartCoroutine(Narration.instance.PlayScene2());
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(2.0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
-                        //SFX.instance.JungleSounds();
                         StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
                         currentStage = SceneStage.HOPE;
+                        Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
                         sceneStageTime = sceneStageTimes[2];
                         ForestAudio.instance.StartHope();
                         ForestAudio.instance.StopFire();

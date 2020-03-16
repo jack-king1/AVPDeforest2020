@@ -32,7 +32,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: bb773edb8733e74479002e7ef1512732, type: 3}
   - name: Narration2
     clip: {fileID: 8300000, guid: 6cfca19d7ad7bfa4e8b16d3670799dbb, type: 3}
-  - name: Narration 3
+  - name: Narration3
     clip: {fileID: 8300000, guid: 6a16e38d8163be24886d02682f3a6516, type: 3}
   - name: Narration4
     clip: {fileID: 8300000, guid: 10a9ebae50653ad41b7552a595316fba, type: 3}
