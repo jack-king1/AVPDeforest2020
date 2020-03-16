@@ -33,7 +33,7 @@ public class CameraRaycast : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 3000.0f))
+        if (Physics.Raycast(transform.position + transform.forward * 3, transform.TransformDirection(Vector3.forward), out hit, 3000.0f))
         {
             eyeLinePs.transform.position = hit.point;
             //Debug.Log(eyeLinePs.transform.position);

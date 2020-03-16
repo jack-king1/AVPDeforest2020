@@ -12,11 +12,11 @@ public class NextScene : MonoBehaviour
         {
             Debug.Log("Scene Trigger Hit");
             startSFX = true;
-            AudioManager.instance.Stop("Intro");
+            AudioManagerOld.instance.Stop("Intro");
 
-            AudioManager.instance.Play("Jungle");
-            AudioManager.instance.Play("Cicada");
-            AudioManager.instance.Play("Alt");
+            AudioManagerOld.instance.Play("Jungle");
+            AudioManagerOld.instance.Play("Cicada");
+            AudioManagerOld.instance.Play("Alt");
           
 
         }

@@ -31,13 +31,13 @@ public class Narration : MonoBehaviour
         if (!a)
         {
             yield return new WaitForSeconds(3);
-            AudioManager.instance.Play("Clip1");
+            AudioManagerOld.instance.Play("Clip1");
             yield return new WaitForSeconds(10);
-            AudioManager.instance.Play("Clip2");
+            AudioManagerOld.instance.Play("Clip2");
             yield return new WaitForSeconds(10);
-            AudioManager.instance.Play("Clip3");
+            AudioManagerOld.instance.Play("Clip3");
             yield return new WaitForSeconds(10);
-            AudioManager.instance.Play("Clip4");
+            AudioManagerOld.instance.Play("Clip4");
             a = true;
         }
 
@@ -47,23 +47,23 @@ public class Narration : MonoBehaviour
 
     public IEnumerator PlayScene2()
     {
-        AudioManager.instance.Play("Clip5");
+        //AudioManager.instance.Play("Clip5");
         yield return new WaitForSeconds(10);
-        AudioManager.instance.Play("Clip6");
-        yield return new WaitForSeconds(10);
-        AudioManager.instance.Play("Clip7");
+        //AudioManager.instance.Play("Clip6");
+        //yield return new WaitForSeconds(10);
+        //AudioManager.instance.Play("Clip7");
     }
      
      
     public IEnumerator PlayScene3()
     {
 
-        AudioManager.instance.Play("Clip8");
+        AudioManagerOld.instance.Play("Clip8");
         yield return new WaitForSeconds(10);
-        AudioManager.instance.Play("Clip9");
+        AudioManagerOld.instance.Play("Clip9");
 
 
-        AudioManager.instance.Play("G");
+        AudioManagerOld.instance.Play("G");
         yield return new WaitForSeconds(10);
     }
         

@@ -13,6 +13,8 @@ public class OVRFadeCustom : MonoBehaviour
 
     public OVRScreenFade ovrscreenfade;
 
+    public SceneType fadeToScene;
+
     private void Update()
     {
         if(newScene)
@@ -24,7 +26,7 @@ public class OVRFadeCustom : MonoBehaviour
             else
             {
                 newScene = false;
-                ScenesManager.Instance().LoadNextScene();
+               ScenesManager.Instance.LoadScene(fadeToScene);
             }
         }
         else
@@ -59,6 +61,6 @@ public class OVRFadeCustom : MonoBehaviour
     {
         Debug.Log("Fadeing In!");
         ovrscreenfade = VRCam.GetComponentInChildren<OVRScreenFade>();
-        ovrscreenfade.FadeIn(fadeTime); ;
+        ovrscreenfade.FadeIn(fadeTime);
     }
 }

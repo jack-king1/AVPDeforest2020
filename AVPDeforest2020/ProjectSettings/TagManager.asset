@@ -9,6 +9,8 @@ TagManager:
   - GameManager
   - DirectinalLight
   - HopeTreeSpawn
+  - TransitionTree
+  - Animal
   layers:
   - Default
   - TransparentFX
