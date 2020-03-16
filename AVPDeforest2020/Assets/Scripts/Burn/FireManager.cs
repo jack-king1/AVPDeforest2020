@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using AudioManagerNS;
 
 public class FireManager : MonoBehaviour
 {
     static FireManager instance;
     public GameObject FireSoundPrefab;
     public List <GameObject> FireSoundPrefabs = new List<GameObject>();
-
 
     public static FireManager Instance() { return instance; }
 
@@ -39,13 +39,22 @@ public class FireManager : MonoBehaviour
             {
                 hit.gameObject.GetComponent<Burnable>().StartFire();
 
-                GameObject newFireSound = Instantiate(FireSoundPrefab, new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z), Quaternion.identity, hit.transform);
-                FireSoundPrefabs.Add(newFireSound);
-             
-                hit.gameObject.GetComponent<Burnable>().fireSound = newFireSound;
+                //flamestrike - Fire 1 - Fire 4
+                AudioSource flamestrike = AudioManager.Instance.Play(SFX.Instance.GetSFX("Flamestrike"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
+                flamestrike.spatialBlend = 1;
+                flamestrike.volume = 1;
+                flamestrike.maxDistance = 10;
+                AudioSource fire1 = AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire1"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
+                fire1.spatialBlend = 1;
+                fire1.volume = 1;
+                fire1.maxDistance = 10;
+                AudioSource fire4 =  AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire4"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
+                fire4.spatialBlend = 1;
+                fire4.volume = 1;
+                fire4.maxDistance = 10;
             }
         }
-    }
+    } 
 
     public void GetBurnables()
     {

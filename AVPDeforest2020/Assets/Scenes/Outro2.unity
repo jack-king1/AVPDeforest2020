@@ -1027,11 +1027,6 @@ PrefabInstance:
       propertyPath: earth
       value: 
       objectReference: {fileID: 1552105248}
-    - target: {fileID: 8094547266151035613, guid: 845c8354330d49045ad31901954d5567,
-        type: 3}
-      propertyPath: fadeTime
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 845c8354330d49045ad31901954d5567, type: 3}
 --- !u!1001 &8082861745971183784

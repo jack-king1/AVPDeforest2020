@@ -12195,18 +12195,38 @@ PrefabInstance:
     - target: {fileID: 3365555421246821703, guid: 2b6650e9f522d0345a33ab8c5abcd717,
         type: 3}
       propertyPath: sceneStageTimes.Array.data[0]
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3365555421246821703, guid: 2b6650e9f522d0345a33ab8c5abcd717,
         type: 3}
       propertyPath: sceneStageTimes.Array.data[1]
-      value: 90
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3365555421246821703, guid: 2b6650e9f522d0345a33ab8c5abcd717,
         type: 3}
       propertyPath: sceneStageTimes.Array.data[2]
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 3365555421246821701, guid: 2b6650e9f522d0345a33ab8c5abcd717,
+        type: 3}
+      propertyPath: FireSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365555421246821701, guid: 2b6650e9f522d0345a33ab8c5abcd717,
+        type: 3}
+      propertyPath: FireSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d2e5a08b6ac182479ade85b76311e1e, type: 3}
+    - target: {fileID: 3365555421246821701, guid: 2b6650e9f522d0345a33ab8c5abcd717,
+        type: 3}
+      propertyPath: FireSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a6d180ea68e69246af2004f1b96c030, type: 3}
+    - target: {fileID: 3365555421246821701, guid: 2b6650e9f522d0345a33ab8c5abcd717,
+        type: 3}
+      propertyPath: FireSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b6650e9f522d0345a33ab8c5abcd717, type: 3}
 --- !u!20 &8186418409263844374 stripped
