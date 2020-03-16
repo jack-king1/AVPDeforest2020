@@ -179,6 +179,7 @@ namespace AudioManagerNS
         /// <param name="volume">From 0 (mute) to 100 (full volume - 0 DB)</param>
         public void SetVolume(AudioChannel channel, float volume)
         {
+     
             // Converts the 0 - 100 input into decibles | volume of 0 will mute, 1 should be ~the lowestDecibles set,
             // and 100 should be 0 DB offset from the base volume on the channel
             float adjustedVolume = lowestDeciblesBeforeMute + (-lowestDeciblesBeforeMute / 5 * volume / 20);
