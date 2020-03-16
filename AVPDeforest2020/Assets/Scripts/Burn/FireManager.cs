@@ -43,15 +43,15 @@ public class FireManager : MonoBehaviour
                 AudioSource flamestrike = AudioManager.Instance.Play(SFX.Instance.GetSFX("Flamestrike"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 flamestrike.spatialBlend = 1;
                 flamestrike.volume = 1;
-                flamestrike.maxDistance = 10;
+                flamestrike.maxDistance = 2000;
                 AudioSource fire1 = AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire1"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 fire1.spatialBlend = 1;
                 fire1.volume = 1;
-                fire1.maxDistance = 10;
+                fire1.maxDistance = 2000;
                 AudioSource fire4 =  AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire4"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 fire4.spatialBlend = 1;
                 fire4.volume = 1;
-                fire4.maxDistance = 10;
+                fire4.maxDistance = 2000;
             }
         }
     } 

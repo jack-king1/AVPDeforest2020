@@ -35,13 +35,14 @@ public class SFX : Singleton<SFX>
         return sound;
     }
 
+    #region OldCode
     //private void Update()
     //{
     //    //if(scene.startSFX)
     //    //{
     //    //    timer += Time.deltaTime;
     //    //}
-       
+
     //    //if (timer >= 60 && timer <= 61 )   StopForestSounds(5);
 
     //    //if (timer >= 110 && timer <= 111) StartWindSounds(1);
@@ -116,4 +117,5 @@ public class SFX : Singleton<SFX>
     //{
     //    //timer = 0;
     //}
+    #endregion
 }
