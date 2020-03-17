@@ -9,7 +9,7 @@ public class Narration : MonoBehaviour
     AudioSource m_MyAudioSource;
 
     bool a = false;
-    int timebuffer;
+    int timebuffer = 5;
     void Start()
     {
         if(instance == null)
