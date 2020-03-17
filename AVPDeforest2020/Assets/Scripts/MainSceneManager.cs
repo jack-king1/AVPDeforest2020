@@ -17,6 +17,9 @@ public class MainSceneManager : MonoBehaviour
 
     bool nextSceneLoading = false;
 
+    public delegate void BurningStartedDelegate();
+    public BurningStartedDelegate fireStartedDelegate;
+
     public enum SceneStage
     {
         TRANQUIL = 0,
@@ -41,7 +44,6 @@ public class MainSceneManager : MonoBehaviour
         {
             Destroy(this);
         }
-
         sceneStageTime = sceneStageTimes[0];
         hopeTreeSpawn = GameObject.FindGameObjectWithTag("HopeTreeSpawn");
         dirLight = GameObject.FindGameObjectWithTag("DirectinalLight");
@@ -59,6 +61,7 @@ public class MainSceneManager : MonoBehaviour
             {
                 case SceneStage.TRANQUIL:
                     {
+                        fireStartedDelegate(); //Call all functions that are subscribed to this.
                         currentStage = SceneStage.BURNING;
                         sceneStageTime = sceneStageTimes[1];
                         AnimalManager.instance.RemoveAllAnimals();
