@@ -63,6 +63,9 @@ public class GetMeshTriangles : MonoBehaviour
         int colourCount = 0;
         for (int j = 0; j < childVertices.Length; ++j)
         {
+            if (!ColourMaps.instance)
+                continue;
+
             for (int i = 0; i < ColourMaps.instance.ForestTerrain.Length; ++i)
             {
                 float currentHeight = heights[j];

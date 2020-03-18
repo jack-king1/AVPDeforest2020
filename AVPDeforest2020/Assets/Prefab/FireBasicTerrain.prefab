@@ -3834,7 +3834,7 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 1
   TriggerModule:
-    enabled: 0
+    enabled: 1
     collisionShape0: {fileID: 9051363779210115167, guid: c0a2d56b76d1a6448afc95da5a4f5d4e,
       type: 3}
     collisionShape1: {fileID: 0}
@@ -3842,7 +3842,7 @@ ParticleSystem:
     collisionShape3: {fileID: 0}
     collisionShape4: {fileID: 0}
     collisionShape5: {fileID: 0}
-    inside: 1
+    inside: 2
     outside: 0
     enter: 2
     exit: 0

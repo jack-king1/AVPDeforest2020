@@ -16,6 +16,8 @@ public class Burnable : MonoBehaviour
         public float life = 0.0f;
         public Color start;
         public Color end;
+        public Color [] starts;
+        public Color [] ends;
     }
 
     Colour colour = new Colour();
@@ -24,7 +26,9 @@ public class Burnable : MonoBehaviour
     {
         TRUNK = 0,
         LEAVES = 1,
-        TERRAIN = 2
+        TERRAIN = 2,
+        FOLIAGE = 3,
+        ROCK = 4
     }
 
     public enum States
@@ -46,9 +50,9 @@ public class Burnable : MonoBehaviour
     Vector3 maxScale;
     Vector3 minScale;
 
-    [SerializeField] float burnRate = 1.0f;
-    [SerializeField] float fadeRate = 1.0f;
-    [SerializeField] float fadeLife = 100.0f;
+    float burnRate = 1.0f;
+    float fadeRate = 1.0f;
+    float fadeLife = 100.0f;
 
     bool destroyedFire = false;
 
@@ -59,7 +63,42 @@ public class Burnable : MonoBehaviour
 
     private void Awake()
     {
-        // fade = GetComponent<AudioFade>();
+
+        switch (type)
+        {
+            case Object.TRUNK:
+                {
+                    burnRate = 10.0f;
+                    break;
+                }
+            case Object.LEAVES:
+            case Object.FOLIAGE:
+                {
+                    burnRate = 20.0f;
+                    fadeRate = 100.0f;
+                    break;
+                }
+            case Object.TERRAIN:
+            case Object.ROCK:
+                {
+                    burnRate = 5.0f;
+                    break;
+                }
+        }
+
+
+
+        if (type == Object.TRUNK)
+        {
+            var burns = GetComponentsInChildren<Burnable>();
+
+            for (int i = 0; i < burns.Length; ++i)
+            {
+                if(burns[i].name != name)
+                    neighbours.Add(burns[i].gameObject);
+            }
+        }
+
     }
 
     // Start is called before the first frame update
@@ -69,18 +108,18 @@ public class Burnable : MonoBehaviour
         {      
             StartCoroutine(EndFire());
         }
-        else if(state == States.BURN)
+        else if(state == States.BURN && type != Object.FOLIAGE || type != Object.LEAVES)
         {
             foreach (var n in neighbours)
             {
                 var nBurnable = n.GetComponent<Burnable>();
                 if (nBurnable)
                 {
-                    if (nBurnable.type == Object.LEAVES && burnTime > 2.0f)
+                    if (nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 2.0f)
                     {
                         nBurnable.StartFire();
                     }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 4.0f)
+                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 3.0f)
                     {
                         nBurnable.StartFire();
                     }
@@ -88,6 +127,12 @@ public class Burnable : MonoBehaviour
                     {
                         nBurnable.StartFire();
                         burnTime = 0.0f;
+                    }
+
+                    if ((nBurnable.State == States.ALIVE && nBurnable.type == Object.ROCK && burnTime > 4.0f) ||
+                        (nBurnable.State == States.ALIVE && nBurnable.type == Object.FOLIAGE && burnTime > 2.0f))
+                    {
+                        nBurnable.Burn();
                     }
                 }
             }
@@ -130,6 +175,40 @@ public class Burnable : MonoBehaviour
                     StartCoroutine(BurnTerrain());
                     break;
                 }
+            case Object.FOLIAGE:
+                {
+
+                    var burns = GetComponentsInChildren<Burnable>();
+
+
+                    if(burns.Length == 1 && burns[0].name == gameObject.name)
+                    {
+                        maxScale = gameObject.GetComponent<Transform>().localScale;
+                        minScale = maxScale * 0.2f;
+                        colour.starts = new Color[gameObject.GetComponent<MeshRenderer>().materials.Length];
+                        colour.ends = new Color[colour.starts.Length];
+                        for (int i = 0; i < gameObject.GetComponent<MeshRenderer>().materials.Length; ++i)
+                        {
+                            colour.starts[i] = gameObject.GetComponent<MeshRenderer>().materials[i].color;
+                            colour.ends[i] = Color.black;
+                        }
+                        StartCoroutine(BurnFoliage());
+                        return;
+                    }
+
+                    foreach(var burn in burns)
+                    {
+                        burn.Burn();
+                    }
+                    break;
+                }
+            case Object.ROCK:
+                {
+                    colour.start = gameObject.GetComponent<MeshRenderer>().material.color;
+                    colour.end = Color.black;
+                    StartCoroutine(BurnRock());
+                    break;
+                }
         }
     }
 
@@ -152,6 +231,12 @@ public class Burnable : MonoBehaviour
             burnTime += Time.deltaTime;
 
             yield return null;
+        }
+
+
+        if(Random.Range(0, 3) == 1)
+        {
+            gameObject.SetActive(false);
         }
 
         state = States.DEAD;
@@ -193,7 +278,66 @@ public class Burnable : MonoBehaviour
         state = States.DEAD;
     }
 
+    IEnumerator BurnFoliage()
+    {
+        Vector3 scale = gameObject.GetComponent<Transform>().localScale;
+
+        while (health >= 0.0f)
+        {
+
+            scale = Vector3.Lerp(minScale, maxScale, health / 100.0f);
+            gameObject.GetComponent<Transform>().localScale = scale;
+
+            for (int i = 0; i < colour.starts.Length; ++i)
+            {
+                var col = gameObject.GetComponent<MeshRenderer>().materials[i].color;
+                col = Color.Lerp(colour.ends[i], colour.starts[i], (health - 20.0f) / 80.0f);
+                gameObject.GetComponent<MeshRenderer>().materials[i].color = col;
+            }
+
+            health -= Time.deltaTime * burnRate;
+            burnTime += Time.deltaTime;
+            yield return null;
+        }
+
+        while (fadeLife > 0.0f)
+        {
+            for (int i = 0; i < colour.starts.Length; ++i)
+            {
+                var col = gameObject.GetComponent<MeshRenderer>().materials[i].color;
+                col.a = Mathf.Lerp(0.0f, 1.0f, fadeLife / 100.0f);
+                if (col.a < 0.1f)
+                    col.a = 0.0f;
+                gameObject.GetComponent<MeshRenderer>().materials[i].color = col;
+            }
+
+            fadeLife -= Time.deltaTime * fadeRate;
+
+            yield return null;
+        }
+
+        state = States.DEAD;
+    }
+
     IEnumerator BurnTerrain()
+    {
+        var col = gameObject.GetComponent<MeshRenderer>().material.color;
+
+        while (health >= 0.0f)
+        {
+
+            col = Color.Lerp(colour.end, colour.start, health / 100.0f);
+            gameObject.GetComponent<MeshRenderer>().material.color = col;
+
+            health -= Time.deltaTime * burnRate;
+            burnTime += Time.deltaTime;
+            yield return null;
+        }
+
+        state = States.DEAD;
+    }
+
+    IEnumerator BurnRock()
     {
         var col = gameObject.GetComponent<MeshRenderer>().material.color;
 
@@ -213,6 +357,11 @@ public class Burnable : MonoBehaviour
 
     public void StartFire()
     {
+        if(type != Object.TRUNK && type != Object.LEAVES && type != Object.TERRAIN)
+        {
+            return;
+        }
+
         fire = Instantiate(ps);
 
         fire.transform.parent = gameObject.transform;
@@ -234,13 +383,18 @@ public class Burnable : MonoBehaviour
     IEnumerator EndFire()
     {
         destroyedFire = true;
-        while (fire.GetComponent<ParticleSystem>().isPlaying)
+
+        if (fire)
         {
-            fire.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            yield return null;
+            while (fire.GetComponent<ParticleSystem>().isPlaying)
+            {
+                fire.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                yield return null;
+            }
+            FireManager.Instance().RemoveFireSound(fireSound);
+            fire.SetActive(false);
         }
-        FireManager.Instance().RemoveFireSound(fireSound);
-        fire.SetActive(false);
+        yield return 0;
     }
 
 
@@ -260,4 +414,19 @@ public class Burnable : MonoBehaviour
         }
 
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Burnable>())
+        {
+            if ((other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN) && 
+                type == Object.TERRAIN)
+            {
+                if(!neighbours.Contains(other.gameObject))
+                    neighbours.Add(other.gameObject);
+            }
+        }
+    }
+
 }
