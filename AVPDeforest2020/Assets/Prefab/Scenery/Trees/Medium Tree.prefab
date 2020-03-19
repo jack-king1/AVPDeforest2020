@@ -15,9 +15,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!114 &6626935099223944322
 MonoBehaviour:
@@ -34,9 +31,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!114 &1609793633561834153
 MonoBehaviour:
@@ -53,9 +47,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!1 &2280170119255187421
 GameObject:
@@ -153,9 +144,6 @@ MonoBehaviour:
     type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!64 &993959346886977267
 MeshCollider:
@@ -267,9 +255,6 @@ MonoBehaviour:
     type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!64 &8015464000486560288
 MeshCollider:
@@ -381,9 +366,6 @@ MonoBehaviour:
     type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!64 &6422201436861775004
 MeshCollider:
@@ -414,9 +396,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!114 &2864422578945052636
 MonoBehaviour:
@@ -433,9 +412,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!114 &2122404558162960164
 MonoBehaviour:
@@ -452,9 +428,6 @@ MonoBehaviour:
   fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
-  burnRate: 20
-  fadeRate: 100
-  fadeLife: 100
   neighbours: []
 --- !u!1 &8427238797256914581
 GameObject:
@@ -522,7 +495,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8761910824519130491, guid: 729df8f6b3b6ef546bfee2857a3f6c36, type: 3}
+  - {fileID: 2100000, guid: f30e5f73f782cf44f82672ff09d016c1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -559,9 +532,6 @@ MonoBehaviour:
     type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 0
-  burnRate: 10
-  fadeRate: 1
-  fadeLife: 100
   neighbours: []
 --- !u!54 &641863157035379670
 Rigidbody:

@@ -69,6 +69,7 @@ public class Burnable : MonoBehaviour
             case Object.TRUNK:
                 {
                     burnRate = 10.0f;
+                    fadeRate = 50.0f;
                     break;
                 }
             case Object.LEAVES:
@@ -234,9 +235,20 @@ public class Burnable : MonoBehaviour
         }
 
 
-        if(Random.Range(0, 3) == 1)
+        if(Random.Range(0, 5) != 0)
         {
-            gameObject.SetActive(false);
+            while (fadeLife > 0.0f)
+            {
+                col.a = Mathf.Lerp(0.0f, 1.0f, fadeLife / 100.0f);
+                if (col.a < 0.1f)
+                    col.a = 0.0f;
+
+                gameObject.GetComponent<MeshRenderer>().material.color = col;
+
+                fadeLife -= Time.deltaTime * fadeRate;
+
+                yield return null;
+            }
         }
 
         state = States.DEAD;
@@ -420,7 +432,7 @@ public class Burnable : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Burnable>())
         {
-            if ((other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN) && 
+            if (other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN && 
                 type == Object.TERRAIN)
             {
                 if(!neighbours.Contains(other.gameObject))
