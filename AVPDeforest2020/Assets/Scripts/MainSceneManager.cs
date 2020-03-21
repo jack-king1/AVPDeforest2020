@@ -55,29 +55,33 @@ public class MainSceneManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (sceneStageTime <= 0.0f)
         {
             switch (currentStage)
             {
                 case SceneStage.TRANQUIL:
                     {
-                        fireStartedDelegate(); //Call all functions that are subscribed to this.
+                        if(fireStartedDelegate != null)
+                        {
+                            fireStartedDelegate(); //Call all functions that are subscribed to this.
+                        }
                         currentStage = SceneStage.BURNING;
                         sceneStageTime = sceneStageTimes[1];
                         AnimalManager.instance.RemoveAllAnimals();
                         ForestAudio.instance.StopJungle();
-                        Narration.instance.StartCoroutine(Narration.instance.PlayScene2());
+                        StartCoroutine(Narration.instance.FireNarration());
+                      //  Narration.instance.StartCoroutine(Narration.instance.FireNarration());
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(2.0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
-                        StartCoroutine(Narration.instance. PlayScene2());
+                       // StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
                         currentStage = SceneStage.SILENCE;
-                        Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
+                      //  Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
                         sceneStageTime = sceneStageTimes[2];
                         ForestAudio.instance.StopFire();
                         
@@ -93,7 +97,7 @@ public class MainSceneManager : MonoBehaviour
                         sceneStageTime = sceneStageTimes[3];
                         ForestAudio.instance.StartHope();
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
-                        StartCoroutine(Narration.instance.PlayScene3());
+                         StartCoroutine(Narration.instance.HopeNarration());
                         break;
                     }
                 case SceneStage.HOPE:

@@ -290,6 +290,28 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7e67ad06c791ff440b7df82ba78c731a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3314769ca1a95474f88819e876890c66, type: 3}
+--- !u!1 &822795919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8082861744665342462, guid: 11620b04f2e5210409b791261703d645,
+    type: 3}
+  m_PrefabInstance: {fileID: 8082861745971183784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &822795920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822795919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653498758d2b87740b051fd3eb858978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeInAfterTime: 8
+  displayTextDuration: 4
+  fadeOutTime: 4
+  needsFadeOut: 1
 --- !u!1 &994648307
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,9 +321,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994648310}
-  - component: {fileID: 994648309}
   - component: {fileID: 994648308}
   - component: {fileID: 994648311}
+  - component: {fileID: 994648309}
   m_Layer: 0
   m_Name: SceneTrigger
   m_TagString: Untagged
@@ -331,16 +353,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 994648307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3bcd1e27fd1e744ca185438be9065ae, type: 3}
+  m_Script: {fileID: 11500000, guid: b7fca14c12813bb45a783db82d012aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeIn: 0
-  VRCam: {fileID: 2989777506030687508}
-  fadeTime: 3.5
-  newSceneTimer: 5
-  timer: 5
-  ovrscreenfade: {fileID: 0}
-  fadeToScene: 0
+  loadTimer: 5
 --- !u!4 &994648310
 Transform:
   m_ObjectHideFlags: 0
@@ -364,10 +380,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 994648307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b816c0f069c64c74c98516b8612c1058, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ccfde178114ab04fb6878fc88cd89be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadTimer: 20
+  VRCam: {fileID: 1244652101}
+  quote: {fileID: 822795919}
 --- !u!1 &1230417912
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +545,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112f9495ebfaf434f8a6da0727401b13, type: 3}
+--- !u!1 &1244652101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8094547266144376899, guid: 845c8354330d49045ad31901954d5567,
+    type: 3}
+  m_PrefabInstance: {fileID: 6424465231783431507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1244652104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244652101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960df718f95ac0e4a8f7c7bc88c9357d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 5
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeOnStart: 1
+  renderQueue: 5000
 --- !u!1001 &1347780152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -634,7 +673,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1552105248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d0614344abf04418def70a5046b217, type: 3}
+  m_Script: {fileID: 11500000, guid: b7b0f3acd28cf7e4c9a6e0c402a78c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1552105250
@@ -855,6 +894,23 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6424465231783431507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2989777506030687509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2989777506030687508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76fd8baedbae27644814672c9e0310c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earth: {fileID: 1552105248}
+  zoomSpeed: 200
+  increaseSpeedTimer: 5
+  resetTime: 5
+  maxSpeed: 200
 --- !u!20 &2989777506031555500 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8094547266145771263, guid: 845c8354330d49045ad31901954d5567,
@@ -1027,7 +1083,9 @@ PrefabInstance:
       propertyPath: earth
       value: 
       objectReference: {fileID: 1552105248}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8094547267133665904, guid: 845c8354330d49045ad31901954d5567, type: 3}
+    - {fileID: 8094547266151035613, guid: 845c8354330d49045ad31901954d5567, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 845c8354330d49045ad31901954d5567, type: 3}
 --- !u!1001 &8082861745971183784
 PrefabInstance:
@@ -1171,5 +1229,6 @@ PrefabInstance:
       propertyPath: needsFadeOut
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8082861744665342463, guid: 11620b04f2e5210409b791261703d645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11620b04f2e5210409b791261703d645, type: 3}

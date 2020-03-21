@@ -19,7 +19,7 @@ public class IntroAudio : MonoBehaviour
         {
             Destroy(this);
         }
-        AudioManagerOld.instance.FadeInSound("Idle", 5);
+        //AudioManagerOld.instance.FadeInSound("Idle", 5);
     }
 
     private void Update()
@@ -34,6 +34,6 @@ public class IntroAudio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Intro, 20, false, GetComponentInChildren<AudioSource>());
+        AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Intro, 10, false, GetComponentInChildren<AudioSource>());
     }
 }

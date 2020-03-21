@@ -45,12 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usingVr: 1
-  Camera: {fileID: 0}
+  CameraGO: {fileID: 0}
   hopeTreePrefab: {fileID: 8009494259949963184, guid: 1b0ca3f94a8c146408d7560333a57848,
     type: 3}
   sceneStageTimes:
   - 60
-  - 90
+  - 700
   - 30
 --- !u!114 &3365555421246821701
 MonoBehaviour:

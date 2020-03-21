@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1581139558390493538}
   - component: {fileID: 2983782733124805132}
-  - component: {fileID: 7715255944105103886}
-  - component: {fileID: 3685847470918902832}
+  - component: {fileID: 8301091199078704563}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Animal
@@ -53,7 +52,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7715255944105103886
+--- !u!114 &8301091199078704563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,24 +61,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4220836954249588973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d2b282f09399845b1efe2c9256a739, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  birdColors:
-  - {r: 1, g: 0, b: 0, a: 0}
-  - {r: 1, g: 0.89338535, b: 0, a: 0}
-  - {r: 1, g: 0, b: 0.7319846, a: 0}
-  - {r: 0, g: 1, b: 0.22047544, a: 0}
---- !u!114 &3685847470918902832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4220836954249588973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c2193329924c3f4a9cee6dbc69f1328, type: 3}
+  m_Script: {fileID: 11500000, guid: acdf632447e35294b9ecda83e03e561d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2105421359800622571
