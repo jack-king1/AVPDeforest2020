@@ -25,7 +25,7 @@ public class Narration : MonoBehaviour
        // StartCoroutine(PlayScene1());
     }
 
-    public IEnumerator PlayScene1()
+    public IEnumerator JungleNarration()
     {
         //Scene 1
         if (!a)
@@ -51,7 +51,7 @@ public class Narration : MonoBehaviour
     }
         //Scene 2
 
-    public IEnumerator PlayScene2()
+    public IEnumerator FireNarration()
     {
         AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration5"), transform);
         yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration5").length + timebuffer);
@@ -62,7 +62,7 @@ public class Narration : MonoBehaviour
     }
      
      
-    public IEnumerator PlayScene3()
+    public IEnumerator HopeNarration()
     {
         if (a)
         {
