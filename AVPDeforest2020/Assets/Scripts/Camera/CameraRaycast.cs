@@ -31,9 +31,16 @@ public class CameraRaycast : MonoBehaviour
 
     void Update()
     {
+
+        int layerMask = 1 << 8;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        layerMask = ~layerMask;
+
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position + transform.forward * 3, transform.TransformDirection(Vector3.forward), out hit, 3000.0f))
+        if (Physics.Raycast(transform.position + transform.forward * 3, transform.TransformDirection(Vector3.forward), out hit, 3000.0f, layerMask, QueryTriggerInteraction.Ignore))
         {
             eyeLinePs.transform.position = hit.point;
             //Debug.Log(eyeLinePs.transform.position);
