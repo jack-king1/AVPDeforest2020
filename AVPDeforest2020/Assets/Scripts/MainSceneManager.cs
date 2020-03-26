@@ -129,13 +129,11 @@ public class MainSceneManager : MonoBehaviour
         if(!burnPercentFull)
         {
             burnPercent += 0.05f;
+            Debug.Log("Fire Burn progress:" + burnPercent);
             if (burnPercent >= 1)
             {
                 burnPercentFull = true;
-                if(fireBurnProgressDelegate != null)
-                {
-                    fireBurnProgressDelegate();
-                }
+                fireBurnProgressDelegate?.Invoke();
             }
         }
     }

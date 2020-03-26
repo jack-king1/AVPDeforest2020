@@ -369,13 +369,13 @@ public class Burnable : MonoBehaviour
 
     public void StartFire()
     {
+        
         if(type != Object.TRUNK && type != Object.LEAVES && type != Object.TERRAIN)
         {
             return;
         }
-
         fire = Instantiate(ps);
-
+        MainSceneManager.instance.burnCounterIncrease(); //adds 0.05 to the counter once it hits 1, can no longer increase/decrease volume.
         fire.transform.parent = gameObject.transform;
         if (tag == "Terrain")
         {
