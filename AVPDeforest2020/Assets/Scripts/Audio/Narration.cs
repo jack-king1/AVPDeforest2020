@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using AudioManagerNS;
 [RequireComponent(typeof(AudioSource))]
 public class Narration : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class Narration : MonoBehaviour
     AudioSource m_MyAudioSource;
 
     bool a = false;
-
+    int timebuffer = 5;
     void Start()
     {
         if(instance == null)
@@ -25,19 +25,25 @@ public class Narration : MonoBehaviour
        // StartCoroutine(PlayScene1());
     }
 
-    public IEnumerator PlayScene1()
+    public IEnumerator JungleNarration()
     {
         //Scene 1
         if (!a)
         {
-            yield return new WaitForSeconds(3);
-            AudioManagerOld.instance.Play("Clip1");
-            yield return new WaitForSeconds(10);
-            AudioManagerOld.instance.Play("Clip2");
-            yield return new WaitForSeconds(10);
-            AudioManagerOld.instance.Play("Clip3");
-            yield return new WaitForSeconds(10);
-            AudioManagerOld.instance.Play("Clip4");
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration1"), transform);
+
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration1").length +timebuffer);
+
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration2"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration2").length + timebuffer);
+
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration3"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration3").length + timebuffer);
+
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration4"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration4").length + timebuffer);
+
+         
             a = true;
         }
 
@@ -45,26 +51,34 @@ public class Narration : MonoBehaviour
     }
         //Scene 2
 
-    public IEnumerator PlayScene2()
+    public IEnumerator FireNarration()
     {
-        //AudioManager.instance.Play("Clip5");
-        yield return new WaitForSeconds(10);
-        //AudioManager.instance.Play("Clip6");
-        //yield return new WaitForSeconds(10);
-        //AudioManager.instance.Play("Clip7");
+        AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration5"), transform);
+        yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration5").length + timebuffer);
+
+        AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration6"), transform);
+        yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration6").length + timebuffer);
+
     }
      
      
-    public IEnumerator PlayScene3()
+    public IEnumerator HopeNarration()
     {
+        if (a)
+        {
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration7"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration7").length + timebuffer);
 
-        AudioManagerOld.instance.Play("Clip8");
-        yield return new WaitForSeconds(10);
-        AudioManagerOld.instance.Play("Clip9");
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration8"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration8").length + timebuffer);
 
+            AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration9"), transform);
+            yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration9").length + timebuffer);
 
-        AudioManagerOld.instance.Play("G");
-        yield return new WaitForSeconds(10);
+            a = false;
+        }
+
+       
     }
         
 

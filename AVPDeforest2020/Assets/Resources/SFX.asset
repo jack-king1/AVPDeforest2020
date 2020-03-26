@@ -29,28 +29,30 @@ MonoBehaviour:
   - name: Birds
     clip: {fileID: 8300000, guid: 67ca0d59e673204419b686781a9be71f, type: 3}
   - name: Narration1
-    clip: {fileID: 8300000, guid: bb773edb8733e74479002e7ef1512732, type: 3}
+    clip: {fileID: 8300000, guid: fe47a04ea1269f049b7c3d1ff0b6fdb1, type: 3}
   - name: Narration2
-    clip: {fileID: 8300000, guid: 6cfca19d7ad7bfa4e8b16d3670799dbb, type: 3}
-  - name: Narration 3
-    clip: {fileID: 8300000, guid: 6a16e38d8163be24886d02682f3a6516, type: 3}
+    clip: {fileID: 8300000, guid: 10f7c9f28537fdf408088b879439b65d, type: 3}
+  - name: Narration3
+    clip: {fileID: 8300000, guid: 00beabe60dfda7f47a46196ae9841a63, type: 3}
   - name: Narration4
-    clip: {fileID: 8300000, guid: 10a9ebae50653ad41b7552a595316fba, type: 3}
+    clip: {fileID: 8300000, guid: 37b87a15e22486749a3d73eb6a5265d8, type: 3}
   - name: Narration5
-    clip: {fileID: 8300000, guid: 878f01fe8ff374f4d8d53ca3ca471707, type: 3}
+    clip: {fileID: 8300000, guid: 30edbdfcd9e11dc4fb6cb017203a5d29, type: 3}
   - name: Narration6
-    clip: {fileID: 8300000, guid: 11cef84ab24f0ef48907c24c853f0a01, type: 3}
+    clip: {fileID: 8300000, guid: 67b73a416603b48419336f1055957ca4, type: 3}
   - name: Narration7
-    clip: {fileID: 8300000, guid: 1ff7076e39cf84a4e9290713fa720e2d, type: 3}
+    clip: {fileID: 8300000, guid: f7a96267b749a034488cc8b749f869bd, type: 3}
   - name: Narration8
-    clip: {fileID: 8300000, guid: 94acaf4ece1535a40b5fdc60a87bb6a8, type: 3}
+    clip: {fileID: 8300000, guid: 77346ede5bda30740b367b3189c13a33, type: 3}
   - name: Narration9
-    clip: {fileID: 8300000, guid: 1ff7076e39cf84a4e9290713fa720e2d, type: 3}
+    clip: {fileID: 8300000, guid: 25b99758c3ad2cb46aba58557b705bd0, type: 3}
   - name: Hope
     clip: {fileID: 8300000, guid: 1bc237bebddcabb4b987f636161ee8b0, type: 3}
   - name: Flamestrike
     clip: {fileID: 8300000, guid: 9d2e5a08b6ac182479ade85b76311e1e, type: 3}
   - name: Fire1
     clip: {fileID: 8300000, guid: 8a6d180ea68e69246af2004f1b96c030, type: 3}
+  - name: Fire4
+    clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
   - name: Fire4
     clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}

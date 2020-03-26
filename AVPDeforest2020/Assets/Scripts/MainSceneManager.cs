@@ -17,16 +17,20 @@ public class MainSceneManager : MonoBehaviour
 
     bool nextSceneLoading = false;
 
+    public delegate void BurningStartedDelegate();
+    public BurningStartedDelegate fireStartedDelegate;
+
     public enum SceneStage
     {
         TRANQUIL = 0,
         BURNING = 1,
-        HOPE = 2
+        SILENCE = 2,
+        HOPE = 3
     }
 
     SceneStage currentStage = SceneStage.TRANQUIL;
 
-    [SerializeField]float[] sceneStageTimes = new float[3];
+    [SerializeField]float[] sceneStageTimes = new float[4];
     float sceneStageTime = 0.0f;
 
 
@@ -41,7 +45,6 @@ public class MainSceneManager : MonoBehaviour
         {
             Destroy(this);
         }
-
         sceneStageTime = sceneStageTimes[0];
         hopeTreeSpawn = GameObject.FindGameObjectWithTag("HopeTreeSpawn");
         dirLight = GameObject.FindGameObjectWithTag("DirectinalLight");
@@ -52,36 +55,49 @@ public class MainSceneManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         if (sceneStageTime <= 0.0f)
         {
             switch (currentStage)
             {
                 case SceneStage.TRANQUIL:
                     {
+                        if(fireStartedDelegate != null)
+                        {
+                            fireStartedDelegate(); //Call all functions that are subscribed to this.
+                        }
                         currentStage = SceneStage.BURNING;
                         sceneStageTime = sceneStageTimes[1];
                         AnimalManager.instance.RemoveAllAnimals();
                         ForestAudio.instance.StopJungle();
+                        StartCoroutine(Narration.instance.FireNarration());
+                      //  Narration.instance.StartCoroutine(Narration.instance.FireNarration());
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(2.0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
-                        //SFX.instance.JungleSounds();
-                        StartCoroutine(Narration.instance. PlayScene2());
+                       // StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
-                        currentStage = SceneStage.HOPE;
+                        currentStage = SceneStage.SILENCE;
+                      //  Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
                         sceneStageTime = sceneStageTimes[2];
-                        ForestAudio.instance.StartHope();
                         ForestAudio.instance.StopFire();
                         
                         StartCoroutine(ChangeSkyBoxColour(2.0f));
-                        Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
                         Camera.main.GetComponent<CameraRaycast>().enabled = false;
-                        StartCoroutine(Narration.instance.PlayScene3());
 
+
+                        break;
+                    }
+                case SceneStage.SILENCE:
+                    {
+                        currentStage = SceneStage.HOPE;
+                        sceneStageTime = sceneStageTimes[3];
+                        ForestAudio.instance.StartHope();
+                        Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
+                         StartCoroutine(Narration.instance.HopeNarration());
                         break;
                     }
                 case SceneStage.HOPE:
