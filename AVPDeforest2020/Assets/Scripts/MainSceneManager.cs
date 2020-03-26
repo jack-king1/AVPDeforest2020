@@ -20,6 +20,12 @@ public class MainSceneManager : MonoBehaviour
     public delegate void BurningStartedDelegate();
     public BurningStartedDelegate fireStartedDelegate;
 
+    public delegate void ForestBurnProgress();
+    public ForestBurnProgress fireBurnProgressDelegate;
+
+    float burnPercent = 0;
+    bool burnPercentFull = false;
+
     public enum SceneStage
     {
         TRANQUIL = 0,
@@ -116,6 +122,22 @@ public class MainSceneManager : MonoBehaviour
             }
         }
         sceneStageTime -= Time.deltaTime;
+    }
+
+    public void burnCounterIncrease()
+    {
+        if(!burnPercentFull)
+        {
+            burnPercent += 0.05f;
+            if (burnPercent >= 1)
+            {
+                burnPercentFull = true;
+                if(fireBurnProgressDelegate != null)
+                {
+                    fireBurnProgressDelegate();
+                }
+            }
+        }
     }
 
 
