@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0652172af6c534941b042b13067dc9d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReachDestination: 0
+  timeToReachDestination: 30
   startPos: {fileID: 6862723084249433716}
   endPos: {fileID: 1403860008577794663}
   StartPositionVector: {x: 0, y: 0, z: 0}
@@ -117,6 +117,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1403860007537720407}
     m_Modifications:
+    - target: {fileID: 522207570893367479, guid: 63374dfcb0c0ded4984d1ada948b544c,
+        type: 3}
+      propertyPath: m_Name
+      value: MonkeySwing
+      objectReference: {fileID: 0}
     - target: {fileID: 3558996939599551140, guid: 63374dfcb0c0ded4984d1ada948b544c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,11 +176,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 522207570893367479, guid: 63374dfcb0c0ded4984d1ada948b544c,
-        type: 3}
-      propertyPath: m_Name
-      value: MonkeySwing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63374dfcb0c0ded4984d1ada948b544c, type: 3}
