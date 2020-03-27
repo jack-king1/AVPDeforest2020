@@ -54,5 +54,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8a6d180ea68e69246af2004f1b96c030, type: 3}
   - name: Fire4
     clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
-  - name: Fire4
-    clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
+  - name: Monkey
+    clip: {fileID: 8300000, guid: f5c7bc53c09903e4a9fc7aa7b3dcd482, type: 3}
