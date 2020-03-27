@@ -26,7 +26,8 @@ public class EyeLineParticleSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = gameObject.GetComponent<ParticleSystem>();   
+        ps = gameObject.GetComponent<ParticleSystem>();
+        MainSceneManager.instance.silenceSceneStartedDelegate += RemoveEyeline;
     }
 
     // Update is called once per frame
@@ -52,8 +53,12 @@ public class EyeLineParticleSystem : MonoBehaviour
         vel.radial = new ParticleSystem.MinMaxCurve(Mathf.Lerp(radialLower, radialUpper * (radiusSize > 2.0f ? radiusSize - 1.0f : radiusSize), lookTime / (maxLookTime * 0.8f)));
         emission.rate = new ParticleSystem.MinMaxCurve(Mathf.Lerp(rateLower, rateUpper, lookTime / (maxLookTime * 0.8f)));
         shape.radius = radiusSize;
+    }
 
-
-
+    void RemoveEyeline()
+    {
+        Debug.Log("Removing EyelIne PS");
+        Destroy(ps);
+        Destroy(this);
     }
 }

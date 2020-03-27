@@ -30,7 +30,7 @@ public class FireManager : MonoBehaviour
                 burnables[i].type == Burnable.Object.TRUNK)
             {
                 ++unburnedObjectCount;
-                Debug.Log(unburnedObjectCount);
+                //Debug.Log(unburnedObjectCount);
             }
         }
     }

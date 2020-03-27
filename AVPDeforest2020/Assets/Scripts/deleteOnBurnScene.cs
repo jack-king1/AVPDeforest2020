@@ -7,7 +7,7 @@ public class deleteOnBurnScene : MonoBehaviour
 
     void Start()
     {
-        MainSceneManager.instance.fireStartedDelegate += Deleteobject;
+        StartCoroutine(WaitToAdd());
     }
 
     void Deleteobject()
@@ -15,4 +15,9 @@ public class deleteOnBurnScene : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    IEnumerator WaitToAdd()
+    {
+        yield return new WaitForSeconds(1);
+        MainSceneManager.instance.fireStartedDelegate += Deleteobject;
+    }
 }
