@@ -11,16 +11,29 @@ public class FireManager : MonoBehaviour
 
     public static FireManager Instance() { return instance; }
 
-    private void Awake()
-    {
-        instance = this;
-        GetBurnables();
-    }
-
     public GameObject psTree;
     public GameObject psTerrain;
 
     Burnable[] burnables;
+
+    public int unburnedObjectCount = 0;
+
+    private void Awake()
+    {
+        instance = this;
+        GetBurnables();
+
+        Debug.Log(burnables.Length);
+        for(int i = 0; i < burnables.Length; ++i)
+        {
+            if(burnables[i].type == Burnable.Object.TERRAIN ||
+                burnables[i].type == Burnable.Object.TRUNK)
+            {
+                ++unburnedObjectCount;
+                Debug.Log(unburnedObjectCount);
+            }
+        }
+    }
 
     public void RemoveFireSound(GameObject fireSound)
     {
@@ -29,6 +42,12 @@ public class FireManager : MonoBehaviour
             FireSoundPrefabs.Remove(fireSound);
             Destroy(fireSound);
         }
+    }
+
+    public void DecrementUnburnedObject()
+    {
+        Debug.Log(unburnedObjectCount);
+        unburnedObjectCount--;
     }
 
     public void StartFire(Collider hit)
@@ -61,13 +80,13 @@ public class FireManager : MonoBehaviour
 
     public void GetBurnables()
     {
+        burnables = FindObjectsOfType<Burnable>();
         StartCoroutine(GetNeighbours());
     }
 
 
     IEnumerator GetNeighbours()
     {
-        burnables = FindObjectsOfType<Burnable>();
 
         for (int i = 0; i < burnables.Length; ++i)
         {

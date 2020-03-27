@@ -11,6 +11,9 @@ public class MainSceneManager : MonoBehaviour
     public GameObject CameraGO;
     public GameObject hopeTreePrefab;
 
+    public GameObject fogPSParent;
+    bool fogStopped = false;
+
     GameObject hopeTreeSpawn;
     GameObject dirLight;
     Color startColour = new Color();
@@ -41,6 +44,7 @@ public class MainSceneManager : MonoBehaviour
     [SerializeField]float[] sceneStageTimes = new float[4];
     float sceneStageTime = 0.0f;
 
+    float fogTimer = 30.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -79,15 +83,16 @@ public class MainSceneManager : MonoBehaviour
                         AnimalManager.instance.RemoveAllAnimals();
                         ForestAudio.instance.StopJungle();
                         StartCoroutine(Narration.instance.FireNarration());
-                      //  Narration.instance.StartCoroutine(Narration.instance.FireNarration());
                         StartCoroutine(ChangeSkyBox(5.0f));
                         StartCoroutine(ChangeDirectionalLight(2.0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
-                       // StartCoroutine(Narration.instance. PlayScene2());
                         break;
                     }
                 case SceneStage.BURNING:
                     {
+                        if (FireManager.Instance().unburnedObjectCount > 5)
+                            return;
+
                         currentStage = SceneStage.SILENCE;
                       //  Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
                         sceneStageTime = sceneStageTimes[2];
@@ -125,6 +130,23 @@ public class MainSceneManager : MonoBehaviour
             }
         }
         sceneStageTime -= Time.deltaTime;
+
+
+        if (currentStage == SceneStage.BURNING)
+        {
+            if(fogTimer < 0.0f && !fogStopped)
+            {
+                foreach(var fog in fogPSParent.GetComponentsInChildren<ParticleSystem>())
+                {
+                    if(fog.isPlaying)
+                    {
+                        fog.Stop(true);
+                    }
+                }
+                fogStopped = true;
+            }
+            fogTimer -= Time.deltaTime;
+        }
     }
 
     public void burnCounterIncrease()
@@ -170,7 +192,7 @@ public class MainSceneManager : MonoBehaviour
         float startTime = time;
         while (time > 0.0f)
         { 
-            dirLight.GetComponent<Light>().intensity = Mathf.Lerp(0.0f, 1.0f, time / startTime);
+            dirLight.GetComponent<Light>().intensity = Mathf.Lerp(0.5f, 1.0f, time / startTime);
             time -= Time.deltaTime;
             yield return null;
         }
