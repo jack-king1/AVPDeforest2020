@@ -20,6 +20,14 @@ public class MainSceneManager : MonoBehaviour
     public delegate void BurningStartedDelegate();
     public BurningStartedDelegate fireStartedDelegate;
 
+    public delegate void ForestBurnProgress();
+    public ForestBurnProgress fireBurnProgressDelegate;
+    public delegate void SilenecSceneStarted();
+    public SilenecSceneStarted silenceSceneStartedDelegate;
+
+    float burnPercent = 0;
+    bool burnPercentFull = false;
+
     public enum SceneStage
     {
         TRANQUIL = 0,
@@ -94,6 +102,7 @@ public class MainSceneManager : MonoBehaviour
                 case SceneStage.SILENCE:
                     {
                         currentStage = SceneStage.HOPE;
+                        silenceSceneStartedDelegate();
                         sceneStageTime = sceneStageTimes[3];
                         ForestAudio.instance.StartHope();
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
@@ -116,6 +125,20 @@ public class MainSceneManager : MonoBehaviour
             }
         }
         sceneStageTime -= Time.deltaTime;
+    }
+
+    public void burnCounterIncrease()
+    {
+        if(!burnPercentFull)
+        {
+            burnPercent += 0.05f;
+            Debug.Log("Fire Burn progress:" + burnPercent);
+            if (burnPercent >= 1)
+            {
+                burnPercentFull = true;
+                fireBurnProgressDelegate?.Invoke();
+            }
+        }
     }
 
 

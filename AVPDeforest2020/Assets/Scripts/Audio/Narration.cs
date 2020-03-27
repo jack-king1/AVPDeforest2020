@@ -38,11 +38,11 @@ public class Narration : MonoBehaviour
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration2").length + timebuffer);
 
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration3"), transform);
-            ForestAudio.instance.MonkeySounds();
+            Monkey.instance.MonkeySounds();
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration3").length + timebuffer);
 
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration4"), transform);
-            ForestAudio.instance.StopMonkey();
+            Monkey.instance.StopMonkey();
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration4").length + timebuffer);
 
          
