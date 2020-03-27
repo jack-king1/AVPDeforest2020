@@ -11,13 +11,21 @@ public class ForestAudio : MonoBehaviour
     bool stopHopeMusic = false;
     float timer = 20;
 
+    //Monkey Vals
+    bool stopMonkeys = false;
+    private Transform monkeyTr;
+    private AudioSource Monkey;
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-        DontDestroyOnLoad(this.gameObject); 
+        DontDestroyOnLoad(this.gameObject);
+
+        GameObject monkeyObject;
+        monkeyObject = GameObject.Find("Monkey");
+        monkeyTr = monkeyObject.transform;
     }
 
     private void Update()
@@ -28,6 +36,9 @@ public class ForestAudio : MonoBehaviour
             AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 5, true, new AudioSource());
             AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Jungle"), transform, 1, 1, AudioManager.AudioChannel.Jungle);
             Narration.instance.StartCoroutine(Narration.instance.JungleNarration() );
+            
+
+           
         }
 
         if(stopHopeMusic)
@@ -41,17 +52,16 @@ public class ForestAudio : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
 
+        if(stopMonkeys)
+        {
+            Monkey.volume -= Time.deltaTime/50;
+        }
+    }
+    #region Scene Audio
     public void StopJungle()
     {
         AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 4, false, new AudioSource());
-    }
-
-    public void StartWind()
-    {
-        //AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Fire, 10, true, new AudioSource());
-        //AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Wind"), transform, 1, 1, AudioManager.AudioChannel.Fire);
     }
 
     public void StartHope()
@@ -74,4 +84,25 @@ public class ForestAudio : MonoBehaviour
     {
         stopHopeMusic = true;
     }
+
+    #endregion 
+
+    #region MonkeySounds
+    public void MonkeySounds()
+    {
+        Monkey = AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Monkey"), monkeyTr, .5f, 1, AudioManager.AudioChannel.Jungle);
+        Monkey.spatialBlend = 1f;
+        Monkey.minDistance = 50;
+        Monkey.maxDistance = 2000;
+    }
+
+    public void StopMonkey()
+    {
+        stopMonkeys = true;
+    }
+
+    #endregion
+
+
+
 }
