@@ -1064,7 +1064,7 @@ PrefabInstance:
     - target: {fileID: 6903142155782377928, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
       propertyPath: timeToReachDestination
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1403860008577794662, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
@@ -1104,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 1403860008577794662, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 80.4
+      value: 35.85
       objectReference: {fileID: 0}
     - target: {fileID: 1403860008577794662, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
@@ -1114,7 +1114,7 @@ PrefabInstance:
     - target: {fileID: 6116474924210679372, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -132.83
+      value: -820
       objectReference: {fileID: 0}
     - target: {fileID: 6116474924210679372, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
@@ -1124,7 +1124,7 @@ PrefabInstance:
     - target: {fileID: 6116474924210679372, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.65
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 6116474924210679372, guid: d2af5fc7d7634684cafd227f6089eca3,
         type: 3}
@@ -1151,7 +1151,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 110.114006
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1485411270950019413, guid: d2af5fc7d7634684cafd227f6089eca3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -820
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485411270950019413, guid: d2af5fc7d7634684cafd227f6089eca3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485411270950019413, guid: d2af5fc7d7634684cafd227f6089eca3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7910467048369437661, guid: d2af5fc7d7634684cafd227f6089eca3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d2af5fc7d7634684cafd227f6089eca3, type: 3}
 --- !u!1001 &2882242337808405838
 PrefabInstance:

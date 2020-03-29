@@ -38,7 +38,7 @@ public class Monkey : MonoBehaviour
     #region MonkeySounds
     public void MonkeySounds()
     {
-        monkeys = AudioManagerNS.AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Monkey"), transform, .5f, 1,  AudioManagerNS.AudioManager.AudioChannel.Jungle);
+        monkeys = AudioManagerNS.AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Monkey"), transform, .35f, 1,  AudioManagerNS.AudioManager.AudioChannel.Jungle);
         monkeys.spatialBlend = 1f;
         monkeys.minDistance = 50;
         monkeys.maxDistance = 2000;

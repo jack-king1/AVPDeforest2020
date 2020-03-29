@@ -375,7 +375,9 @@ public class Burnable : MonoBehaviour
             return;
         }
         fire = Instantiate(ps);
-        MainSceneManager.instance.burnCounterIncrease(); //adds 0.05 to the counter once it hits 1, can no longer increase/decrease volume.
+        
+        MainSceneManager.instance.BurnCounterIncrease(); //adds 0.05 to the counter once it hits 1, can no longer increase/decrease volume.
+
         fire.transform.parent = gameObject.transform;
         if (tag == "Terrain")
         {

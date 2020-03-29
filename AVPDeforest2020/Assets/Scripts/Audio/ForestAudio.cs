@@ -87,22 +87,5 @@ public class ForestAudio : MonoBehaviour
 
     #endregion 
 
-    //#region MonkeySounds
-    //public void MonkeySounds()
-    //{
-    //    Monkey = AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Monkey"), monkeyTr, .5f, 1, AudioManager.AudioChannel.Jungle);
-    //    Monkey.spatialBlend = 1f;
-    //    Monkey.minDistance = 50;
-    //    Monkey.maxDistance = 2000;
-    //}
-
-    //public void StopMonkey()
-    //{
-    //    stopMonkeys = true;
-    //}
-
-    //#endregion
-
-
 
 }
