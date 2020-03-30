@@ -36,7 +36,7 @@ public class ForestAudio : MonoBehaviour
             AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 5, true, new AudioSource());
             AudioManager.Instance.PlayLoop(SFX.Instance.GetSFX("Jungle"), transform, 1, 1, AudioManager.AudioChannel.Jungle);
             Narration.instance.StartCoroutine(Narration.instance.JungleNarration() );
-            
+            BirdSounds.instance.BirdSound();
 
            
         }
@@ -62,6 +62,8 @@ public class ForestAudio : MonoBehaviour
     public void StopJungle()
     {
         AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 4, false, new AudioSource());
+        BirdSounds.instance.StopBird();
+        JaguarSounds.instance.StopJaguarSound();
     }
 
     public void StartHope()
