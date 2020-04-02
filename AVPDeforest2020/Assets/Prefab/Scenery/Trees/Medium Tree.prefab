@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -28,7 +27,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -44,7 +42,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -140,8 +137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
-    type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
   neighbours: []
@@ -251,8 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
-    type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
   neighbours: []
@@ -362,8 +355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
-    type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 1
   neighbours: []
@@ -393,7 +384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -409,7 +399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -425,7 +414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
   ps: {fileID: 0}
   type: 3
   neighbours: []
@@ -528,8 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52f72d76137729e469200e6ffe5579c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSound: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
-    type: 3}
   ps: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
   type: 0
   neighbours: []

@@ -11,21 +11,22 @@ public class ForestAudio : MonoBehaviour
     bool stopHopeMusic = false;
     float timer = 20;
 
-    //Monkey Vals
-    //bool stopMonkeys = false;
-    //private Transform monkeyTr;
-    //private AudioSource Monkey;
+    
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+
+        else if (instance != null)
+        {
+            Destroy(this);
+        }
+
         DontDestroyOnLoad(this.gameObject);
 
-        //GameObject monkeyObject;
-        //monkeyObject = GameObject.Find("Monkey");
-        ////monkeyTr = monkeyObject.transform;
+   
     }
 
     private void Update()
@@ -63,7 +64,7 @@ public class ForestAudio : MonoBehaviour
     {
         AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 4, false, new AudioSource());
         BirdSounds.instance.StopBird();
-        JaguarSounds.instance.StopJaguarSound();
+      //  Jaguar.instance.StopJaguarSound();
     }
 
     public void StartHope()

@@ -11,16 +11,29 @@ public class FireManager : MonoBehaviour
 
     public static FireManager Instance() { return instance; }
 
-    private void Awake()
-    {
-        instance = this;
-        GetBurnables();
-    }
-
     public GameObject psTree;
     public GameObject psTerrain;
 
     Burnable[] burnables;
+
+    public int unburnedObjectCount = 0;
+
+    private void Awake()
+    {
+        instance = this;
+        GetBurnables();
+
+        Debug.Log(burnables.Length);
+        for(int i = 0; i < burnables.Length; ++i)
+        {
+            if(burnables[i].type == Burnable.Object.TERRAIN ||
+                burnables[i].type == Burnable.Object.TRUNK)
+            {
+                ++unburnedObjectCount;
+                //Debug.Log(unburnedObjectCount);
+            }
+        }
+    }
 
     public void RemoveFireSound(GameObject fireSound)
     {
@@ -31,22 +44,12 @@ public class FireManager : MonoBehaviour
         }
     }
 
-
-    private void Update()
+    public void DecrementUnburnedObject()
     {
-        if (MainSceneManager.instance.burnPercentFull == false)
-        {
-            AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 175 + MainSceneManager.instance.burnPercent*2 );
-            Debug.Log("Hey;");
-        }
-
-        if (MainSceneManager.instance.burnPercentFull == true)
-        {
-          //  AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 0.1f / 1000);
-            
-        }
-
+        Debug.Log(unburnedObjectCount);
+        unburnedObjectCount--;
     }
+
     public void StartFire(Collider hit)
     {
         if (hit.gameObject.tag == "Tree" || hit.gameObject.tag == "Terrain")
@@ -82,13 +85,13 @@ public class FireManager : MonoBehaviour
 
     public void GetBurnables()
     {
+        burnables = FindObjectsOfType<Burnable>();
         StartCoroutine(GetNeighbours());
     }
 
 
     IEnumerator GetNeighbours()
     {
-        burnables = FindObjectsOfType<Burnable>();
 
         for (int i = 0; i < burnables.Length; ++i)
         {

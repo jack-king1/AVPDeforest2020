@@ -4,9 +4,7 @@ using UnityEngine;
 
 
 public class Burnable : MonoBehaviour
-{
-    public GameObject fireSound;
-     
+{   
     public GameObject ps;
     GameObject fire;
 
@@ -106,8 +104,9 @@ public class Burnable : MonoBehaviour
     void Update()
     {  
         if (state == States.DEAD && !destroyedFire)
-        {      
-            StartCoroutine(EndFire());
+        {
+            StopFire();
+           // StartCoroutine(EndFire());
         }
         else if(state == States.BURN && type != Object.FOLIAGE || type != Object.LEAVES)
         {
@@ -252,6 +251,7 @@ public class Burnable : MonoBehaviour
         }
 
         state = States.DEAD;
+        //FireManager.Instance().unburnedObjectCount--;
     }
 
     IEnumerator BurnLeaves()
@@ -288,6 +288,7 @@ public class Burnable : MonoBehaviour
         }
 
         state = States.DEAD;
+        //FireManager.Instance().unburnedObjectCount--;
     }
 
     IEnumerator BurnFoliage()
@@ -314,11 +315,11 @@ public class Burnable : MonoBehaviour
 
         while (fadeLife > 0.0f)
         {
-            for (int i = 0; i < colour.starts.Length; ++i)
+            for (int i = 0; i < gameObject.GetComponent<MeshRenderer>().materials.Length; ++i)
             {
                 var col = gameObject.GetComponent<MeshRenderer>().materials[i].color;
                 col.a = Mathf.Lerp(0.0f, 1.0f, fadeLife / 100.0f);
-                if (col.a < 0.1f)
+                if (col.a < 0.05f)
                     col.a = 0.0f;
                 gameObject.GetComponent<MeshRenderer>().materials[i].color = col;
             }
@@ -400,15 +401,40 @@ public class Burnable : MonoBehaviour
 
         if (fire)
         {
-            while (fire.GetComponent<ParticleSystem>().isPlaying)
-            {
-                fire.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                yield return null;
-            }
-            FireManager.Instance().RemoveFireSound(fireSound);
+            //while (fire.GetComponent<ParticleSystem>().isPlaying)
+            //{
+            //    fire.GetComponent<ParticleSystem>().Stop(true);
+            //    //fire.GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            //    yield return null;
+            //}
+
+            fire.GetComponent<ParticleSystem>().Stop(true);
             fire.SetActive(false);
         }
         yield return 0;
+    }
+
+    void StopFire()
+    {
+        if (fire)
+        {
+            fire.GetComponent<ParticleSystem>().Stop(true);
+
+            if (fire.GetComponent<ParticleSystem>().isStopped)
+            {
+                fire.SetActive(false);
+                destroyedFire = true;
+
+                if (type == Object.TERRAIN || type == Object.TRUNK)
+                {
+                    FireManager.Instance().DecrementUnburnedObject();
+                }
+            }
+        }
+        else
+        {
+            destroyedFire = true;
+        }
     }
 
 
