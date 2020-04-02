@@ -44,6 +44,22 @@ public class FireManager : MonoBehaviour
         }
     }
 
+
+    private void Update()
+    {
+        if (MainSceneManager.instance.burnPercentFull == false)
+        {
+            AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 175 + MainSceneManager.instance.burnPercent*2 );
+            Debug.Log("Hey;");
+        }
+
+        if (MainSceneManager.instance.burnPercentFull == true)
+        {
+          //  AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 0.1f / 1000);
+            
+        }
+
+    }
     public void DecrementUnburnedObject()
     {
         Debug.Log(unburnedObjectCount);
@@ -62,18 +78,23 @@ public class FireManager : MonoBehaviour
                 AudioSource flamestrike = AudioManager.Instance.Play(SFX.Instance.GetSFX("Flamestrike"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 flamestrike.spatialBlend = 1;
                 flamestrike.volume = 1;
+                flamestrike.minDistance = 1;
                 flamestrike.maxDistance = 2000;
-                AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 150);
-               // AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Master, 150);
+
+               
 
                 AudioSource fire1 = AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire1"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 fire1.spatialBlend = 1;
                 fire1.volume = 1;
+                fire1.minDistance = 1;
                 fire1.maxDistance = 2000;
+
                 AudioSource fire4 =  AudioManager.Instance.Play(SFX.Instance.GetSFX("Fire4"), hit.gameObject.transform, 1, 1, AudioManager.AudioChannel.Fire);
                 fire4.spatialBlend = 1;
                 fire4.volume = 1;
+                fire4.minDistance = 1;
                 fire4.maxDistance = 2000;
+
             }
         }
     } 

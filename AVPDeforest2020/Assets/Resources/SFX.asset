@@ -26,8 +26,6 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 843d8f032fb891643a46a5f670ff537f, type: 3}
   - name: Wind
     clip: {fileID: 0}
-  - name: Birds
-    clip: {fileID: 8300000, guid: 67ca0d59e673204419b686781a9be71f, type: 3}
   - name: Narration1
     clip: {fileID: 8300000, guid: fe47a04ea1269f049b7c3d1ff0b6fdb1, type: 3}
   - name: Narration2
@@ -55,4 +53,8 @@ MonoBehaviour:
   - name: Fire4
     clip: {fileID: 8300000, guid: 397319df9d6c41e4dbe0734ae68f2c0f, type: 3}
   - name: Monkey
-    clip: {fileID: 8300000, guid: f5c7bc53c09903e4a9fc7aa7b3dcd482, type: 3}
+    clip: {fileID: 8300000, guid: 6b7c39b062f88154f8f18df92dfbf930, type: 3}
+  - name: Birds
+    clip: {fileID: 8300000, guid: 60e5ffa37b14dc641a5780412ba968b0, type: 3}
+  - name: Jaguar
+    clip: {fileID: 8300000, guid: 60e5ffa37b14dc641a5780412ba968b0, type: 3}

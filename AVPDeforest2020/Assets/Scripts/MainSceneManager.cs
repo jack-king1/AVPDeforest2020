@@ -28,8 +28,8 @@ public class MainSceneManager : MonoBehaviour
     public delegate void SilenecSceneStarted();
     public SilenecSceneStarted silenceSceneStartedDelegate;
 
-    float burnPercent = 0;
-    bool burnPercentFull = false;
+    public float burnPercent = 0;
+    public bool burnPercentFull = false;
 
     public enum SceneStage
     {
@@ -94,7 +94,7 @@ public class MainSceneManager : MonoBehaviour
                             return;
 
                         currentStage = SceneStage.SILENCE;
-                      //  Narration.instance.StartCoroutine(Narration.instance.PlayScene3());
+                   
                         sceneStageTime = sceneStageTimes[2];
                         ForestAudio.instance.StopFire();
                         
@@ -149,12 +149,12 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-    public void burnCounterIncrease()
+    public void BurnCounterIncrease()
     {
         if(!burnPercentFull)
         {
-            burnPercent += 0.05f;
-            Debug.Log("Fire Burn progress:" + burnPercent);
+            burnPercent += 0.0025f;
+           // Debug.Log("Fire Burn progress:" + burnPercent);
             if (burnPercent >= 1)
             {
                 burnPercentFull = true;
