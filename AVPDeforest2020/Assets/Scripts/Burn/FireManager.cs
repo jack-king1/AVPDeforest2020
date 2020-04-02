@@ -50,7 +50,7 @@ public class FireManager : MonoBehaviour
         if (MainSceneManager.instance.burnPercentFull == false)
         {
             AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 175 + MainSceneManager.instance.burnPercent*2 );
-            Debug.Log("Hey;");
+            //Debug.Log("Hey;");
         }
 
         if (MainSceneManager.instance.burnPercentFull == true)

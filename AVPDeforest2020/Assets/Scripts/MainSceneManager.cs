@@ -81,10 +81,11 @@ public class MainSceneManager : MonoBehaviour
                         currentStage = SceneStage.BURNING;
                         sceneStageTime = sceneStageTimes[1];
                         AnimalManager.instance.RemoveAllAnimals();
-                        ForestAudio.instance.StopJungle();
+                        //ForestAudio.instance.StopJungle();
                         StartCoroutine(Narration.instance.FireNarration());
-                        StartCoroutine(ChangeSkyBox(5.0f));
-                        StartCoroutine(ChangeDirectionalLight(2.0f));
+                        StartCoroutine(ChangeSkyBoxColour(20.0f, 
+                            Camera.main.GetComponent<Camera>().backgroundColor, new Color(72.0f / 255.0f, 83.0f / 255.0f, 104.0f / 255.0f)));
+                        //StartCoroutine(ChangeDirectionalLight(20.0f, 1.0f, .0f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
                         break;
                     }
@@ -98,7 +99,9 @@ public class MainSceneManager : MonoBehaviour
                         sceneStageTime = sceneStageTimes[2];
                         ForestAudio.instance.StopFire();
                         
-                        StartCoroutine(ChangeSkyBoxColour(2.0f));
+                        StartCoroutine(ChangeSkyBoxColour(sceneStageTimes[2],
+                            Camera.main.GetComponent<Camera>().backgroundColor, new Color(32.0f / 255.0f, 33.0f / 255.0f, 37.0f / 255.0f)));
+                        StartCoroutine(ChangeDirectionalLight(sceneStageTimes[2], 1.0f, 0.1f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = false;
 
 
@@ -107,11 +110,14 @@ public class MainSceneManager : MonoBehaviour
                 case SceneStage.SILENCE:
                     {
                         currentStage = SceneStage.HOPE;
-                        silenceSceneStartedDelegate();
+                        if (silenceSceneStartedDelegate != null)
+                        {
+                            silenceSceneStartedDelegate();
+                        }
                         sceneStageTime = sceneStageTimes[3];
                         ForestAudio.instance.StartHope();
                         Instantiate(hopeTreePrefab, hopeTreeSpawn.transform.position, hopeTreePrefab.transform.rotation);
-                         StartCoroutine(Narration.instance.HopeNarration());
+                        StartCoroutine(Narration.instance.HopeNarration());
                         break;
                     }
                 case SceneStage.HOPE:
@@ -163,36 +169,24 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
-
-    IEnumerator ChangeSkyBox(float time)
+    IEnumerator ChangeSkyBoxColour(float time, Color startColour, Color endColour)
     {
-        while(time > 0.0f)
-        {
-            time -= Time.deltaTime;
-            yield return null;
-        }
-        Camera.main.GetComponent<Camera>().clearFlags = CameraClearFlags.SolidColor;
-    }
-
-    IEnumerator ChangeSkyBoxColour(float time)
-    {
-        startColour = Camera.main.GetComponent<Camera>().backgroundColor;
         float startTime = time;
         while (time > 0.0f)
         {
-            Camera.main.GetComponent<Camera>().backgroundColor = Color.Lerp(Color.black, startColour, time/startTime);
+            Camera.main.GetComponent<Camera>().backgroundColor = Color.Lerp(endColour, startColour, time / startTime);
 
             time -= Time.deltaTime;
             yield return null;
         }
     }
 
-    IEnumerator ChangeDirectionalLight(float time)
+    IEnumerator ChangeDirectionalLight(float time, float startIntensity, float endIntensity)
     {
         float startTime = time;
         while (time > 0.0f)
-        { 
-            dirLight.GetComponent<Light>().intensity = Mathf.Lerp(0.5f, 1.0f, time / startTime);
+        {
+            dirLight.GetComponent<Light>().intensity = Mathf.Lerp(endIntensity, startIntensity, time / startTime);
             time -= Time.deltaTime;
             yield return null;
         }
