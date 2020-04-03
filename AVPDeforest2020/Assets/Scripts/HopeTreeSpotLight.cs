@@ -8,8 +8,8 @@ public class HopeTreeSpotLight : MonoBehaviour
     Light light;
 
     float time = 0.0f;
-
-    float maxIntensity = 100.0f;
+    float timeLimit = 10.0f;
+    float maxIntensity = 30.0f;
     float minIntensity = 0.0f;
 
 
@@ -27,9 +27,9 @@ public class HopeTreeSpotLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(time < 5.0f)
+        if(time < timeLimit)
         {
-            light.intensity = Mathf.Lerp(minIntensity, maxIntensity, time / 5.0f);
+            light.intensity = Mathf.Lerp(minIntensity, maxIntensity, time / timeLimit);
             time += Time.deltaTime;
         }
 

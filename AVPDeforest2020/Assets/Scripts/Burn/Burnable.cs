@@ -66,7 +66,7 @@ public class Burnable : MonoBehaviour
         {
             case Object.TRUNK:
                 {
-                    burnRate = 10.0f;
+                    burnRate = 5.0f;
                     fadeRate = 50.0f;
                     break;
                 }
@@ -80,7 +80,7 @@ public class Burnable : MonoBehaviour
             case Object.TERRAIN:
             case Object.ROCK:
                 {
-                    burnRate = 5.0f;
+                    burnRate = 7.0f;
                     break;
                 }
         }
@@ -115,15 +115,15 @@ public class Burnable : MonoBehaviour
                 var nBurnable = n.GetComponent<Burnable>();
                 if (nBurnable)
                 {
-                    if (nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 2.0f)
+                    if (nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 3.0f)
                     {
                         nBurnable.StartFire();
                     }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 3.0f)
+                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 6.0f)
                     {
                         nBurnable.StartFire();
                     }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 4.0f)
+                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 6.0f)
                     {
                         nBurnable.StartFire();
                         burnTime = 0.0f;
@@ -155,7 +155,7 @@ public class Burnable : MonoBehaviour
                     maxScale = GetComponent<Transform>().localScale;
                     minScale = maxScale * 0.8f;
                     colour.start = gameObject.GetComponent<MeshRenderer>().material.color;
-                    colour.end = Color.black;
+                    colour.end = new Color(32.0f / 255.0f, 19.0f / 255.0f, 3.0f / 255.0f);
                     StartCoroutine(BurnTrunk());
                     break;
                 }
@@ -171,7 +171,7 @@ public class Burnable : MonoBehaviour
             case Object.TERRAIN:
                 {
                     colour.start = gameObject.GetComponent<MeshRenderer>().material.color;
-                    colour.end = Color.black;
+                    colour.end = new Color(39.0f / 255.0f, 35.0f / 255.0f, 7.0f / 255.0f);
                     StartCoroutine(BurnTerrain());
                     break;
                 }
@@ -376,7 +376,9 @@ public class Burnable : MonoBehaviour
             return;
         }
         fire = Instantiate(ps);
-        MainSceneManager.instance.burnCounterIncrease(); //adds 0.05 to the counter once it hits 1, can no longer increase/decrease volume.
+        
+        MainSceneManager.instance.BurnCounterIncrease(); //adds 0.05 to the counter once it hits 1, can no longer increase/decrease volume.
+
         fire.transform.parent = gameObject.transform;
         if (tag == "Terrain")
         {
@@ -458,8 +460,11 @@ public class Burnable : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Burnable>())
         {
-            if (other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN && 
-                type == Object.TERRAIN)
+            //if (other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN && 
+            //    type == Object.TERRAIN || type == Object.TRUNK)
+            if ((other.gameObject.GetComponent<Burnable>().type != Object.TERRAIN &&
+                type == Object.TERRAIN) || (other.gameObject.GetComponent<Burnable>().type == Object.TERRAIN
+                && type == Object.TRUNK))
             {
                 if(!neighbours.Contains(other.gameObject))
                     neighbours.Add(other.gameObject);

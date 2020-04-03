@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AudioManagerNS;
 [RequireComponent(typeof(AudioSource))]
+
 public class Narration : MonoBehaviour
 {
     public static Narration instance;
@@ -35,12 +36,15 @@ public class Narration : MonoBehaviour
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration1").length +timebuffer);
 
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration2"), transform);
+            //JaguarSounds.instance.JaguarSound();
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration2").length + timebuffer);
 
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration3"), transform);
+            //Monkey.instance.MonkeySounds();
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration3").length + timebuffer);
 
             AudioManager.Instance.Play(SFX.Instance.GetSFX("Narration4"), transform);
+            //Monkey.instance.StopMonkey();
             yield return new WaitForSeconds(SFX.Instance.GetSFX("Narration4").length + timebuffer);
 
          
