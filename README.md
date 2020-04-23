@@ -1,5 +1,5 @@
 # EARTH: Deforestation
-Team Diverse
+## Team Diverse
 
 Project Leader | Jack King | jack3.king@live.uwe.ac.uk
 
