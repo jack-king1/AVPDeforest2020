@@ -5,7 +5,7 @@ Project Leader | Jack King | jack3.king@live.uwe.ac.uk
 
 Lead Programmer | Lewis Bond | @live.uwe.ac.uk
 
-Models | Luke Tolchard | @live.uwe.ac.uk
+Models | Luke Tolchard | luke2.tolchard@live.uwe.ac.uk
 
 Audio Producer | Jack Lynham | @live.uwe.ac.uk
 
