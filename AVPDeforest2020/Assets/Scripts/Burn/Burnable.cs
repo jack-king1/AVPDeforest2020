@@ -97,7 +97,6 @@ public class Burnable : MonoBehaviour
                     neighbours.Add(burns[i].gameObject);
             }
         }
-
     }
 
     // Start is called before the first frame update
@@ -115,18 +114,11 @@ public class Burnable : MonoBehaviour
                 var nBurnable = n.GetComponent<Burnable>();
                 if (nBurnable)
                 {
-                    if (nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 3.0f)
+                    if ((nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 3.0f)
+                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 6.0f)
+                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 6.0f))
                     {
                         nBurnable.StartFire();
-                    }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 6.0f)
-                    {
-                        nBurnable.StartFire();
-                    }
-                    else if (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 6.0f)
-                    {
-                        nBurnable.StartFire();
-                        burnTime = 0.0f;
                     }
 
                     if ((nBurnable.State == States.ALIVE && nBurnable.type == Object.ROCK && burnTime > 4.0f) ||
@@ -177,9 +169,7 @@ public class Burnable : MonoBehaviour
                 }
             case Object.FOLIAGE:
                 {
-
                     var burns = GetComponentsInChildren<Burnable>();
-
 
                     if(burns.Length == 1 && burns[0].name == gameObject.name)
                     {
@@ -369,9 +359,8 @@ public class Burnable : MonoBehaviour
     }
 
     public void StartFire()
-    {
-        
-        if(type != Object.TRUNK && type != Object.LEAVES && type != Object.TERRAIN)
+    { 
+        if(type == Object.FOLIAGE || type == Object.ROCK)
         {
             return;
         }

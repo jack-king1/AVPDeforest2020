@@ -83,9 +83,9 @@ public class MainSceneManager : MonoBehaviour
                         AnimalManager.instance.RemoveAllAnimals();
                         //ForestAudio.instance.StopJungle();
                         StartCoroutine(Narration.instance.FireNarration());
-                        StartCoroutine(ChangeSkyBoxColour(20.0f, 
+                        StartCoroutine(ChangeSkyBoxColour(10.0f, 
                             Camera.main.GetComponent<Camera>().backgroundColor, new Color(72.0f / 255.0f, 83.0f / 255.0f, 104.0f / 255.0f)));
-                        //StartCoroutine(ChangeDirectionalLight(20.0f, 1.0f, .0f));
+                        StartCoroutine(ChangeDirectionalLight(20.0f, 1.0f, 0.5f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = true;
                         break;
                     }
@@ -101,7 +101,7 @@ public class MainSceneManager : MonoBehaviour
                         
                         StartCoroutine(ChangeSkyBoxColour(sceneStageTimes[2],
                             Camera.main.GetComponent<Camera>().backgroundColor, new Color(32.0f / 255.0f, 33.0f / 255.0f, 37.0f / 255.0f)));
-                        StartCoroutine(ChangeDirectionalLight(sceneStageTimes[2], 1.0f, 0.1f));
+                        StartCoroutine(ChangeDirectionalLight(sceneStageTimes[2] / 3.0f, 0.5f, 0.05f));
                         Camera.main.GetComponent<CameraRaycast>().enabled = false;
 
 
@@ -127,7 +127,7 @@ public class MainSceneManager : MonoBehaviour
                             //SFX.Instance.StopForestSounds(5);
                             //SFX.Instance.StopWindSounds(5);
                             //SFX.Instance.StartOutroSounds(10);
-                            //ForestAudio.instance.StopHope();
+                            ForestAudio.instance.StopHope();
                             Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
                             nextSceneLoading = true;
                         }
