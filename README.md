@@ -17,5 +17,5 @@ The projects aim was to let the user experience the rainforest destruction throu
 allowing the user to burn the rainforest and dinally a hope scene which is to allow the user to reflect on everything they jsut experienced.
 
 
-### Click the image below to view our demo video!
+### Click the image below to view our video!
 [![Watch the video](header.jpg)](https://youtu.be/5w7jlHQLG6Q)
