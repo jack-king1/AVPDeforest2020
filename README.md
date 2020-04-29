@@ -3,13 +3,13 @@
 
 Project Leader | Jack King | jack3.king@live.uwe.ac.uk | http://jackkingdev.co.uk/home/
 
-Lead Programmer | Lewis Bond | @live.uwe.ac.uk
+Lead Programmer | Lewis Bond 
 
 Models | Luke Tolchard | luke2.tolchard@live.uwe.ac.uk
 
-Audio Producer | Jack Lynham | @live.uwe.ac.uk
+Audio Producer | Jack Lynham 
 
-Animations | Hector Martin-Davies | @live.uwe.ac.uk
+Animations | Hector Martin-Davies 
 
 ## Project Overview
 This project is a narrated virtual reality experience. It's aimed at the ages of 13 - 25, however would be a viable experience for any age! 
