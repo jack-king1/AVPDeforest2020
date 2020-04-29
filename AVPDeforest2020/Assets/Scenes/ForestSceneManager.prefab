@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3365555421246821702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3365555421246821700}
+  - component: {fileID: 3365555421246821703}
+  - component: {fileID: 3365555421246821701}
+  m_Layer: 0
+  m_Name: ForestSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3365555421246821700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365555421246821702}
+  m_LocalRotation: {x: 0, y: -0.82541907, z: 0, w: 0.56452054}
+  m_LocalPosition: {x: 2190.4368, y: 243, z: 825.8671}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -111.26201, z: 0}
+--- !u!114 &3365555421246821703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365555421246821702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e476c8a07e7f84a96a6ed658f1dea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usingVr: 1
+  CameraGO: {fileID: 0}
+  hopeTreePrefab: {fileID: 8009494259949963184, guid: 1b0ca3f94a8c146408d7560333a57848,
+    type: 3}
+  sceneStageTimes:
+  - 60
+  - 700
+  - 30
+--- !u!114 &3365555421246821701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365555421246821702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e30a2c0b6fbd65845a7ad1637cb858ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FireSoundPrefab: {fileID: 9139352651116941716, guid: 5438b95146269ba4cac71413da0b56a2,
+    type: 3}
+  FireSoundPrefabs: []
+  psTree: {fileID: 3189149895216184250, guid: b3f93f7f8e4fe234e92b53a95f7e3606, type: 3}
+  psTerrain: {fileID: 3189149895216184250, guid: 6f00ce5af6bc8d94bb4e8e341dc753cc,
+    type: 3}
