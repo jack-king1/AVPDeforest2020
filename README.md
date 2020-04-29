@@ -1,7 +1,7 @@
 # EARTH: Deforestation
 ## Team Diverse
 
-Project Leader | Jack King | jack3.king@live.uwe.ac.uk
+Project Leader | Jack King | jack3.king@live.uwe.ac.uk | www.jackkngdev.co.uk/home
 
 Lead Programmer | Lewis Bond | @live.uwe.ac.uk
 
@@ -18,4 +18,4 @@ allowing the user to burn the rainforest and dinally a hope scene which is to al
 
 
 ### Click the image below to view our demo video!
-[![Watch the video](header.jpg)](https://youtu.be/KvoVolWkTR4)
+[![Watch the video](header.jpg)](https://youtu.be/5w7jlHQLG6Q)
