@@ -22,11 +22,13 @@ public class CameraRaycast : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
     }
 
     void Start()
     {
         eyeLinePs = Instantiate(eyeLinePsPrefab);
+        StartCoroutine(DelaySetDelegate());
     }
 
     void Update()
@@ -87,5 +89,17 @@ public class CameraRaycast : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward)* 3000.0f, Color.yellow);
 
+    }
+
+    IEnumerator DelaySetDelegate()
+    {
+        yield return new WaitForSeconds(2);
+        MainSceneManager.instance.fireBurnProgressDelegate += destroyPS;
+    }
+
+    void destroyPS()
+    {
+        Destroy(eyeLinePs);
+        Destroy(this);
     }
 }

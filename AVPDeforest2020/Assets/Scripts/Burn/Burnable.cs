@@ -61,7 +61,6 @@ public class Burnable : MonoBehaviour
 
     private void Awake()
     {
-
         switch (type)
         {
             case Object.TRUNK:
@@ -115,12 +114,13 @@ public class Burnable : MonoBehaviour
                 if (nBurnable)
                 {
                     if ((nBurnable.State == States.ALIVE && nBurnable.type == Object.LEAVES && burnTime > 3.0f)
-                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 6.0f)
-                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 6.0f))
+                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TRUNK && burnTime > 12.0f)
+                        || (nBurnable.State == States.ALIVE && nBurnable.type == Object.TERRAIN && burnTime > 16.0f))
                     {
                         nBurnable.StartFire();
                     }
 
+                    //Excess
                     if ((nBurnable.State == States.ALIVE && nBurnable.type == Object.ROCK && burnTime > 4.0f) ||
                         (nBurnable.State == States.ALIVE && nBurnable.type == Object.FOLIAGE && burnTime > 2.0f))
                     {

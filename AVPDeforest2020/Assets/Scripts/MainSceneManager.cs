@@ -7,14 +7,14 @@ public class MainSceneManager : MonoBehaviour
 {
     public static MainSceneManager instance;
 
-    [SerializeField] bool usingVr = false;
+    [SerializeField] bool usingVr = true;
     public GameObject CameraGO;
     public GameObject hopeTreePrefab;
 
     public GameObject fogPSParent;
     bool fogStopped = false;
 
-    GameObject hopeTreeSpawn;
+    public GameObject hopeTreeSpawn;
     GameObject dirLight;
     Color startColour = new Color();
 
@@ -58,7 +58,6 @@ public class MainSceneManager : MonoBehaviour
             Destroy(this);
         }
         sceneStageTime = sceneStageTimes[0];
-        hopeTreeSpawn = GameObject.FindGameObjectWithTag("HopeTreeSpawn");
         dirLight = GameObject.FindGameObjectWithTag("DirectinalLight");
 
         Camera.main.GetComponent<CameraRaycast>().enabled = false;
@@ -102,9 +101,10 @@ public class MainSceneManager : MonoBehaviour
                         StartCoroutine(ChangeSkyBoxColour(sceneStageTimes[2],
                             Camera.main.GetComponent<Camera>().backgroundColor, new Color(32.0f / 255.0f, 33.0f / 255.0f, 37.0f / 255.0f)));
                         StartCoroutine(ChangeDirectionalLight(sceneStageTimes[2] / 3.0f, 0.5f, 0.05f));
-                        Camera.main.GetComponent<CameraRaycast>().enabled = false;
-
-
+                        if(Camera.main.GetComponent<CameraRaycast>())
+                        {
+                            Camera.main.GetComponent<CameraRaycast>().enabled = false;
+                        }
                         break;
                     }
                 case SceneStage.SILENCE:
@@ -127,7 +127,7 @@ public class MainSceneManager : MonoBehaviour
                             //SFX.Instance.StopForestSounds(5);
                             //SFX.Instance.StopWindSounds(5);
                             //SFX.Instance.StartOutroSounds(10);
-                            ForestAudio.instance.StopHope();
+                            //ForestAudio.instance.StopHope();
                             Camera.main.GetComponent<OVRScreenFade>().FadeOut(5, SceneType.OUTRO);
                             nextSceneLoading = true;
                         }
@@ -159,8 +159,8 @@ public class MainSceneManager : MonoBehaviour
     {
         if(!burnPercentFull)
         {
-            burnPercent += 0.0025f;
-           // Debug.Log("Fire Burn progress:" + burnPercent);
+            burnPercent += 0.005f;
+            Debug.Log("Fire Burn progress:" + burnPercent);
             if (burnPercent >= 1)
             {
                 burnPercentFull = true;

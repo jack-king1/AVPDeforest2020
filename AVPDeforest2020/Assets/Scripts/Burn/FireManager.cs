@@ -15,6 +15,7 @@ public class FireManager : MonoBehaviour
     public GameObject psTerrain;
 
     Burnable[] burnables;
+    bool jungleStopped = false;
 
     public int unburnedObjectCount = 0;
 
@@ -30,7 +31,7 @@ public class FireManager : MonoBehaviour
                 burnables[i].type == Burnable.Object.TRUNK)
             {
                 ++unburnedObjectCount;
-                Debug.Log(unburnedObjectCount);
+                //Debug.Log(unburnedObjectCount);
             }
         }
     }
@@ -49,15 +50,13 @@ public class FireManager : MonoBehaviour
     {
         if (MainSceneManager.instance.burnPercentFull == false)
         {
-            AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 175 + MainSceneManager.instance.burnPercent*2 );
-            //Debug.Log("Hey;");
+            //AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 175 + MainSceneManager.instance.burnPercent * 2);
         }
 
-        if (MainSceneManager.instance.burnPercentFull == true)
-        {
-          //  AudioManager.Instance.SetVolume(AudioManager.AudioChannel.Fire, 0.1f / 1000);
-            
-        }
+        //if (MainSceneManager.instance.burnPercentFull)
+        //{
+        //    AudioManager.Instance.FadeMixer(AudioManager.AudioChannel.Jungle, 3, false, new AudioSource());
+        //}
 
     }
     public void DecrementUnburnedObject()
@@ -79,7 +78,7 @@ public class FireManager : MonoBehaviour
                 flamestrike.spatialBlend = 1;
                 flamestrike.volume = 1;
                 flamestrike.minDistance = 1;
-                flamestrike.maxDistance = 2000;
+                flamestrike.maxDistance = 1000;
 
                
 
@@ -93,7 +92,7 @@ public class FireManager : MonoBehaviour
                 fire4.spatialBlend = 1;
                 fire4.volume = 1;
                 fire4.minDistance = 1;
-                fire4.maxDistance = 2000;
+                fire4.maxDistance = 1000;
 
             }
         }

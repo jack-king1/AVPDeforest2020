@@ -57,4 +57,12 @@ MonoBehaviour:
   - name: Birds
     clip: {fileID: 8300000, guid: 60e5ffa37b14dc641a5780412ba968b0, type: 3}
   - name: Jaguar
-    clip: {fileID: 8300000, guid: 60e5ffa37b14dc641a5780412ba968b0, type: 3}
+    clip: {fileID: 8300000, guid: 564d4fc3b04c5924ea42f2a8930b2242, type: 3}
+  - name: monkey1
+    clip: {fileID: 8300000, guid: 71f4af0a11cbfbc40a6d10a0c1376e6a, type: 3}
+  - name: monkey2
+    clip: {fileID: 8300000, guid: 8192c3d7e05066b459c47fe2959a617f, type: 3}
+  - name: monkey3
+    clip: {fileID: 8300000, guid: ae3a213a48b8856409cffe23ca3c1447, type: 3}
+  - name: monkey4
+    clip: {fileID: 8300000, guid: ff00c85e72dcfe64e80e588fdc8a2cbd, type: 3}
