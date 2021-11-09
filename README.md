@@ -3,7 +3,7 @@
 
 Project Leader | Jack King | jackking.gm97@gmail.com | http://jackkingdev.com
 
-Lead Programmer | Lewis Bond 
+Lead Programmer | Lewis Bond | https://lbondi7.github.io/
 
 Models | Luke Tolchard | luke2.tolchard@live.uwe.ac.uk
 
