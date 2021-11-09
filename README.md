@@ -1,7 +1,7 @@
 # EARTH: Deforestation
 ## Team Diverse
 
-Project Leader | Jack King | jackking.gm97@gmail.com | http://jackkingdev.co.uk/home/
+Project Leader | Jack King | jackking.gm97@gmail.com | http://jackkingdev.com
 
 Lead Programmer | Lewis Bond 
 
